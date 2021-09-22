@@ -334,6 +334,7 @@ function openCity(cityName) {
 
 function openNav() {
   document.getElementById("mySidenav").style.width = "300px";
+  setTimeout(function(){ closeNav(); }, 8000);
 }
 
 function closeNav() {
