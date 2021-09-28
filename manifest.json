@@ -12,12 +12,12 @@
  "icons": [{
    "src": "WebAppJp05/icons/72x72.png",
    "sizes": "72x72",
-   "type": "image/png"
+   "type": "image/png",
    "purpose": "any maskable"
   }, {
    "src": "WebAppJp05/icons/512x512.png",
    "sizes": "512x512",
-   "type": "image/png"
+   "type": "image/png",
    "purpose": "any maskable"
   }]
 }
