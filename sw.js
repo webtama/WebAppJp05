@@ -21,6 +21,8 @@ const BASE_CACHE_FILES = [
     '/WebAppJp05/SOUND/click003.mp3',
     '/WebAppJp05/SOUND/Around-The-World.mp3',
     '/WebAppJp05/SOUND/Blue.mp3',
+    '/WebAppJp05/FONT/Hey%20Comic.ttf',
+    '/WebAppJp05/FONT/MinecraftEvenings-RBao.ttf',
 ];
 
 const OFFLINE_CACHE_FILES = [
@@ -44,6 +46,8 @@ const OFFLINE_CACHE_FILES = [
     '/WebAppJp05/SOUND/click003.mp3',
     '/WebAppJp05/SOUND/Around-The-World.mp3',
     '/WebAppJp05/SOUND/Blue.mp3',
+    '/WebAppJp05/FONT/Hey%20Comic.ttf',
+    '/WebAppJp05/FONT/MinecraftEvenings-RBao.ttf',    
 ];
 
 const NOT_FOUND_CACHE_FILES = [
