@@ -5,10 +5,9 @@
  "lang": "en-US",
  "dir": "ltr",
  "theme_color": "#000000",
- "start_url": "/WebAppJp05/index.html",
  "background_color": "#000",
  "display": "standalone",
- "orientation": "portrait-primary",
+ "orientation": "portrait",
  "icons": [{
    "src": "WebAppJp05/icons/72x72.png",
    "sizes": "72x72",
