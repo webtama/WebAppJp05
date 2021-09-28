@@ -34,7 +34,7 @@ document.getElementById('warning').style.display = 'none';
 <script>
   if('serviceWorker' in navigator) {
       navigator.serviceWorker
-          .register('/sw.js', { scope: '/' })
+          .register('/WebAppJp05/sw.js', { scope: '/' })
           .then(function(registration) {
               //console.log('Service Worker Registered');
           });
