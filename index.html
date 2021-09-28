@@ -30,19 +30,18 @@ document.getElementById('warning').style.display = 'none';
 <body style="margin: 0px; padding: 0px;">
       <iframe width="100%" height="100%" src="https://script.google.com/a/macros/edu.jakarta.go.id/s/AKfycbxNj_NcfFf0lxCD9bwnKA5DcjUsFK66lnp6W_PQJ9ty8yn6Det0/exec" frameborder="0"></iframe>
 <script>
-  if('serviceWorker' in navigator) {
-      navigator.serviceWorker
-          .register('/WebAppJp05/sw.js', { scope: '/WebAppJp05/' })
-          .then(function(registration) {
-              //console.log('Service Worker Registered');
-          });
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/WebAppJp05/sw.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
 
-      navigator.serviceWorker
-          .ready
-          .then(function(registration) {
-              //console.log('Service Worker Ready');
-          });
-  }
 </script>
 
 </body>
