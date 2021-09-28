@@ -1,0 +1,21 @@
+{
+ "name": "WebSchoolsAppJp05",
+ "short_name": "WebAppJp05",
+ "description": "Aplikasi Database SDN Jatipadang 05 Pagi",
+ "lang": "en-US",
+ "dir": "ltr",
+ "theme_color": "#000000",
+ "start_url": ".",
+ "background_color": "#000",
+ "display": "standalone",
+ "orientation": "portrait-primary",
+ "icons": [{
+   "src": "/icons/72x72.png",
+   "sizes": "72x72",
+   "type": "image/png"
+  }, {
+   "src": "/icons/512x512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  }]
+}
