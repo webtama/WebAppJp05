@@ -3,6 +3,8 @@
  "short_name": "WebAppJp05",
  "description": "Aplikasi Database SDN Jatipadang 05 Pagi",
  "lang": "en-US",
+ "start_url": "/WebAppJp05/index.html",
+ "scope": ".",
  "dir": "ltr",
  "theme_color": "#000000",
  "background_color": "#000",
