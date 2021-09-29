@@ -1,6 +1,6 @@
 var APP_PREFIX = 'WebAppJp05_';
 var VERSION = 'version_01';
-var URLS = '/WebAppJp05/';
+var URLS = '.';
 
 const NOT_FOUND_CACHE_FILES = '/WebAppJp05/404.html';
 const CACHE_NAME = 'offline';
