@@ -10,52 +10,66 @@ const CACHE_NAME = 'offline';
 const OFFLINE_URL = '/WebAppJp05/offline/index.html';
 const NOT_FOUND_URL = '/WebAppJp05/404.html';
 
+var urlsToCache = [
+  '/',
+  '/WebAppJp05/'
+];
+
 self.addEventListener('install', function(event) {
-  console.log('[ServiceWorker] Install');
-  
-  event.waitUntil((async () => {
-    const cache = await caches.open(CACHE_NAME);
-    // Setting {cache: 'reload'} in the new request will ensure that the response
-    // isn't fulfilled from the HTTP cache; i.e., it will be from the network.
-    await cache.add(new Request(OFFLINE_URL, {cache: 'reload'}));
-  })());
-  
-  self.skipWaiting();
+  // Perform install steps
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(function(cache) {
+        console.log('Opened cache');
+        return cache.addAll(urlsToCache);
+      })
+  );
 });
+self.addEventListener('activate', function(event) {
 
-self.addEventListener('activate', (event) => {
-  console.log('[ServiceWorker] Activate');
-  event.waitUntil((async () => {
-    // Enable navigation preload if it's supported.
-    // See https://developers.google.com/web/updates/2017/02/navigation-preload
-    if ('navigationPreload' in self.registration) {
-      await self.registration.navigationPreload.enable();
-    }
-  })());
+  var cacheAllowlist = ['CACHE_NAME'];
 
-  // Tell the active service worker to take control of the page immediately.
-  self.clients.claim();
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.map(function(cacheName) {
+          if (cacheAllowlist.indexOf(cacheName) === -1) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
 });
 
 self.addEventListener('fetch', function(event) {
-  // console.log('[Service Worker] Fetch', event.request.url);
-  if (event.request.mode === 'navigate') {
-    event.respondWith((async () => {
-      try {
-        const preloadResponse = await event.preloadResponse;
-        if (preloadResponse) {
-          return preloadResponse;
+  event.respondWith(
+    caches.match(event.request)
+      .then(function(response) {
+        // Cache hit - return response
+        if (response) {
+          return response;
         }
 
-        const networkResponse = await fetch(event.request);
-        return networkResponse;
-      } catch (error) {
-        console.log('[Service Worker] Fetch failed; returning offline page instead.', error);
+        var fetchRequest = event.request.clone();
 
-        const cache = await caches.open(CACHE_NAME);
-        const cachedResponse = await cache.match(OFFLINE_URL);
-        return cachedResponse;
-      }
-    })());
-  }
+        return fetch(fetchRequest).then(
+          function(response) {
+
+            if(!response || response.status !== 200 || response.type !== 'basic') {
+              return response;
+            }
+           var responseToCache = response.clone();
+
+            caches.open(CACHE_NAME)
+              .then(function(cache) {
+                cache.put(event.request, responseToCache);
+              });
+
+            return response;
+          }
+        );
+      })
+    );
 });
+
