@@ -7,6 +7,19 @@ const CACHE_NAME = 'offline';
 const OFFLINE_URL = '/WebAppJp05/offline/index.html';
 const NOT_FOUND_URL = '/WebAppJp05/404.html';
 
+importScripts('/WebAppJp05/script.js');
+
+self.addEventListener('install', function(e) {
+ e.waitUntil(
+   caches.open('airhorner').then(function(cache) {
+     return cache.addAll([
+       '/WebAppJp05/',
+       '/WebAppJp05/index.html'
+     ]);
+   })
+ );
+});
+
 self.addEventListener('fetch', function(event) {
   // console.log('[Service Worker] Fetch', event.request.url);
   if (event.request.mode === 'navigate') {
