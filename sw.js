@@ -2,7 +2,7 @@ var APP_PREFIX = 'WebAppJp05_';
 var VERSION = 'version_01';
 var URLS = [
   '/WebAppJp05/',
-  '/WebAppJp05/index.html',
+  '/WebAppJp05/index.html'
 ];
 
 const NOT_FOUND_CACHE_FILES = '/WebAppJp05/404.html';
