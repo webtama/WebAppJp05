@@ -6,6 +6,50 @@ const NOT_FOUND_CACHE_FILES = '/WebAppJp05/404.html';
 const CACHE_NAME = 'offline';
 const OFFLINE_URL = '/WebAppJp05/offline/index.html';
 const NOT_FOUND_URL = '/WebAppJp05/404.html';
+const DATA_CACHE_NAME = 'data-cache-v1';
+
+const FILES_TO_CACHE = [
+  '/',
+  '/WebAppJp05/index.html',
+  '/WebAppJp05/app.js',
+  '/WebAppJp05/install.js',
+  '/WebAppJp05/luxon-1.11.4.js',
+  '/WebAppJp05/inline.css',
+  '/WebAppJp05/add.svg',
+  '/WebAppJp05/clear-day.svg',
+  '/WebAppJp05/clear-night.svg',
+  '/WebAppJp05/cloudy.svg',
+  '/WebAppJp05/fog.svg',
+  '/WebAppJp05/hail.svg',
+  '/WebAppJp05/install.svg',
+  '/WebAppJp05/partly-cloudy-day.svg',
+  '/WebAppJp05/partly-cloudy-night.svg',
+  '/WebAppJp05/rain.svg',
+  '/WebAppJp05/refresh.svg',
+  '/WebAppJp05/sleet.svg',
+  '/WebAppJp05/snow.svg',
+  '/WebAppJp05/thunderstorm.svg',
+  '/WebAppJp05/tornado.svg',
+  '/WebAppJp05/wind.svg',
+];
+
+evt.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => {
+      console.log('[ServiceWorker] Pre-caching offline page');
+      return cache.addAll(FILES_TO_CACHE);
+    })
+);
+
+evt.waitUntil(
+    caches.keys().then((keyList) => {
+      return Promise.all(keyList.map((key) => {
+        if (key !== CACHE_NAME && key !== DATA_CACHE_NAME) {
+          console.log('[ServiceWorker] Removing old cache', key);
+          return caches.delete(key);
+        }
+      }));
+    })
+);
 
 self.addEventListener('install', function(event) {
   console.log('[ServiceWorker] Install');
