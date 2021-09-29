@@ -10,10 +10,7 @@ const CACHE_NAME = 'offline';
 const OFFLINE_URL = '/WebAppJp05/offline/index.html';
 const NOT_FOUND_URL = '/WebAppJp05/404.html';
 
-var urlsToCache = [
-  '/',
-  '/WebAppJp05/'
-];
+var urlsToCache = '/';
 
 self.addEventListener('install', function(event) {
   // Perform install steps
