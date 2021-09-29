@@ -11,7 +11,7 @@ importScripts('/WebAppJp05/script.js');
 
 self.addEventListener('install', function(e) {
  e.waitUntil(
-   caches.open('airhorner').then(function(cache) {
+   caches.open('offline').then(function(cache) {
      return cache.addAll([
        '/WebAppJp05/',
        '/WebAppJp05/index.html'
