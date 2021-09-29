@@ -47,7 +47,7 @@ document.getElementById('warning').style.display = 'none';
 <script>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/WebAppJp05/sw.js', {scope: '/'}).then(function(registration) {
+    navigator.serviceWorker.register('/WebAppJp05/sw.js', {scope: '/WebAppJp05/'}).then(function(registration) {
       // Registration was successful
       console.log('ServiceWorker registration successful with scope: ', registration.scope);
     }, function(err) {
