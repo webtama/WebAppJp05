@@ -12,6 +12,32 @@ const CACHE_NAME = 'offline';
 const OFFLINE_URL = '/WebAppJp05/offline/index.html';
 const NOT_FOUND_URL = '/WebAppJp05/404.html';
 
+const filesToCache = [
+  '/',
+  '/WebAppJp05/CSS/',
+  '/WebAppJp05/FONT/',
+  '/WebAppJp05/IMG/',
+  '/WebAppJp05/JQUERY/',
+  '/WebAppJp05/JS/'
+  '/WebAppJp05/SOUND/',
+  '/WebAppJp05/icons/',
+  '/WebAppJp05/offline/'
+
+];
+
+const staticCacheName = 'pages-cache-v1';
+
+self.addEventListener('install', event => {
+  console.log('Attempting to install service worker and cache static assets');
+  event.waitUntil(
+    caches.open(staticCacheName)
+    .then(cache => {
+      return cache.addAll(filesToCache);
+    })
+  );
+});
+
+
 self.addEventListener('install', function(event) {
   console.log('[ServiceWorker] Install');
   
