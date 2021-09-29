@@ -2,7 +2,7 @@
  "name": "WebSchoolsAppJp05",
  "short_name": "WebAppJp05",
  "description": "Aplikasi Database SDN Jatipadang 05 Pagi",
- "lang": "en-US",
+ "lang": "id-ID",
  "start_url": "/WebAppJp05/",
  "scope": ".",
  "dir": "ltr",
