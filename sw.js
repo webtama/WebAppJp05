@@ -2,56 +2,7 @@ var APP_PREFIX = 'WebAppJp05_';     // Identifier for this app (this needs to be
 var VERSION = 'version_01';              // Version of the off-line cache (change this value everytime you want to update cache)
 var URLS = [                            // Add URL you want to cache in this list.
   '/WebAppJp05/',                     // If you have separate JS/CSS files,
-  '/WebAppJp05/index.html'            // add path to those files here
-];
-const BASE_CACHE_FILES = [
-    '/WebAppJp05/manifest.json',
-    '/WebAppJp05/CSS/main.css',
-    '/WebAppJp05/CSS/font-awesome.min.css',
-    '/WebAppJp05/JQUERY/jquery-3.6.0.min.js',
-    '/WebAppJp05/JQUERY/jquery.mobile-1.4.5.min.js',
-    '/WebAppJp05/JS/a076d05399.js',
-    '/WebAppJp05/JQUERY/bootstrap.min.js',
-    '/WebAppJp05/JQUERY/bootstrap.bundle.min.js',
-    '/WebAppJp05/JS/JavaScript.js',
-    '/WebAppJp05/JQUERY/JQueryJs.js',
-    '/WebAppJp05/JQUERY/JQueryFormJs.js',
-    '/WebAppJp05/JQUERY/jquery.touchSwipe.min.js',
-    '/WebAppJp05/JQUERY/JQUERY/html2canvas.js',
-    '/WebAppJp05/JQUERY/qrious.min.js',
-    '/WebAppJp05/JQUERY/jspdf.debug.js',
-    '/WebAppJp05/icons/72x72.png',
-    '/WebAppJp05/icons/512x512.png',
-    '/WebAppJp05/SOUND/click003.mp3',
-    '/WebAppJp05/SOUND/Around-The-World.mp3',
-    '/WebAppJp05/SOUND/Blue.mp3',
-    '/WebAppJp05/FONT/Hey%20Comic.ttf',
-    '/WebAppJp05/FONT/MinecraftEvenings-RBao.ttf',
-];
-
-const OFFLINE_CACHE_FILES = [
-    '/WebAppJp05/manifest.json',
-    '/WebAppJp05/CSS/main.css',
-    '/WebAppJp05/CSS/font-awesome.min.css',
-    '/WebAppJp05/JQUERY/jquery-3.6.0.min.js',
-    '/WebAppJp05/JQUERY/jquery.mobile-1.4.5.min.js',
-    '/WebAppJp05/JS/a076d05399.js',
-    '/WebAppJp05/JQUERY/bootstrap.min.js',
-    '/WebAppJp05/JQUERY/bootstrap.bundle.min.js',
-    '/WebAppJp05/JS/JavaScript.js',
-    '/WebAppJp05/JQUERY/JQueryJs.js',
-    '/WebAppJp05/JQUERY/JQueryFormJs.js',
-    '/WebAppJp05/JQUERY/jquery.touchSwipe.min.js',
-    '/WebAppJp05/JQUERY/JQUERY/html2canvas.js',
-    '/WebAppJp05/JQUERY/qrious.min.js',
-    '/WebAppJp05/JQUERY/jspdf.debug.js',
-    '/WebAppJp05/icons/72x72.png',
-    '/WebAppJp05/icons/512x512.png',
-    '/WebAppJp05/SOUND/click003.mp3',
-    '/WebAppJp05/SOUND/Around-The-World.mp3',
-    '/WebAppJp05/SOUND/Blue.mp3',
-    '/WebAppJp05/FONT/Hey%20Comic.ttf',
-    '/WebAppJp05/FONT/MinecraftEvenings-RBao.ttf',    
+  '/WebAppJp05/index.html',            // add path to those files here
 ];
 
 const NOT_FOUND_CACHE_FILES = [  
