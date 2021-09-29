@@ -1,6 +1,6 @@
 <html style="margin: 0px; padding: 0px;">
       <head>
-            
+        <link rel="canonical" href="https://webtama.github.io/WebAppJp05/" />    
         <link rel="manifest" href="/WebAppJp05/manifest.json">    
         <meta charset="UTF-8"/>
         <title>WebSchollsApp-JP05</title>
@@ -47,7 +47,7 @@ document.getElementById('warning').style.display = 'none';
 <script>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/WebAppJp05/sw.js').then(function(registration) {
+    navigator.serviceWorker.register('/WebAppJp05/sw.js', {scope: '/WebAppJp05/'}).then(function(registration) {
       // Registration was successful
       console.log('ServiceWorker registration successful with scope: ', registration.scope);
     }, function(err) {
