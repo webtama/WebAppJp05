@@ -27,7 +27,7 @@ self.addEventListener('install', function(event) {
 });
 self.addEventListener('activate', function(event) {
 
-  var cacheAllowlist = ['CACHE_NAME'];
+  var cacheAllowlist = ['offline'];
 
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
