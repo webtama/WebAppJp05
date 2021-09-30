@@ -424,10 +424,10 @@ function ThemeIndigo() {
 document.getElementById("stylethemes").value = "";
 document.getElementById("stylethemes").value = "<style>"+
 "body {background-image:url('https://WebAppSchools.github.io/img/indigobcg.jpg');}"+
-".mkb-blue input {color: #4B0082;}"+
-".mkb-blue .mkb-button {background-color: white; color: #4B0082;}"+
-".w3-bar, #home h3, sidenav, .mkb-blue .mkb-button:hover {background-color: #4B0082;}"+
-".mkb-blue .mkb-form-group {background-color: rgb(75, 0, 130, 0.6);}"+
+".mkb-blue input {color: #663399;}"+
+".mkb-blue .mkb-button {background-color: white; color: #663399;}"+
+".w3-bar, #home h3, sidenav, .mkb-blue .mkb-button:hover {background-color: #663399;}"+
+".mkb-blue .mkb-form-group {background-color: rgb(102, 51, 153, 0.6);}"+
 "</style>";
 pastethemes();
 }
