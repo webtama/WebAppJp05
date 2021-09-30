@@ -201,7 +201,7 @@ pastetema();
 }
 else if(output == 'FALSE')
 {
-document.getElementById("errorMessage").innerHTML = "Password salah ulangi masukan Password dengan benar";
+document.getElementById("errorMessage").innerHTML = "Password salah";
 document.getElementById("btnlogin").style.display = "block";
 }    
 }).checkLogin(username, password);
@@ -438,7 +438,7 @@ document.getElementById("TEMAANDA").innerHTML = b;
       document.getElementById("messageBUKUSISWA").innerHTML = "";
       }else{
       var div = document.getElementById('dataTableBUKUSISWA');
-      div.innerHTML = "Data Tidak di Temukan!";
+      div.innerHTML = "Data Tidak Ada!";
     }
   }
   
