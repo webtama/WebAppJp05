@@ -284,7 +284,7 @@ resizable(document.getElementById('upload-Preview'),7);
         tr[i].style.display = '';
       } else {
         tr[i].style.display = 'none';
-        tr[i].innerHTML = "";
+        tr[i].setAttribute("id", "nonverifikasi");
         document.getElementById("dataverifikasi").style.display = "block";
         document.getElementById("passwordlogin").style.display = "none";
         document.getElementById('btnlogin').style.display = 'block'
