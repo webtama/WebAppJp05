@@ -454,55 +454,12 @@ document.getElementById("TEMAANDA").innerHTML = b;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
         tr[i].style.display = 'inline-block';
       } else {
-        tr[i].style.display = 'none';
+        tr[i].innerHTML = "";
       }
     }       
   }
   document.getElementById("myTableBUKUSISWA").style.display = "block";
   document.getElementById("dataTableBUKUSISWA").style.display = "inline-block";
   }
-    function getAllDataKOSAKATA(){
-      google.script.run.withSuccessHandler(createTableKOSAKATA).getAllDataKOSAKATA();
-    }
 
-  function createTableKOSAKATA(dataArrayKOSAKATA) {
-     if(dataArrayKOSAKATA){
-      var resultKOSAKATA = "<div class='table table-sm' id='myTableKOSAKATA' style='display:none; text-align: left;'>";
-          for(var i=0; i<dataArrayKOSAKATA.length; i++) {
-          resultKOSAKATA += "<div class='isiKOSAKATA' style='display:block; margin-bottom: 15px;'>";
-          for(var j=0; j<dataArrayKOSAKATA[i].length; j++){
-              resultKOSAKATA += "<span class='tabelKOSAKATA' style='display: block;'>"+dataArrayKOSAKATA[i][j]+"</span>";
-          }
-          resultKOSAKATA += "</div>";
-      }
-      resultKOSAKATA += "</div>";
-      var div = document.getElementById('dataTableKOSAKATA');
-      div.innerHTML = resultKOSAKATA;
-      document.getElementById("messageKOSAKATA").innerHTML = "kosakata tidak ada";
-      }else{
-      var div = document.getElementById('dataTableKOSAKATA');
-      div.innerHTML = "Data Tidak di Temukan!";
-    }
-  }
-  
-  function CARIKOSAKATA() {
-  var input, filter, div, span, txtValue, table, tr, td;
-  input = document.getElementById('myKOSAKATA');
-  filter = input.value.toUpperCase();
-  table = document.getElementById('myTableKOSAKATA');
-  tr = table.getElementsByTagName('div');
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName('div')[0];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > 0) {
-        tr[i].style.display = 'block';
-      } else {
-        tr[i].style.display = 'none';
-      }
-    }       
-  }
-  document.getElementById("myTableKOSAKATA").style.display = "block";
-  document.getElementById("dataTableKOSAKATA").style.display = "block";
-  }
 window.addEventListener('keydown',function(e){if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){if(e.target.nodeName=='INPUT'&&e.target.type=='text'){e.preventDefault();return false;}}},true);
