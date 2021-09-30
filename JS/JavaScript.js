@@ -283,7 +283,7 @@ resizable(document.getElementById('upload-Preview'),7);
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
         tr[i].style.display = '';
       } else {
-        tr[i].style.display = 'none';
+        tr[i].innerHTML = "";
         document.getElementById("dataverifikasi").style.display = "block";
         document.getElementById("passwordlogin").style.display = "none";
         document.getElementById('btnlogin').style.display = 'block'
@@ -454,7 +454,7 @@ document.getElementById("TEMAANDA").innerHTML = b;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
         tr[i].style.display = 'inline-block';
       } else {
-        tr[i].innerHTML = "";
+        tr[i].style.display = 'none';
       }
     }       
   }
