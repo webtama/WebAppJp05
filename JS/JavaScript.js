@@ -96,7 +96,7 @@ window.addEventListener('keydown',function(e){if(e.keyIdentifier=='U+000A'||e.ke
       for(var i=0; i<dataArray.length; i++) {
           result += "<tr>";
           result += "<td><button type='button' style='display:none'>Delete</button></td>";
-          result += "<td><button type='button' style='background-color: transparent; color:#7CFC00; border-color:transparent;font-size: 20px;cursor:pointer;' onclick='editData(this);passwordlogin();pastekey();><i class='fas fa-check-circle'></i> OK</button></td>";
+          result += "<td><button type='button' style='background-color: transparent; color:#7CFC00; border-color:transparent;font-size: 20px;cursor:pointer;' onclick='editData(this);passwordlogin();pastekey();'><i class='fas fa-check-circle'></i> OK</button></td>";
           for(var j=0; j<dataArray[i].length; j++){
               result += "<td>"+dataArray[i][j]+"</td>";
           }
@@ -120,7 +120,7 @@ window.addEventListener('keydown',function(e){if(e.keyIdentifier=='U+000A'||e.ke
   google.script.run.withSuccessHandler(createTable).deleteData(recordId);
   }
   }
-
+    
   //EDIT DATA
   function editData(el){
   var recordId = el.parentNode.parentNode.cells[2].innerHTML;
@@ -284,7 +284,7 @@ resizable(document.getElementById('upload-Preview'),7);
         tr[i].style.display = '';
       } else {
         tr[i].style.display = 'none';
-        tr[i].setAttribute("id", "nonverifikasi");
+        tr[i].innerHTML = "";
         document.getElementById("dataverifikasi").style.display = "block";
         document.getElementById("passwordlogin").style.display = "none";
         document.getElementById('btnlogin').style.display = 'block'
