@@ -120,8 +120,8 @@ window.addEventListener('keydown',function(e){if(e.keyIdentifier=='U+000A'||e.ke
   google.script.run.withSuccessHandler(createTable).deleteData(recordId);
   }
   }
- function deleteData() {
-  document.getElementById("removenonverifikasi").remove(); 
+ function removenonverifikasi() {
+  document.getElementById("nonverifikasi").remove(); 
  } 
   //EDIT DATA
   function editData(el){
