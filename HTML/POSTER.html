@@ -63,6 +63,39 @@ display:none!important;
 </style>
 
 <body>
+<center>
+Masukan Foto Anda :<br>
+<input type='file' id='getval' name="background-image" onchange="GetFotoPoster(event)" />
+<br><br>
+
+Pilih Tema :<br>
+<select name="Color:"onchange="document.getElementById('imgposter').src = this.value;">
+    <option>Pilih Tema</option>
+    <option value="https://webtama.github.io/WebAppJp05/icons/160x160.png">Background 1</option>
+    <option value="https://webtama.github.io/WebAppJp05/icons/512x512.png">Background 2</option>    
+</select>
+<br><br>
+
+Tulis Nama/Komentar :<br>
+<input type="text" id="textchatposter" placeholder="Pesan Teks" onfocus="this.value='';document.getElementById('errorMessage').innerHTML = '';" onchange="GettextPoster();"/>
+<br>
+Pilih Warna Tulisan :<br>
+<input id="colortext" data-jscolor="" onchange="GettcolorPoster();"> 
+<br><br>
+<div id="html-content-holder">      
+<div id="backgroundposter">
+</div>
+<img  id="imgposter" src="" />
+<div id="textposter" style="z-index:auto;">
+</div> 
+</div>
+<br>
+<input id="btn_convert" type="button" value="Unduh Foto" />
+<br><br>
+<h5>By MaSkIbOw 2021</h5>
+<span id="previewImg">
+</span>
+</center>
 <script>
        document.getElementById("btn_convert").addEventListener("click", function() {
 	   document.getElementById("previewImg").innerHTML = "";
@@ -99,39 +132,5 @@ function GettcolorPoster(){
 document.getElementById("textposter").style.color = document.getElementById("colortext").value;
 }
 </script>
-<center>
-Masukan Foto Anda :<br>
-<input type='file' id='getval' name="background-image" onchange="GetFotoPoster(event)" />
-<br><br>
-
-Pilih Tema :<br>
-<select name="Color:"onchange="document.getElementById('imgposter').src = this.value;">
-    <option>Pilih Tema</option>
-    <option value="https://webtama.github.io/WebAppJp05/icons/160x160.png">Background 1</option>
-    <option value="https://webtama.github.io/WebAppJp05/icons/512x512.png">Background 2</option>    
-</select>
-<br><br>
-
-Tulis Nama/Komentar :<br>
-<input type="text" id="textchatposter" placeholder="Pesan Teks" onfocus="this.value='';document.getElementById('errorMessage').innerHTML = '';" onchange="GettextPoster();"/>
-<br>
-Pilih Warna Tulisan :<br>
-<input id="colortext" data-jscolor="" onchange="GettcolorPoster();"> 
-<br><br>
-<div id="html-content-holder">      
-<div id="backgroundposter">
-</div>
-<img  id="imgposter" src="" />
-<div id="textposter" style="z-index:auto;">
-</div> 
-</div>
-<br>
-<input id="btn_convert" type="button" value="Unduh Foto" />
-<br><br>
-<h5>By MaSkIbOw 2021</h5>
-<span id="previewImg">
-</span>
-</center>
-
 </body>
 </html>
