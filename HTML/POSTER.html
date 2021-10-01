@@ -2,7 +2,43 @@
 <head>
 <script src="https://webtama.github.io/WebAppJp05/JQUERY/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.4.6/jscolor.min.js"></script> 
-<script src="https://webtama.github.io/WebAppJp05/HTML/poster.js"></script> 
+<script src="https://webtama.github.io/WebAppJp05/HTML/poster.js"></script>
+	<script>
+       document.getElementById("btn_convert").addEventListener("click", function() {
+	   document.getElementById("previewImg").innerHTML = "";
+		html2canvas(document.getElementById("html-content-holder"),
+			{
+				allowTaint: false,
+				useCORS: true
+			}).then(function (canvas) {
+				var anchorTag = document.createElement("a");
+				document.body.appendChild(anchorTag);
+				document.getElementById("previewImg").appendChild(canvas);
+				anchorTag.download = "PosterHariIni.jpg";
+				anchorTag.href = canvas.toDataURL();
+				anchorTag.target = '_blank';
+				anchorTag.click();
+			});
+  });
+
+    </script>
+
+<script>
+function GetFotoPoster(event){
+		 var getImagePath = URL.createObjectURL(event.target.files[0]);
+		 $('#backgroundposter').css('background-image', 'url(' + getImagePath + ')');
+		}
+</script>
+<script>
+function GettextPoster(){
+document.getElementById("textposter").innerHTML = document.getElementById("textchatposter").value;
+}
+</script>
+<script>
+function GettcolorPoster(){
+document.getElementById("textposter").style.color = document.getElementById("colortext").value;
+}
+</script>	
 </head>
 <style>
 #html-content-holder {
@@ -81,7 +117,7 @@ Tulis Nama/Komentar :<br>
 <br>
 Pilih Warna Tulisan :<br>
 <input id="colortext" data-jscolor="" onchange="GettcolorPoster();"> 
-<br> <br> <br><br><br>      
+<br><br>
 <div id="html-content-holder">      
 <div id="backgroundposter">
 </div>
@@ -96,41 +132,6 @@ Pilih Warna Tulisan :<br>
 <span id="previewImg">
 </span>
 </center>
-	<script>
-       document.getElementById("btn_convert").addEventListener("click", function() {
-	   document.getElementById("previewImg").innerHTML = "";
-		html2canvas(document.getElementById("html-content-holder"),
-			{
-				allowTaint: false,
-				useCORS: true
-			}).then(function (canvas) {
-				var anchorTag = document.createElement("a");
-				document.body.appendChild(anchorTag);
-				document.getElementById("previewImg").appendChild(canvas);
-				anchorTag.download = "PosterHariIni.jpg";
-				anchorTag.href = canvas.toDataURL();
-				anchorTag.target = '_blank';
-				anchorTag.click();
-			});
-  });
 
-    </script>
-
-<script>
-function GetFotoPoster(event){
-		 var getImagePath = URL.createObjectURL(event.target.files[0]);
-		 $('#backgroundposter').css('background-image', 'url(' + getImagePath + ')');
-		}
-</script>
-<script>
-function GettextPoster(){
-document.getElementById("textposter").innerHTML = document.getElementById("textchatposter").value;
-}
-</script>
-<script>
-function GettcolorPoster(){
-document.getElementById("textposter").style.color = document.getElementById("colortext").value;
-}
-</script>
 </body>
 </html>
