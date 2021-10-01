@@ -67,27 +67,22 @@ display:none!important;
 <body>
 <center>
 <div class="mkb-label">Masukan Foto Anda :</div>
-<br>
 <input type='file' id='getval' name="background-image" onchange="GetFotoPoster(event)" class="mkb-input"/>
-<br><br>
-
-<div class="mkb-label">Pilih Tema :</div>
 <br>
+<div class="mkb-label">Pilih Tema :</div>
 <select name="Color:"onchange="document.getElementById('imgposter').src = this.value;" class="mkb-input">
     <option>Pilih Tema</option>
     <option value="https://webtama.github.io/WebAppJp05/icons/160x160.png">Background 1</option>
     <option value="https://webtama.github.io/WebAppJp05/icons/512x512.png">Background 2</option>    
 </select>
-<br><br>
-
-<div class="mkb-label">Tulis Nama/Komentar :</div>
 <br>
+<div class="mkb-label">Tulis Nama/Komentar :</div>
 <input class="mkb-input" type="text" id="textchatposter" placeholder="Pesan Teks" onfocus="this.value='';document.getElementById('errorMessage').innerHTML = '';" onchange="GettextPoster();"/>
 <br>
 <div class="mkb-label">Pilih Warna Tulisan :</div>
 <br>
 <input id="colortext" data-jscolor="" onchange="GettcolorPoster();" style="position: relative;" class="mkb-input">  
-<br><br>
+<br>
 <div id="html-content-holder">      
 <div id="backgroundposter">
 </div>
