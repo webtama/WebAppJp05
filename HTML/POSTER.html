@@ -34,8 +34,6 @@ background-color: transparent!important;
 background-repeat: no-repeat!important;
 background-position: center center!important;
 border-radius: 20px!important;
-margin-top: -51px!important;
-margin-left: -10px!important;	
 }
 #textposter {
 width: inherit!important; 
@@ -131,13 +129,15 @@ cursor: pointer;
 <div class="mkb-label">🧰 Pilih Warna Tulisan :</div>
 <input id="colortext" data-jscolor="" onchange="GettcolorPoster();" style="position: relative;" class="mkb-input">  
 </div>
-
+margin-top: -51px!important;
+margin-left: -10px!important;	
 <input id="btn_convert" type="button" value="Unduh Foto" class="mkb-button"/>	
 <div>By MaSkIbOw 2021</div>	
 </center>
 <script>
        document.getElementById("btn_convert").addEventListener("click", function() {
-	   document.getElementById("previewImg").innerHTML = "";
+	   document.getElementById("backgroundposter").style.marginLeft = "-13px";
+	   document.getElementById("backgroundposter").style.marginTop = "-83px";  
 		html2canvas(document.getElementById("html-content-holder"),
 			{
 				allowTaint: true,
