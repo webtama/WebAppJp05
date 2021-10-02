@@ -141,11 +141,19 @@ border-radius: 10px;
 <input id="btn_convert" type="button" value="Unduh Foto" class="mkb-button"/>	
 <div>By MaSkIbOw 2021</div>	
 </center>
-<script>
+<script>	
        document.getElementById("btn_convert").addEventListener("click", function() {
 	   document.getElementById("backgroundposter").style.marginLeft = "-15px";
-	   document.getElementById("backgroundposter").style.marginTop = "-102px";  
-		html2canvas(document.getElementById("html-content-holder"),
+	   document.getElementById("backgroundposter").style.marginTop = "-102px";
+	   document.getElementById("html-content-holder").style.width = "500px";
+	   document.getElementById("backgroundposter").style.width = "500px";
+	   document.getElementById("imgposter").style.width = "500px";
+	   document.getElementById("previewImg").style.width = "500px";    
+	   document.getElementById("html-content-holder").style.height = "500px";
+	   document.getElementById("backgroundposter").style.height = "500px";
+	   document.getElementById("imgposter").style.height = "500px";
+	   document.getElementById("previewImg").style.height = "500px";  
+	       html2canvas(document.getElementById("html-content-holder"),
 			{
 				allowTaint: true,
 				useCORS: true
@@ -159,8 +167,16 @@ border-radius: 10px;
 				anchorTag.click();
 			});
 	  document.getElementById("backgroundposter").style.marginLeft = "0px";
-	  document.getElementById("backgroundposter").style.marginTop = "0px";      
-  });
+	  document.getElementById("backgroundposter").style.marginTop = "0px"; 
+	  document.getElementById("html-content-holder").style.width = "300px";
+	  document.getElementById("backgroundposter").style.width = "300px";
+	  document.getElementById("imgposter").style.width = "300px";
+	  document.getElementById("previewImg").style.width = "300px";      
+	  document.getElementById("html-content-holder").style.height = "300px";
+	  document.getElementById("backgroundposter").style.height = "300px";
+	  document.getElementById("imgposter").style.height = "300px";
+	  document.getElementById("previewImg").style.height = "300px";   
+       });
 
 </script>
 
