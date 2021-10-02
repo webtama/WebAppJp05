@@ -37,12 +37,13 @@ border-radius: 20px!important;
 }
 #textposter {
 width: inherit!important; 
-font-size: 10px;	
+font-size: 14px;	
 position: absolute!important; 
 z-index: 100!important;
 font-smoothing: always!important;
 text-shadow: 2px 2px 3px #000000!important;
 font-family: Arial, sans-serif!important;
+margin-top: -40px;	
 }
 #imgposter {
 width: 300px!important; 
@@ -137,7 +138,7 @@ margin-left: -10px!important;
 <script>
        document.getElementById("btn_convert").addEventListener("click", function() {
 	   document.getElementById("backgroundposter").style.marginLeft = "-13px";
-	   document.getElementById("backgroundposter").style.marginTop = "-83px";  
+	   document.getElementById("backgroundposter").style.marginTop = "-103px";  
 		html2canvas(document.getElementById("html-content-holder"),
 			{
 				allowTaint: true,
