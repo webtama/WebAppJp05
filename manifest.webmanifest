@@ -11,15 +11,48 @@
  "display": "standalone",
  "orientation": "portrait",
  "prefer_related_applications": "false",
- "icons": [{
-   "src": "WebAppJp05/icons/72x72.png",
-   "sizes": "72x72",
-   "type": "image/png",
-   "purpose": "any maskable"
-  }, {
-   "src": "WebAppJp05/icons/512x512.png",
-   "sizes": "512x512",
-   "type": "image/png",
-   "purpose": "any maskable"
-  }]
+ "icons": [
+    {
+      "src": "WebAppJp05/icons/72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "WebAppJp05/icons/96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "WebAppJp05/icons/128x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "iWebAppJp05/icons/144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "WebAppJp05/icons/152x152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "WebAppJp05/icons/192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "WebAppJp05/icons/384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "WebAppJp05/icons/512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "splash_pages": null
+}
 }
