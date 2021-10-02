@@ -63,11 +63,10 @@ width: 300px!important;
 height: 300px!important;
 position: relative!important
 background-color: transparent;
-display: none;
-margin: 0px!important 0px!important 0px!important 0px!important;
-padding: 0px!important 0px!important 0px!important 0px!important;	
+display: none!important;	
 }
-.previewImg div, .previewImg img, .previewImg canvas{	
+.previewImg {
+	
 }
 .mkb-group {
 display: block;
@@ -143,10 +142,10 @@ cursor: pointer;
 	   document.getElementById("previewImg").innerHTML = "";
 		html2canvas(document.getElementById("html-content-holder"),
 			{
-				allowTaint: false,
+				allowTaint: true,
 				useCORS: true
 			}).then(function (canvas) {
-				var anchorTag = document.createElement("a");
+				var anchorTag = document.createElement("div");
 				document.body.appendChild(anchorTag);
 				document.getElementById("html-content-holder").appendChild(canvas);
 				anchorTag.download = "PosterHariIni.jpg";
