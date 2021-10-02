@@ -37,7 +37,7 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox
 const CACHE = "offline";
 
 // TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "offline.html";
-const offlineFallbackPage = "ToDo-replace-this-name.html";
+const offlineFallbackPage = "https://webtama.github.io/WebAppJp05/index.html";
 
 self.addEventListener("message", (event) => {
   if (event.data && event.data.type === "SKIP_WAITING") {
@@ -91,7 +91,7 @@ self.addEventListener("message", (event) => {
 });
 
 workbox.routing.registerRoute(
-  new RegExp('/*'),
+  new RegExp('.'),
   new workbox.strategies.StaleWhileRevalidate({
     cacheName: CACHE
   })
@@ -104,7 +104,7 @@ const CACHE = "offline";
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
 // TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "offline.html";
-const offlineFallbackPage = "ToDo-replace-this-name.html";
+const offlineFallbackPage = "https://webtama.github.io/WebAppJp05/index.html";
 
 self.addEventListener("message", (event) => {
   if (event.data && event.data.type === "SKIP_WAITING") {
@@ -124,7 +124,7 @@ if (workbox.navigationPreload.isSupported()) {
 }
 
 workbox.routing.registerRoute(
-  new RegExp('/*'),
+  new RegExp('.'),
   new workbox.strategies.StaleWhileRevalidate({
     cacheName: CACHE
   })
@@ -165,7 +165,7 @@ self.addEventListener("message", (event) => {
 });
 
 workbox.routing.registerRoute(
-  new RegExp('/*'),
+  new RegExp('.'),
   new workbox.strategies.CacheFirst({
     cacheName: CACHE
   })
@@ -265,7 +265,7 @@ const bgSyncPlugin = new workbox.backgroundSync.BackgroundSyncPlugin(QUEUE_NAME,
 });
 
 workbox.routing.registerRoute(
-  new RegExp('/*'),
+  new RegExp('.'),
   new workbox.strategies.StaleWhileRevalidate({
     cacheName: CACHE,
     plugins: [
