@@ -11,7 +11,15 @@
 <base target="_top">	
 	
 </head>
-<style>	
+<style>
+body {
+overflow: hidden;
+scrollbar-width: none;
+-ms-overflow-style: none;
+}
+body::-webkit-scrollbar {
+display: none;
+}	
 center {padding: 10px 10px 10px 10px;}	
 #html-content-holder {
 display: inline-block;
@@ -37,7 +45,7 @@ border-radius: 20px!important;
 }
 #textposter {
 width: inherit!important; 
-font-size: 14px;	
+font-size: 18px;	
 position: absolute!important; 
 z-index: 100!important;
 font-smoothing: always!important;
@@ -65,7 +73,7 @@ margin-left: 10px;
 .mkb-group {
 display: block;
 border-radius: 10px!important;
-background-color: #87CEFA;
+background-color: #000000;
 box-shadow: 5px 5px 10px #000000;
 max-width: 400px;
 padding: 5px 5px 5px 5px;
@@ -81,18 +89,19 @@ text-align: center;
 border: 0px solid transparent;
 font-weight: bold;
 font-size: 16px;
-color: #0000CD;	
+color: #ffffff;
+background-color: #000000;	
 }
 	
 .mkb-button {
-border-radius: 5px!important;
-background-color: #00008B;
+background-color: #000000;
 color: #ffffff;	
 max-width: 300px;
 padding: 10px 10px 10px 10px;
 text-align: center;
 font-size: 18px;
-cursor: pointer;	
+cursor: pointer;
+border-radius: 10px;	
 }
 </style>
 
