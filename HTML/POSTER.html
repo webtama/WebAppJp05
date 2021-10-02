@@ -129,15 +129,13 @@ cursor: pointer;
 <input class="mkb-input" type="text" id="textchatposter" placeholder="Pesan Teks" value="" onfocus="this.value='';document.getElementById('errorMessage').innerHTML = '';" onchange="GettextPoster();"/>
 <div class="mkb-label">🧰 Pilih Warna Tulisan :</div>
 <input id="colortext" data-jscolor="" onchange="GettcolorPoster();" style="position: relative;" class="mkb-input">  
-</div>
-margin-top: -51px!important;
-margin-left: -10px!important;	
+</div>	
 <input id="btn_convert" type="button" value="Unduh Foto" class="mkb-button"/>	
 <div>By MaSkIbOw 2021</div>	
 </center>
 <script>
        document.getElementById("btn_convert").addEventListener("click", function() {
-	   document.getElementById("backgroundposter").style.marginLeft = "-13px";
+	   document.getElementById("backgroundposter").style.marginLeft = "-15px";
 	   document.getElementById("backgroundposter").style.marginTop = "-103px";  
 		html2canvas(document.getElementById("html-content-holder"),
 			{
