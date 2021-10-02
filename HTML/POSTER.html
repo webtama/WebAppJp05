@@ -1,5 +1,7 @@
 <html>
 <head>
+<link href="https://webtama.github.io/WebAppJp05/CSS/main.css" type="text/css" rel="stylesheet"/>     
+	
 <script src="https://webtama.github.io/WebAppJp05/JQUERY/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.4.6/jscolor.min.js"></script> 
 <script src="https://webtama.github.io/WebAppJp05/HTML/poster.js"></script>
@@ -72,10 +74,10 @@ display:none!important;
 
 <body>
 <center>
-<div class="mkb-label">Masukan Foto Anda :</div>
+<div class="mkb-label">📸 Masukan Foto Anda :</div>
 <input type='file' id='getval' name="background-image" onchange="GetFotoPoster(event)" class="mkb-input"/>
 <br>
-<div class="mkb-label">Pilih Tema :</div>
+<div class="mkb-label">🧩 Pilih Tema :</div>
 <select name="Color:"onchange="document.getElementById('imgposter').src = this.value;" class="mkb-input">
     <option>Pilih Tema</option>
     <option value="https://webtama.github.io/WebAppJp05/IMG/0110-001.png">Kesaktian Pancasila - 01</option>
@@ -83,10 +85,10 @@ display:none!important;
     <option value="https://webtama.github.io/WebAppJp05/IMG/0110-003.png">Kesaktian Pancasila - 03</option>  	
 </select>
 <br>
-<div class="mkb-label">Tulis Nama/Komentar :</div>
+<div class="mkb-label">✍ Tulis Nama/Komentar :</div>
 <input class="mkb-input" type="text" id="textchatposter" placeholder="Pesan Teks" onfocus="this.value='';document.getElementById('errorMessage').innerHTML = '';" onchange="GettextPoster();"/>
 <br>
-<div class="mkb-label">Pilih Warna Tulisan :</div>
+<div class="mkb-label">🧰 Pilih Warna Tulisan :</div>
 <input id="colortext" data-jscolor="" onchange="GettcolorPoster();" style="position: relative;" class="mkb-input">  
 <br>
 <div id="html-content-holder">      
