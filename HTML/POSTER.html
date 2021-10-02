@@ -14,7 +14,7 @@
 <style>	
 center {padding: 10px 10px 10px 10px;}	
 #html-content-holder {
-display:block;
+display: inline-block;
 position: relative;	
 background-color: transparent!important; 
 width: 150px!important; 
@@ -60,7 +60,8 @@ border-radius: 20px!important;
 width: 150px!important; 
 height: 150px!important;
 position: relative!important
-background-color: transparent;	
+background-color: transparent;
+display: inline-block;	
 }
 .previewImg {
 	
@@ -101,15 +102,17 @@ cursor: pointer;
 
 <body>	
 <center>
+<div style="display: block; position: relative;">
+	
 <div id="html-content-holder" class="html-content-holder">      
 <div id="backgroundposter" class="backgroundposter">
 <img  id="imgposter" class="imgposter" src="" />	
 <div id="textposter" class="textposter"></div>
 </div>
 	
-</div>	
-<div style="display: block; position: relative;">	
+</div>		
 <div id="previewImg" class="previewImg"></div>
+	
 </div>
 	
 <div class="mkb-group">
