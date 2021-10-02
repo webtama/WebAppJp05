@@ -74,9 +74,12 @@ display:none!important;
 
 <body>
 <center>
+<div class="mkb-form">	
 <div class="mkb-label">📸 Masukan Foto Anda :</div>
 <input type='file' id='getval' name="background-image" onchange="GetFotoPoster(event)" class="mkb-input"/>
+</div>
 <br>
+<div class="mkb-form">	
 <div class="mkb-label">🧩 Pilih Tema :</div>
 <select name="Color:"onchange="document.getElementById('imgposter').src = this.value;" class="mkb-input">
     <option>Pilih Tema</option>
@@ -84,13 +87,17 @@ display:none!important;
     <option value="https://webtama.github.io/WebAppJp05/IMG/0110-002.png">Kesaktian Pancasila - 02</option>
     <option value="https://webtama.github.io/WebAppJp05/IMG/0110-003.png">Kesaktian Pancasila - 03</option>  	
 </select>
+</div>	
 <br>
+<div class="mkb-form">	
 <div class="mkb-label">✍ Tulis Nama/Komentar :</div>
 <input class="mkb-input" type="text" id="textchatposter" placeholder="Pesan Teks" onfocus="this.value='';document.getElementById('errorMessage').innerHTML = '';" onchange="GettextPoster();"/>
 <br>
 <div class="mkb-label">🧰 Pilih Warna Tulisan :</div>
 <input id="colortext" data-jscolor="" onchange="GettcolorPoster();" style="position: relative;" class="mkb-input">  
+</div>
 <br>
+<div class="mkb-form">	
 <div id="html-content-holder">      
 <div id="backgroundposter">
 </div>
@@ -102,8 +109,9 @@ display:none!important;
 <input id="btn_convert" type="button" value="Unduh Foto" class="mkb-button"/>
 <br><br>
 <h5>By MaSkIbOw 2021</h5>
-<span id="previewImg">
-</span>
+<canvas id="previewImg">
+</canvas>
+</div>	
 </center>
 <script>
        document.getElementById("btn_convert").addEventListener("click", function() {
