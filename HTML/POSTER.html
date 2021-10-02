@@ -75,12 +75,13 @@ display:none!important;
 
 <body>
 <center>
-<div class="mkb-form">	
+<div class="mkb-form">
+<div class="mkb-group">	
 <div class="mkb-label">📸 Masukan Foto Anda :</div>
 <input type='file' id='getval' name="background-image" onchange="GetFotoPoster(event)" class="mkb-input"/>
 </div>
 <br>
-<div class="mkb-form">	
+<div class="mkb-group">
 <div class="mkb-label">🧩 Pilih Tema :</div>
 <select name="Color:"onchange="document.getElementById('imgposter').src = this.value;" class="mkb-input">
     <option>Pilih Tema</option>
@@ -90,7 +91,7 @@ display:none!important;
 </select>
 </div>	
 <br>
-<div class="mkb-form">	
+<div class="mkb-group">	
 <div class="mkb-label">✍ Tulis Nama/Komentar :</div>
 <input class="mkb-input" type="text" id="textchatposter" placeholder="Pesan Teks" onfocus="this.value='';document.getElementById('errorMessage').innerHTML = '';" onchange="GettextPoster();"/>
 <br>
@@ -98,7 +99,7 @@ display:none!important;
 <input id="colortext" data-jscolor="" onchange="GettcolorPoster();" style="position: relative;" class="mkb-input">  
 </div>
 <br>
-<div class="mkb-form">	
+<div class="mkb-group">
 <div id="html-content-holder">      
 <div id="backgroundposter">
 </div>
@@ -112,6 +113,7 @@ display:none!important;
 <h5>By MaSkIbOw 2021</h5>
 <canvas id="previewImg">
 </canvas>
+</div>
 </div>	
 </center>
 <script>
