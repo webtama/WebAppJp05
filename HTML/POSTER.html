@@ -66,7 +66,7 @@ display: none;
 margin: 0px 0px 0px 0px;
 padding: 0px 0px 0px 0px;	
 }
-#previewImg #html-content-holder, #previewImg #backgroundposter, #previewImg #imgposter{	
+.previewImg div, .previewImg img{	
 margin-top: 0px!important; 
 margin-bottom: 0px!important; 
 margin-left: 0px!important; 
@@ -131,22 +131,18 @@ cursor: pointer;
 </div>
 <br>
 
-<div id="html-content-holder">      
-<div id="backgroundposter">
-<img  id="imgposter" src="" />	
-<div id="textposter" style="z-index:auto; display: flex; align-items: center; justify-content: center;">	
+<div id="html-content-holder" class="html-content-holder">      
+<div id="backgroundposter" class="backgroundposter">
+<img  id="imgposter" class="imgposter" src="" />	
+<div id="textposter" class="textposter">	
 </div>
 </div> 
 <div style="display: block; position: relative;">	
-<div id="previewImg"></div>
+<div id="previewImg" class="previewImg"></div>
 </div>
 <br>
 <input id="btn_convert" type="button" value="Unduh Foto" class="mkb-button"/>	
-<h5>By MaSkIbOw 2021</h5>
-    <div class="col-md-2">
-        <a href="#" class="button btn btn-download" id="btn-Preview-Image">Preview</a>
-        <a class="button btn btn-download" id="btn-Convert-Html2Image" href="#">Download</a>
-    </div>	
+<h5>By MaSkIbOw 2021</h5>	
 </center>
 <script>
        document.getElementById("btn_convert").addEventListener("click", function() {
@@ -184,27 +180,5 @@ function GettcolorPoster(){
 document.getElementById("textposter").style.color = document.getElementById("colortext").value;
 }
 </script>
-<script>	
- var element = $("#html-content-holder"); // global variable
-    var getCanvas; // global variable
-
-    $("#btn-Preview-Image").on('click', function () {
-        html2canvas(element, {
-            onrendered: function (canvas) {
-                $("#previewImg").append(canvas);
-                getCanvas = canvas;
-            }
-        });
-    });
-
-    $("#btn-Convert-Html2Image").on('click', function () {
-        var imgageData = getCanvas.toDataURL("image/png");
-        // Now browser starts downloading it instead of just showing it
-        var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
-        $("#btn-Convert-Html2Image").attr("download", "your_pic_name.png").attr("href", newData);
-    });	
-</script>
-	
-	
 </body>
 </html>
