@@ -106,13 +106,13 @@ font-size: 18px;
 <body>
 <center>
 <div class="mkb-group">
-<div class="mkb-label">📸 Masukan Foto Anda :</div>
+<div class="mkb-label" value="">📸 Masukan Foto Anda :</div>
 <input type='file' id='getval' name="background-image" onchange="GetFotoPoster(event)" class="mkb-input"/>
 </div>
 <br>
 <div class="mkb-group">
-<div class="mkb-label">🧩 Pilih Tema ads:</div>
-<select name="Color:"onchange="document.getElementById('imgposter').src = this.value;" class="mkb-input">
+<div class="mkb-label">🧩 Pilih Tema :</div>
+<select name="Color:"onchange="document.getElementById('imgposter').src = this.value;" class="mkb-input" value="">
     <option>Pilih Tema</option>
     <option value="https://webtama.github.io/WebAppJp05/IMG/0110-001.png">Kesaktian Pancasila - 01</option>
     <option value="https://webtama.github.io/WebAppJp05/IMG/0110-002.png">Kesaktian Pancasila - 02</option>
@@ -122,7 +122,7 @@ font-size: 18px;
 <br>
 <div class="mkb-group">
 <div class="mkb-label">✍ Tulis Nama/Komentar :</div>
-<input class="mkb-input" type="text" id="textchatposter" placeholder="Pesan Teks" onfocus="this.value='';document.getElementById('errorMessage').innerHTML = '';" onchange="GettextPoster();"/>
+<input class="mkb-input" type="text" id="textchatposter" placeholder="Pesan Teks" value="" onfocus="this.value='';document.getElementById('errorMessage').innerHTML = '';" onchange="GettextPoster();"/>
 <br>
 <div class="mkb-label">🧰 Pilih Warna Tulisan :</div>
 <input id="colortext" data-jscolor="" onchange="GettcolorPoster();" style="position: relative;" class="mkb-input">  
