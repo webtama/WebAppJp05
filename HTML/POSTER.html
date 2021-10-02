@@ -105,6 +105,15 @@ cursor: pointer;
 
 <body>
 <center>
+<div id="html-content-holder" class="html-content-holder">      
+<div id="backgroundposter" class="backgroundposter">
+<img  id="imgposter" class="imgposter" src="" />	
+<div id="textposter" class="textposter"></div>
+</div>
+</div>	
+<div style="display: block; position: relative;">	
+<div id="previewImg" class="previewImg"></div>
+</div>	
 <div class="mkb-group">
 <div class="mkb-label" value="">📸 Masukan Foto Anda :</div>
 <input type='file' id='getval' name="background-image" onchange="GetFotoPoster(event)" class="mkb-input"/>
@@ -125,15 +134,6 @@ cursor: pointer;
 <input id="colortext" data-jscolor="" onchange="GettcolorPoster();" style="position: relative;" class="mkb-input">  
 </div>
 
-<div id="html-content-holder" class="html-content-holder">      
-<div id="backgroundposter" class="backgroundposter">
-<img  id="imgposter" class="imgposter" src="" />	
-<div id="textposter" class="textposter"></div>
-</div>
-</div>	
-<div style="display: block; position: relative;">	
-<div id="previewImg" class="previewImg"></div>
-</div>
 <input id="btn_convert" type="button" value="Unduh Foto" class="mkb-button"/>	
 <div>By MaSkIbOw 2021</div>	
 </center>
