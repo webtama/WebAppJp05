@@ -110,7 +110,7 @@ cursor: pointer;
 <div class="mkb-group">
 <div class="mkb-label" value="">📸 Masukan Foto Anda :</div>
 <input type='file' id='getval' name="background-image" onchange="GetFotoPoster(event)" class="mkb-input"/>
-</div>
+</div>	
 <div class="mkb-group">
 <div class="mkb-label">🧩 Pilih Tema :</div>
 <select name="Color:"onchange="document.getElementById('imgposter').src = this.value;" class="mkb-input" value="">
@@ -136,9 +136,8 @@ cursor: pointer;
 <div style="display: block; position: relative;">	
 <div id="previewImg" class="previewImg"></div>
 </div>
-<br>
 <input id="btn_convert" type="button" value="Unduh Foto" class="mkb-button"/>	
-<h5>By MaSkIbOw 2021</h5>	
+<div>By MaSkIbOw 2021</div>	
 </center>
 <script>
        document.getElementById("btn_convert").addEventListener("click", function() {
