@@ -34,7 +34,7 @@ self.addEventListener('fetch', function(event) {
 
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
-const CACHE = "chache_pwa";
+const CACHE = "offline";
 
 // TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "offline.html";
 const offlineFallbackPage = "ToDo-replace-this-name.html";
@@ -80,7 +80,7 @@ self.addEventListener('fetch', (event) => {
 
 // This is the "Offline copy of assets" service worker
 
-const CACHE = "chache_pwa";
+const CACHE = "offline";
 
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
@@ -99,7 +99,7 @@ workbox.routing.registerRoute(
 
 // This is the service worker with the combined offline experience (Offline page + Offline copy of pages)
 
-const CACHE = "chache_pwa";
+const CACHE = "offline";
 
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
@@ -154,7 +154,7 @@ self.addEventListener('fetch', (event) => {
 
 // This is the service worker with the Cache-first network
 
-const CACHE = "chache_pwa";
+const CACHE = "offline";
 
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
@@ -249,7 +249,7 @@ workbox.routing.registerRoute(
 
 // This is the "Offline copy of assets" service worker
 
-const CACHE = "chache_pwa";
+const CACHE = "offline";
 const QUEUE_NAME = "bgSyncQueue";
 
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
@@ -276,7 +276,7 @@ workbox.routing.registerRoute(
 
 // This is the "serving cached media" service worker
 
-const CACHE = "chache_pwa";
+const CACHE = "offline";
 
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
