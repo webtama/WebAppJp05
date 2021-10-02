@@ -143,7 +143,10 @@ cursor: pointer;
 <br>
 <input id="btn_convert" type="button" value="Unduh Foto" class="mkb-button"/>	
 <h5>By MaSkIbOw 2021</h5>
-	
+    <div class="col-md-2">
+        <a href="#" class="button btn btn-download" id="btn-Preview-Image">Preview</a>
+        <a class="button btn btn-download" id="btn-Convert-Html2Image" href="#">Download</a>
+    </div>	
 </center>
 <script>
        document.getElementById("btn_convert").addEventListener("click", function() {
@@ -181,5 +184,27 @@ function GettcolorPoster(){
 document.getElementById("textposter").style.color = document.getElementById("colortext").value;
 }
 </script>
+<script>	
+ var element = $("#html-content-holder"); // global variable
+    var getCanvas; // global variable
+
+    $("#btn-Preview-Image").on('click', function () {
+        html2canvas(element, {
+            onrendered: function (canvas) {
+                $("#previewImg").append(canvas);
+                getCanvas = canvas;
+            }
+        });
+    });
+
+    $("#btn-Convert-Html2Image").on('click', function () {
+        var imgageData = getCanvas.toDataURL("image/png");
+        // Now browser starts downloading it instead of just showing it
+        var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
+        $("#btn-Convert-Html2Image").attr("download", "your_pic_name.png").attr("href", newData);
+    });	
+</script>
+	
+	
 </body>
 </html>
