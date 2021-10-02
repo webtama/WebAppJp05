@@ -154,7 +154,7 @@ cursor: pointer;
 			}).then(function (canvas) {
 				var anchorTag = document.createElement("a");
 				document.body.appendChild(anchorTag);
-				document.getElementById("previewImg").appendChild(canvas);
+				document.getElementById("html-content-holder").appendChild(canvas);
 				anchorTag.download = "PosterHariIni.jpg";
 				anchorTag.href = canvas.toDataURL();
 				anchorTag.target = '_blank';
