@@ -63,6 +63,7 @@ width: 300px!important;
 height: 300px!important;
 position: relative;!important
 background-color: transparent;
+display:none!important;
 }
 .mkb-group {
 display: block;
@@ -97,7 +98,7 @@ font-size: 18px;
 </style>
 
 <body>
-<center>	
+<center>
 <div class="mkb-group">
 <div class="mkb-label">📸 Masukan Foto Anda :</div>
 <input type='file' id='getval' name="background-image" onchange="GetFotoPoster(event)" class="mkb-input"/>
@@ -121,19 +122,21 @@ font-size: 18px;
 <input id="colortext" data-jscolor="" onchange="GettcolorPoster();" style="position: relative;" class="mkb-input">  
 </div>
 <br>
-	
+
 <div id="html-content-holder">      
-<div id="backgroundposter"></div>
-<div id="textposter"></div>
-<img  id="imgposter" src=""/>
-</div>		
-<br><br>
-<div id="previewImg">
-</div>	
-	
+<div id="backgroundposter">
+</div>
+<img  id="imgposter" src="" />
+<div id="textposter" style="z-index:auto;">
+</div> 
+
+<br>
 <input id="btn_convert" type="button" value="Unduh Foto" class="mkb-button"/>
 <br><br>
 <h5>By MaSkIbOw 2021</h5>
+<div id="previewImg">
+</div>
+	
 </center>
 <script>
        document.getElementById("btn_convert").addEventListener("click", function() {
