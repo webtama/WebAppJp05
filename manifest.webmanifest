@@ -11,6 +11,7 @@
  "display": "standalone",
  "orientation": "portrait",
  "prefer_related_applications": "false",
+ "categories": ["education", "personalization"]
  "icons": [
     {
       "src": "/WebAppJp05/icons/72x72.png",
@@ -61,5 +62,12 @@
       "purpose": "any maskable"
     }
   ],
+"shortcuts" : [
+  {
+    "name": "Home",
+    "url": "/WebAppJp05/,
+    "description": "Login Page"
+  }
+]
   "splash_pages": null
 }
