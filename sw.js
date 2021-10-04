@@ -192,28 +192,6 @@ workbox.routing.registerRoute(
   })
 );
 
-// This is the "serving cached media" service worker
-
-self.addEventListener("message", (event) => {
-  if (event.data && event.data.type === "SKIP_WAITING") {
-    self.skipWaiting();
-  }
-});
-
-workbox.loadModule('workbox-cacheable-response');
-workbox.loadModule('workbox-range-requests');
-
-workbox.routing.registerRoute(
-  /.*\.mp3/,
-  new workbox.strategies.CacheFirst({
-    cacheName: CACHE,
-    plugins: [
-      new workbox.cacheableResponse.CacheableResponsePlugin({statuses: [200]}),
-      new workbox.rangeRequests.RangeRequestsPlugin(),
-    ],
-  }),
-);
-
 //This is the service worker with the Advanced caching
 
 const HTML_CACHE = "html";
