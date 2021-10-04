@@ -69,5 +69,12 @@
     "description": "Login-Page"
   }
 ],
+ "screenshots": [{
+    "src": "/WebAppJp05/icons/512x512.png",
+    "sizes": "512x512",
+    "type": "image/png",
+    "platform": "wide",
+    "label": "Aplikasi Database SDN Jatipadang 05 Pagi"
+  }],
   "splash_pages": null
 }
