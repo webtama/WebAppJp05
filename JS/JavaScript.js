@@ -453,3 +453,14 @@ document.getElementById("TEMAANDA").innerHTML = b;
   }
 
 window.addEventListener('keydown',function(e){if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){if(e.target.nodeName=='INPUT'&&e.target.type=='text'){e.preventDefault();return false;}}},true);
+
+function hidedataverifikasi() {
+document.getElementById("dataverifikasi").style.display = "none";
+document.getElementById("passwordlogin").style.display = "none";
+}
+
+function clearidkey() {
+document.getElementById("errorMessage").innerHTML = "";
+document.getElementById("idkeyuser").remove();
+document.getElementById("userkey").innerHTML="";
+}
