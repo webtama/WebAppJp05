@@ -43,14 +43,17 @@ background-position: center center!important;
 border-radius: 20px!important;
 }
 #textposter {
-width: inherit!important; 
+width: 280px!important; 
 font-size: 18px;	
 position: absolute!important; 
 z-index: 100!important;
 font-smoothing: always!important;
 text-shadow: 2px 2px 3px #000000!important;
 font-family: Arial, sans-serif!important;
-margin-top: -40px;	
+bottom: 50px;
+white-space:pre;
+max-height: 100px;
+left: 10px;
 }
 #imgposter {
 width: 300px; 
@@ -102,6 +105,7 @@ font-size: 18px;
 cursor: pointer;
 border-radius: 10px;	
 }
+#settingposter {display: none;}
 </style>
 
 <body>	
@@ -118,41 +122,68 @@ border-radius: 10px;
 <div id="previewImg" class="previewImg"></div>
 	
 </div>
-	
+<br>
+<button  onclick="pengaturanon();">🔧 Pengaturan</button>
+
+<div id="settingposter">	
 <div class="mkb-group">
 <div class="mkb-label" value="">📸 Masukan Foto Anda :</div>
 <input type='file' id='getval' name="background-image" onchange="GetFotoPoster(event)" class="mkb-input"/>
 </div>	
 <div class="mkb-group">
 <div class="mkb-label">🧩 Pilih Tema :</div>
-<select name="Color:"onchange="document.getElementById('imgposter').src = this.value;" class="mkb-input" value="">
+<select name="Color:"onchange="document.getElementById('imgposter').src = this.value;" class="mkb-input" value="" id="temapilih">
     <option>Pilih Tema</option>
     <option value="https://webtama.github.io/WebAppJp05/IMG/0110-001.png">Kesaktian Pancasila - 01</option>
     <option value="https://webtama.github.io/WebAppJp05/IMG/0110-002.png">Kesaktian Pancasila - 02</option>
     <option value="https://webtama.github.io/WebAppJp05/IMG/0110-003.png">Kesaktian Pancasila - 03</option>  	
 </select>
-</div>	
+</div>
 <div class="mkb-group">
 <div class="mkb-label">✍ Tulis Nama/Komentar :</div>
-<input class="mkb-input" type="text" id="textchatposter" style="background-color: #DCDCDC; color: #000000" placeholder="Pesan Teks" value="" onfocus="this.value='';document.getElementById('errorMessage').innerHTML = '';" onchange="GettextPoster();"/>
+<textarea class="mkb-input" type="text" id="textchatposter" style="background-color: #DCDCDC; color: #000000; white-space:pre;" placeholder="Pesan Teks" value="" onfocus="this.value='';document.getElementById('errorMessage').innerHTML = '';" value="" onchange="GettextPoster();" rows='2'></textarea><br>
+<div class="mkb-label" style="display:inline-block">Ukuran :</div>
+<select id="UkuranHuruf" onchange="OptionTextSize();" name="UkuranHuruf" value="" required>
+<option value=""></option>
+<option value="Kecil">Kecil</option>
+<option value="Normal">Normal</option>
+<option value="Besar">Besar</option>
+</select>
+<div class="mkb-label" style="display:inline-block">Posisi :</div>
+<select id="PosisiHuruf" onchange="OptionPosisiHuruf();" name="PosisiHuruf" value="" required>
+<option value=""></option>
+<option value="Bawah">Bawah</option>
+<option value="Atas">Atas</option>
+<option value="Kanan">Kanan</option>
+<option value="Kiri">Kiri</option>
+</select>
+<div class="mkb-label" style="display:inline-block">Posisi :</div>
+<select id="PosisiHurufAlign" onchange="OptionPosisiAlign();" name="PosisiHurufAlign" value="" required>
+<option value=""></option>
+<option value="Tengah">Tengah</option>
+<option value="Kanan">Kanan</option>
+<option value="Kiri">Kiri</option>
+</select>	
 <div class="mkb-label">🧰 Pilih Warna Tulisan :</div>
-<input id="colortext" data-jscolor="" onchange="GettcolorPoster();" style="position: relative;" class="mkb-input">  
-</div>	
+<input id="colortext" data-jscolor="#ffffff" onchange="GettcolorPoster();" style="position: relative;" class="mkb-input">  
+</div>
 <input id="btn_convert" type="button" value="Unduh Foto" class="mkb-button"/>	
-<div>By MaSkIbOw 2021</div>	
+<div>By MaSkIbOw 2021</div>
+</div>	
 </center>
 <script>	
        document.getElementById("btn_convert").addEventListener("click", function() {
-	   document.getElementById("backgroundposter").style.marginLeft = "-2px";
-	   document.getElementById("backgroundposter").style.marginTop = "-20px";
-	   document.getElementById("html-content-holder").style.width = "500px";
-	   document.getElementById("backgroundposter").style.width = "500px";
-	   document.getElementById("imgposter").style.width = "500px";
-	   document.getElementById("previewImg").style.width = "500px";    
-	   document.getElementById("html-content-holder").style.height = "500px";
-	   document.getElementById("backgroundposter").style.height = "500px";
-	   document.getElementById("imgposter").style.height = "500px";
-	   document.getElementById("previewImg").style.height = "500px";  
+	   document.getElementById("settingposter").style.display = "none";
+	   document.getElementById("backgroundposter").style.marginLeft = "0px";
+	   document.getElementById("backgroundposter").style.marginTop = "0px";
+	   document.getElementById("html-content-holder").style.width = "300px";
+	   document.getElementById("backgroundposter").style.width = "300px";
+	   document.getElementById("imgposter").style.width = "300px";
+	   document.getElementById("previewImg").style.width = "300px";    
+	   document.getElementById("html-content-holder").style.height = "300px";
+	   document.getElementById("backgroundposter").style.height = "300px";
+	   document.getElementById("imgposter").style.height = "300px";
+	   document.getElementById("previewImg").style.height = "300px";  
 	       html2canvas(document.getElementById("html-content-holder"),
 			{
 				allowTaint: true,
@@ -193,6 +224,67 @@ document.getElementById("textposter").innerHTML = document.getElementById("textc
 function GettcolorPoster(){
 document.getElementById("textposter").style.color = document.getElementById("colortext").value;
 }
+
+function OptionTextSize(){
+if(document.getElementById("UkuranHuruf").value == "Normal") {
+document.getElementById("textposter").style.fontSize = "20px";
+};
+if(document.getElementById("UkuranHuruf").value == "Kecil") {
+document.getElementById("textposter").style.fontSize = "18px";
+};
+if(document.getElementById("UkuranHuruf").value == "Besar") {
+document.getElementById("textposter").style.fontSize = "30px";
+};
+}
+
+function OptionPosisiHuruf(){
+if(document.getElementById("PosisiHuruf").value == "Bawah") {
+document.getElementById("textposter").style.left = "";
+document.getElementById("textposter").style.top  = "";
+document.getElementById("textposter").style.bottom  = "20px";
+document.getElementById("textposter").style.transform = "rotate(0deg)";
+};
+if(document.getElementById("PosisiHuruf").value == "Atas") {
+document.getElementById("textposter").style.left = "";
+document.getElementById("textposter").style.bottom  = "";
+document.getElementById("textposter").style.top  = "20px";
+document.getElementById("textposter").style.transform = "rotate(0deg)";
+};
+if(document.getElementById("PosisiHuruf").value == "Kiri") {
+document.getElementById("textposter").style.top  = "";
+document.getElementById("textposter").style.bottom  = "115px";
+document.getElementById("textposter").style.left = "-110px";
+document.getElementById("textposter").style.transform = "rotate(-90deg)";
+};
+if(document.getElementById("PosisiHuruf").value == "Kanan") {
+document.getElementById("textposter").style.top  = "";
+document.getElementById("textposter").style.bottom  = "115px";
+document.getElementById("textposter").style.left = "110px";
+document.getElementById("textposter").style.transform = "rotate(90deg)";
+};
+}
+function pengaturanon() {
+document.getElementById("settingposter").style.display = "block";
+document.getElementById("getval").value = "";
+document.getElementById("temapilih").value = "";
+document.getElementById("textchatposter").value = "";
+document.getElementById("UkuranHuruf").value = "";
+document.getElementById("PosisiHuruf").value = "";
+document.getElementById("PosisiHurufAlign").value = "";
+}
+
+function OptionPosisiAlign(){
+if(document.getElementById("PosisiHurufAlign").value == "Tengah") {
+document.getElementById("textposter").style.textAlign = "center";
+};
+if(document.getElementById("PosisiHurufAlign").value == "Kanan") {
+document.getElementById("textposter").style.textAlign = "right";
+};
+if(document.getElementById("PosisiHurufAlign").value == "Kiri") {
+document.getElementById("textposter").style.textAlign = "left";
+};
+}
 </script>
+
 </body>
 </html>
