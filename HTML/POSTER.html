@@ -8,8 +8,14 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="viewport" content="width=device-width, initial-scale=1"/>   
-<base target="_top">	
-	
+<base target="_top">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 	
+<link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Rampart+One&display=swap" rel="stylesheet"> 	
 </head>
 <style>
 body {
@@ -28,7 +34,7 @@ width: 300px;
 height: 300px; 
 font-smoothing: always!important;
 text-shadow: 2px 2px 3px #000000!important;
-font-family: Arial, sans-serif!important;
+font-family: Arial, sans-serif;
 }
 #backgroundposter {
 width: 300px; 
@@ -49,7 +55,7 @@ position: absolute!important;
 z-index: 100!important;
 font-smoothing: always!important;
 text-shadow: 2px 2px 3px #000000!important;
-font-family: Arial, sans-serif!important;
+font-family: Arial, sans-serif;
 bottom: 50px;
 white-space:pre;
 max-height: 100px;
@@ -140,33 +146,82 @@ border-radius: 10px;
 </select>
 </div>
 <div class="mkb-group">
+<table border="0">
+  <tr>
+    <td valign="top">
 <div class="mkb-label">✍ Tulis Nama/Komentar :</div>
-<textarea class="mkb-input" type="text" id="textchatposter" style="background-color: #DCDCDC; color: #000000; white-space:pre;" placeholder="Pesan Teks" value="" onfocus="this.value='';document.getElementById('errorMessage').innerHTML = '';" value="" onchange="GettextPoster();" rows='2'></textarea><br>
-<div class="mkb-label" style="display:inline-block">Ukuran :</div>
-<select id="UkuranHuruf" onchange="OptionTextSize();" name="UkuranHuruf" value="" required>
+<textarea class="mkb-input" type="text" id="textchatposter" style="background-color: #DCDCDC; color: #000000; white-space:pre;" placeholder="Pesan Teks" value="" onfocus="this.value='';document.getElementById('errorMessage').innerHTML = '';" value="" onchange="GettextPoster();" rows='2'></textarea> 
+    </td>
+    <td>
+<div style="padding-bottom:5px; text-align:right;">
+<div class="mkb-label" style="display:inline-block" style="width: 150px; display:inline;">↕ :</div>
+<select id="UkuranHuruf" onchange="OptionTextSize();" name="UkuranHuruf" value="" required style="width: 150px; display:inline;">
 <option value=""></option>
 <option value="Kecil">Kecil</option>
 <option value="Normal">Normal</option>
 <option value="Besar">Besar</option>
 </select>
-<div class="mkb-label" style="display:inline-block">Posisi :</div>
-<select id="PosisiHuruf" onchange="OptionPosisiHuruf();" name="PosisiHuruf" value="" required>
+</div>
+<div style="padding-bottom:5px; text-align:right;">
+<div class="mkb-label" style="display:inline-block" style="width: 150px; display:inline;">⯐ :</div>
+<select id="PosisiHuruf" onchange="OptionPosisiHuruf();" name="PosisiHuruf" value="" required style="width: 150px; display:inline;">
 <option value=""></option>
 <option value="Bawah">Bawah</option>
 <option value="Atas">Atas</option>
 <option value="Kanan">Kanan</option>
 <option value="Kiri">Kiri</option>
-</select>
-<div class="mkb-label" style="display:inline-block">Posisi :</div>
-<select id="PosisiHurufAlign" onchange="OptionPosisiAlign();" name="PosisiHurufAlign" value="" required>
+</select> 
+</div>
+<div style="padding-bottom:5px; text-align:right;">
+<div class="mkb-label" style="display:inline-block" style="width: 150px; display:inline;">Ξ :</div>
+<select id="PosisiHurufAlign" onchange="OptionPosisiAlign();" name="PosisiHurufAlign" value="" required style="width: 150px; display:inline;">
 <option value=""></option>
 <option value="Tengah">Tengah</option>
 <option value="Kanan">Kanan</option>
 <option value="Kiri">Kiri</option>
-</select>	
-<div class="mkb-label">🧰 Pilih Warna Tulisan :</div>
-<input id="colortext" data-jscolor="#ffffff" onchange="GettcolorPoster();" style="position: relative;" class="mkb-input">  
+</select>
 </div>
+<div style="padding-bottom:5px; text-align:right;">
+<div class="mkb-label" style="display:inline-block" style="width: 150px; display:inline;">✎ :</div>
+<select id="GayaHuruf" onchange="OptionFonts(this);" name="GayaHuruf" value="" required style="width: 150px; display:inline;">
+<option value=""></option>
+<option>Concert One</option>
+<option>Luckiest Guy</option>
+<option>Henny Penny</option>
+<option>Rampart One</option>
+<option>Finger Paint</option>
+<option>Georgia</option>
+<option>Palatino Linotype</option>
+<option>Book Antiqua</option>
+<option>Times New Roman</option>
+<option>Arial</option>
+<option>Helvetica</option>
+<option>Arial Black</option>
+<option>Impact</option>
+<option>Lucida Sans Unicode</option>
+<option>Tahoma</option>
+<option>Verdana</option>
+<option>Courier New</option>
+<option>Lucida Console</option>
+</select> 
+</div>
+<div style="padding-bottom:5px; text-align:right;">
+<div class="mkb-label" style="display:inline-block" style="width: 150px; display:inline;">✎ :</div>
+<select id="WeightHuruf" onchange="OptionWeightFonts(this);" name="WeightHuruf" value="" required style="width: 150px; display:inline;">
+<option value=""></option>
+<option>normal</option>
+<option>lighter</option>
+<option>bold</option>
+<option>bolder</option>
+</select> 
+</div>
+<div style="padding-bottom:5px; text-align:right;">
+<div class="mkb-label" style="width: 150px; display:inline;">🚥 :</div>
+<input id="colortext" data-jscolor="#ffffff" onchange="GettcolorPoster();" style="width: 150px; display:inline;" class="mkb-input"> 
+</div>  
+    </td>
+  </tr>
+</table>
 <input id="btn_convert" type="button" value="Unduh Foto" class="mkb-button"/>	
 <div>By MaSkIbOw 2021</div>
 </div>	
@@ -251,15 +306,15 @@ document.getElementById("textposter").style.top  = "20px";
 document.getElementById("textposter").style.transform = "rotate(0deg)";
 };
 if(document.getElementById("PosisiHuruf").value == "Kiri") {
-document.getElementById("textposter").style.top  = "";
-document.getElementById("textposter").style.bottom  = "115px";
-document.getElementById("textposter").style.left = "-110px";
+document.getElementById("textposter").style.top  = "100px";
+document.getElementById("textposter").style.bottom  = "";
+document.getElementById("textposter").style.left = "-80px";
 document.getElementById("textposter").style.transform = "rotate(-90deg)";
 };
 if(document.getElementById("PosisiHuruf").value == "Kanan") {
-document.getElementById("textposter").style.top  = "";
-document.getElementById("textposter").style.bottom  = "115px";
-document.getElementById("textposter").style.left = "110px";
+document.getElementById("textposter").style.top  = "100px";
+document.getElementById("textposter").style.bottom  = "";
+document.getElementById("textposter").style.left = "100px";
 document.getElementById("textposter").style.transform = "rotate(90deg)";
 };
 }
@@ -283,6 +338,14 @@ document.getElementById("textposter").style.textAlign = "right";
 if(document.getElementById("PosisiHurufAlign").value == "Kiri") {
 document.getElementById("textposter").style.textAlign = "left";
 };
+}
+function OptionFonts(selectTag){
+  var listValue = selectTag.options[selectTag.selectedIndex].text;
+  document.getElementById("textposter").style.fontFamily = listValue;
+}
+function OptionWeightFonts(selectTag){
+  var listValue = selectTag.options[selectTag.selectedIndex].text;
+  document.getElementById("textposter").style.fontWeight = listValue;
 }
 </script>
 
