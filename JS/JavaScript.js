@@ -251,12 +251,6 @@ filterFunction();
 }).getuserkey(name);
 };
 
-function clearidkey() {
-document.getElementById("errorMessage").innerHTML = "";
-document.getElementById("idkeyuser").remove();
-document.getElementById("userkey").innerHTML="";
-}
-
 function resizable (el, factor) {
 var int = Number(factor) || 7.7;
 function resize() {el.style.width = ((el.value.length+1) * int) + 'px'}
@@ -383,11 +377,6 @@ EditData();
 document.getElementById('AVRfoto').value = "";
 document.getElementById('AVRfoto').value = document.getElementById('copy_img').value;
 document.getElementById('upload-Preview').getAttribute("src") = document.getElementById('AVRfoto').value;
-}
-
-function hidedataverifikasi() {
-document.getElementById("dataverifikasi").style.display = "none";
-document.getElementById("passwordlogin").style.display = "none";
 }
 
 function getfoto(address) {
