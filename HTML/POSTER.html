@@ -1,5 +1,8 @@
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	
 <script src="https://webtama.github.io/WebAppJp05/JQUERY/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.4.6/jscolor.min.js"></script> 
@@ -148,11 +151,81 @@ border-radius: 10px;
 </div>	
 <div class="mkb-group">
 <div class="mkb-label">🧩 Pilih Tema :</div>
-<select name="Color:"onchange="document.getElementById('imgposter').src = this.value;" class="mkb-input" value="" id="temapilih">
-    <option>Pilih Tema</option>
-    <option value="https://webtama.github.io/WebAppJp05/IMG/0110-001.png">Kesaktian Pancasila - 01</option>
-    <option value="https://webtama.github.io/WebAppJp05/IMG/0110-002.png">Kesaktian Pancasila - 02</option>
-    <option value="https://webtama.github.io/WebAppJp05/IMG/0110-003.png">Kesaktian Pancasila - 03</option>  	
+<select name="temapilih" list="temapilih" onchange="document.getElementById('imgposter').src = this.value;" class="mkb-input" value="" id="temapilih">
+	<option>Pilih Tema</option>
+	<optgroup label="Januari">
+		<option value="https://webtama.github.io/WebAppJp05/IMG/.png">Tahun Baru</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/HLHidup.png">Hari Lingkungan Hidup Indonesia</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/1jutapoon.png">Hari Gerakan Satu Juta Pohon</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/GizidanMakanan.png">Hari Gizi dan Makanan</option>
+    </optgroup>
+    <optgroup label="Februari">
+		<option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Gizi Nasional Indonesia</option>
+    </optgroup>
+    <optgroup label="Maret">
+		<option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Musik Nasional</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Film Indonesia</option>
+    </optgroup>
+    <optgroup label="April">
+		<option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Nelayan Indonesia</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Kartini</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Puisi Nasional</option>
+    </optgroup>
+    <optgroup label="Mei">
+		<option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Buruh Sedunia</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Pendidikan Nasional</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Buku Nasional</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Kebangkitan Nasional</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Peringatan Reformasi</option>
+    </optgroup>
+    <optgroup label="Juni">
+		<option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Lahir Pancasila</option>
+    </optgroup>
+    <optgroup label="Juli">
+		<option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Koperasi Indonesia</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Anak Nasional</option>
+    </optgroup>
+    <optgroup label="Agustus">
+		<option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Pramuka (Praja Muda Karana)</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Proklamasi Kemerdekaan Indonesia</option>
+    </optgroup>
+    <optgroup label="September">
+		<option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Palang Merah Indonesia (PMI)</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Olah Raga Nasional</option>
+    </optgroup>
+    <optgroup label="Oktober">
+		<option value="https://webtama.github.io/WebAppJp05/IMG/0110-001.png">Kesaktian Pancasila - 01</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/0110-002.png">Kesaktian Pancasila - 02</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/0110-003.png">Kesaktian Pancasila - 03</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Batik Nasional</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Guru Sedunia</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Sumpah Pemuda</option>
+    </optgroup>
+    <optgroup label="Nopember">
+		<option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Pahlawan</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Kesehatan Nasional</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Ayah Nasional</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Guru (PGRI)</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/">Hari KORPRI</option>
+    </optgroup>
+    <optgroup label="Desember">
+		<option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Bela Negara</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Ibu</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Ayah Nasional</option>
+    </optgroup>
+    <optgroup label="HBA">
+		<option value="https://webtama.github.io/WebAppJp05/IMG/">Tahun Baru Imlek</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Raya Nyepi</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/">Jumat Agung</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/">Isra Miraj Nabi Muhammad SAW</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/">Kenaikan Isa Al Masih</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Raya Waisak</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Raya Idul Fitri</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Raya Idul Adha</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/">Tahun Baru Islam</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/">Maulid Nabi Muhammad SAW</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Raya Natal</option>
+     </optgroup>
 </select>
 </div>
 <div class="mkb-group">
