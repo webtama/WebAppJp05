@@ -12,6 +12,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="viewport" content="width=device-width, initial-scale=1"/>   
 <base target="_top">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 	
 <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet"> 
@@ -31,10 +32,12 @@ overflow-y: none !important !important;
 -moz-appearance: none !important !important;
 -ms-overflow-style: none;
 overflow: none !important !important;
+-webkit-appearance: none;
 }	
 body {
 scrollbar-width: none;
 -ms-overflow-style: none;
+-webkit-appearance: none;
 }
 body::-webkit-scrollbar {
 display: none;
@@ -163,6 +166,7 @@ transition-property: border-color, box-shadow;
 transition-duration: 0.15s, 0.15s;
 transition-timing-function: ease-in-out, ease-in-out;
 transition-delay: 0s, 0s;
+-webkit-appearance: none;
 }
 @supports (appearance: none)
 {
@@ -171,6 +175,7 @@ font-size: 11px!important;
 margin: 0px 0px 0px 0px!important;
 padding: 0px 0px 0px 0px!important;
 background-color: #666!important;
+-webkit-appearance: none;
 }
 }	
 </style>
@@ -483,4 +488,3 @@ function OptionWeightFonts(selectTag){
 
 </body>
 </html>
-
