@@ -32,12 +32,20 @@ overflow-y: none !important !important;
 -moz-appearance: none !important !important;
 -ms-overflow-style: none;
 overflow: none !important !important;
--webkit-appearance: none;
+-webkit-appearance: none !important; /* WebKit */
+-moz-appearance: none !important; /* Mozilla */
+-o-appearance: none !important; /* Opera */
+-ms-appearance: none !important; /* Internet Explorer */
+appearance: none !important; /* CSS3 */
 }	
 body {
 scrollbar-width: none;
 -ms-overflow-style: none;
--webkit-appearance: none;
+-webkit-appearance: none !important; /* WebKit */
+-moz-appearance: none !important; /* Mozilla */
+-o-appearance: none !important; /* Opera */
+-ms-appearance: none !important; /* Internet Explorer */
+appearance: none !important; /* CSS3 */
 }
 body::-webkit-scrollbar {
 display: none;
@@ -166,7 +174,11 @@ transition-property: border-color, box-shadow;
 transition-duration: 0.15s, 0.15s;
 transition-timing-function: ease-in-out, ease-in-out;
 transition-delay: 0s, 0s;
--webkit-appearance: none;
+-webkit-appearance: none !important; /* WebKit */
+-moz-appearance: none !important; /* Mozilla */
+-o-appearance: none !important; /* Opera */
+-ms-appearance: none !important; /* Internet Explorer */
+appearance: none !important; /* CSS3 */
 }
 @supports (appearance: none)
 {
@@ -175,7 +187,11 @@ font-size: 11px!important;
 margin: 0px 0px 0px 0px!important;
 padding: 0px 0px 0px 0px!important;
 background-color: #666!important;
--webkit-appearance: none;
+-webkit-appearance: none !important; /* WebKit */
+-moz-appearance: none !important; /* Mozilla */
+-o-appearance: none !important; /* Opera */
+-ms-appearance: none !important; /* Internet Explorer */
+appearance: none !important; /* CSS3 */
 }
 }	
 </style>
