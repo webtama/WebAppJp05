@@ -5,8 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	
 <script src="https://webtama.github.io/WebAppJp05/JQUERY/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.4.6/jscolor.min.js"></script> 
-<script src="https://webtama.github.io/WebAppJp05/HTML/poster.js"></script>
+<script src="https://webtama.github.io/WebAppJp05/JS/POSTER.js"></script>
 	
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -19,296 +18,95 @@
 <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet"> 
 <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap" rel="stylesheet"> 
 <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet"> 
-<link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Rampart+One&display=swap" rel="stylesheet"> 	
+<link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Rampart+One&display=swap" rel="stylesheet"> 
+<link href="https://webtama.github.io/WebAppJp05/CSS/CSSMAINPOSTER.css" rel="stylesheet" type="text/css" media="all" />
+
 </head>
-<style>
-html {
--ms-overflow-style: none !important !important;
-scrollbar-width: none !important !important; 
-overflow: scroll !important !important;  
-overflow-x: none !important !important;
-overflow-y: none !important !important;
--webkit-appearance: none !important !important;
--moz-appearance: none !important !important;
--ms-overflow-style: none;
-overflow: none !important !important;
--webkit-appearance: none !important; /* WebKit */
--moz-appearance: none !important; /* Mozilla */
--o-appearance: none !important; /* Opera */
--ms-appearance: none !important; /* Internet Explorer */
-appearance: none !important; /* CSS3 */
-}	
-body {
-scrollbar-width: none;
--ms-overflow-style: none;
--webkit-appearance: none !important; /* WebKit */
--moz-appearance: none !important; /* Mozilla */
--o-appearance: none !important; /* Opera */
--ms-appearance: none !important; /* Internet Explorer */
-appearance: none !important; /* CSS3 */
-}
-body::-webkit-scrollbar {
-display: none;
-}		
-#html-content-holder {
-display: inline-block;
-position: relative;	
-background-color: transparent!important; 
-width: 300px; 
-height: 300px; 
-font-smoothing: always!important;
-text-shadow: 3px 3px 3px #000000!important;
-font-family: Arial, sans-serif;
-}
-#backgroundposter {
-width: 300px; 
-height: 300px; 
-background-image:url(''); 
-background-size: 100% auto;
-position: initial!important; 
-z-index: -1!important;
-background-color: transparent!important;
-background-repeat: no-repeat!important;
-background-position: center center!important;
-border-radius: 20px!important;
-}
-#textposter {
-width: 280px!important; 
-font-size: 18px;	
-position: absolute!important; 
-z-index: 100!important;
-font-smoothing: always!important;
-text-shadow: 3px 3px 3px #000000!important;
-font-family: Arial, sans-serif;
-bottom: 50px;
-white-space:pre;
-max-height: 100px;
-left: 10px;
-}
-#imgposter {
-width: 300px; 
-height: 300px; 	
-position: relative!important;
-z-index: 0!important;
-border-radius: 20px!important;	
-}
 
-#previewImg {
-width: 300px; 
-height: 300px; 
-position: relative!important
-background-color: transparent;
-display: none;
-margin-left: 10px;	
-}
-	
-.mkb-group {
-display: block;
-border-radius: 10px!important;
-background-color: #000000;
-box-shadow: 5px 5px 10px #000000;
-max-width: 400px;
-padding: 10px 2px 10px 2px;
-margin: 10px 2px 10px 2px;	
-}
-.mkb-label, input[type=text] {
--webkit-border-radius: 5px;
--moz-border-radius: 5px;	
-border-radius: 5px;
-max-width: 300px;
-padding: 2px 2px 2px 2px;
-text-align: center;
-border: 0px solid transparent;
-font-weight: bold;
-font-size: 16px;
-color: #ffffff;
-background-color: #000000;	
-}
-	
-.mkb-button {
-background-color: #000000;
-color: #ffffff;	
-max-width: 300px;
-padding: 10px 10px 10px 10px;
-text-align: center;
-font-size: 18px;
-cursor: pointer;
-border-radius: 10px;	
-}
-#settingposter {display: none;}
-select {
-display: block;
-height: 20px;
-padding-top: 0px;
-padding-right: 0px;
-padding-bottom: 0px;
-padding-left: 0px;
-font-size: 11px;
-line-height: 0;
-color: #000000;
-vertical-align: middle;
-background-color: #ffffff;
-border-top-width: 1px;
-border-right-width-value: 1px;
-border-bottom-width: 1px;
-border-left-width-value: 1px;
-border-top-style: solid;
-border-right-style-value: solid;
-border-bottom-style: solid;
-border-left-style-value: solid;
-border-top-color: #cccccc;
-border-right-color-value: #cccccc;
-border-bottom-color: #cccccc;
-border-left-color-value: #cccccc;
-border-image-source: none;
-border-image-slice: 100% 100% 100% 100%;
-border-image-width: 1 1 1 1;
-border-image-outset: 0 0 0 0;
-border-image-repeat: stretch stretch;
-border-top-left-radius: 4px;
-border-top-right-radius: 4px;
-border-bottom-right-radius: 4px;
-border-bottom-left-radius: 4px;
-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
-transition-property: border-color, box-shadow;
-transition-duration: 0.15s, 0.15s;
-transition-timing-function: ease-in-out, ease-in-out;
-transition-delay: 0s, 0s;
--webkit-appearance: none !important; /* WebKit */
--moz-appearance: none !important; /* Mozilla */
--o-appearance: none !important; /* Opera */
--ms-appearance: none !important; /* Internet Explorer */
-appearance: none !important; /* CSS3 */
-}
-@supports (appearance: none)
-{
-#temapilih optgroup {
-font-size: 11px!important;
-margin: 0px 0px 0px 0px!important;
-padding: 0px 0px 0px 0px!important;
-background-color: #666!important;
--webkit-appearance: none !important; /* WebKit */
--moz-appearance: none !important; /* Mozilla */
--o-appearance: none !important; /* Opera */
--ms-appearance: none !important; /* Internet Explorer */
-appearance: none !important; /* CSS3 */
-}
-}	
-</style>
 
-<body>	
+<body style="background-color:#CCC">	
 <center>
 <div style="display: block; position: relative; width: 100%;">
 	
-<div id="html-content-holder" class="html-content-holder">      
+<div id="html-content-holder" class="html-content-holder">   
 <div id="backgroundposter" class="backgroundposter">
-<img  id="imgposter" class="imgposter" src="https://webtama.github.io/WebAppJp05/IMG/0110-003.png"/>	
+<img  id="imgposterbcg" class="imgposterbcg" src=""/>
+<img  id="imgposter" src="" class="imgposter"/>
 <div id="textposter" class="textposter"></div>
 </div>
-	
-</div>		
-<div id="previewImg" class="previewImg"></div>
+</div>	
 	
 </div>
+<div id="previewImg" class="previewImg"></div>
+
 <br>
 <button  onclick="pengaturanon();">🔧 Pengaturan</button>
 
-<div id="settingposter">	
-<div class="mkb-group">
-<div class="mkb-label" value="">📸 Masukan Foto Anda :</div>
-<input type='file' id='getval' name="background-image" onchange="GetFotoPoster(event)" class="mkb-input"/>
-</div>	
+<div id="settingposter">
+
 <div class="mkb-group">
 <div class="mkb-label">🧩 Pilih Tema :</div>
-<select name="temapilih" list="temapilih" onchange="document.getElementById('imgposter').src = this.value;" class="mkb-input" value="" id="temapilih">
-	<option>Pilih Tema</option>
+<select name="temapilih" list="temapilih" onchange="document.getElementById('imgposterbcg').src = this.value;" class="mkb-input" value="" id="temapilih">
 	<optgroup label="Januari">
 		<option value="https://webtama.github.io/WebAppJp05/IMG/.png">Tahun Baru</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/HLHidup.png">Lingkungan Hidupa</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/HLHidup.png">Lingkungan Hidup</option>
         <option value="https://webtama.github.io/WebAppJp05/IMG/1jutapoon.png">Gerakan 1 Juta Pohon</option>
         <option value="https://webtama.github.io/WebAppJp05/IMG/GizidanMakanan.png">Gizi dan Makanan</option>
-    </optgroup>
-    <optgroup label="Februari">
-		<option value="https://webtama.github.io/WebAppJp05/IMG/">Gizi Nasional</option>
     </optgroup>
     <optgroup label="Maret">
 		<option value="https://webtama.github.io/WebAppJp05/IMG/">Musik Nasional</option>
         <option value="https://webtama.github.io/WebAppJp05/IMG/">Film Indonesia</option>
     </optgroup>
-    <optgroup label="April">
-		<option value="https://webtama.github.io/WebAppJp05/IMG/">Nelayan Indonesia</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/">Kartini</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/">Puisi Nasional</option>
-    </optgroup>
-    <optgroup label="Mei">
-		<option value="https://webtama.github.io/WebAppJp05/IMG/">Buruh Sedunia</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/">Pendidikan Nasional</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/">Buku Nasional</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/">Kebangkitan Nasional</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/">Peringatan Reformasi</option>
-    </optgroup>
-    <optgroup label="Juni">
-		<option value="https://webtama.github.io/WebAppJp05/IMG/">Lahir Pancasila</option>
-    </optgroup>
-    <optgroup label="Juli">
-		<option value="https://webtama.github.io/WebAppJp05/IMG/">Koperasi Indonesia</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/">Anak Nasional</option>
-    </optgroup>
-    <optgroup label="Agustus">
-		<option value="https://webtama.github.io/WebAppJp05/IMG/">Pramuka</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/">Kemerdekaan Indonesia</option>
-    </optgroup>
-    <optgroup label="September">
-		<option value="https://webtama.github.io/WebAppJp05/IMG/">Palang Merah Indonesia)</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/">Olah Raga Nasional</option>
-    </optgroup>
-    <optgroup label="Oktober">
-		<option value="https://webtama.github.io/WebAppJp05/IMG/0110-001.png">Kesaktian Pancasila - 01</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/0110-002.png">Kesaktian Pancasila - 02</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/0110-003.png">Kesaktian Pancasila - 03</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/">Batik Nasional</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/">Guru Sedunia</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/">Sumpah Pemuda</option>
-    </optgroup>
-    <optgroup label="Nopember">
-		<option value="https://webtama.github.io/WebAppJp05/IMG/">Pahlawan</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/">Kesehatan Nasional</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/">Ayah Nasional</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/">Guru (PGRI)</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/">KORPRI</option>
-    </optgroup>
-    <optgroup label="Desember">
-		<option value="https://webtama.github.io/WebAppJp05/IMG/">Bela Negara</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Ibu</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Ayah Nasional</option>
-    </optgroup>
-    <optgroup label="HBA">
-		<option value="https://webtama.github.io/WebAppJp05/IMG/">Tahun Baru Imlek</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/">Raya Nyepi</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/">Jumat Agung</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/">Isra Miraj Nabi ﷺ ﷴ</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/">Kenaikan Isa Al Masih</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/">Raya Waisak</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/">Raya Idul Fitri</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/">Raya Idul Adha</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/">Tahun Baru Islam</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/">Maulid Nabi ﷺ ﷴ</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/">Hari Raya Natal</option>
-     </optgroup>
 </select>
+</div>
+	
+<div class="mkb-group">
+<div style="padding-bottom:5px;">
+<div class="mkb-label" value="">📸Foto Anda :</div>
+<br />
+Pilih Foto : 
+<input type='file' id='getval' name="background-image" onchange="document.getElementById('imgposter').src = window.URL.createObjectURL(this.files[0])" class="mkb-input" accept="image/png, image/gif, image/jpeg" style="color:transparent; width:80px;"/>
+</div>
+<fieldset style="padding-left: 50px; text-align: justify;">
+<legend>Edit Frame:</legend>
+<div style="padding-bottom:5px;">
+Frame Foto : 
+<select name="FrameFoto" list="FrameFoto" onchange="OptionFrameFoto();" value="" class="mkb-input" id="FrameFoto" style="display: inline; width:100px;">
+		<option value="frame01">Frame-01</option>
+        <option value="frame02">Frame-02</option>
+        <option value="frame03">Frame-03</option>
+        <option value="frame04">Frame-04</option>
+        <option value="frame05">Frame-05</option>
+        <option value="frame06">Frame-06</option>
+        <option value="frame07">Frame-07</option>
+        <option value="frame08">Frame-08</option>
+        <option value="frame09">Frame-09</option>
+</select>
+</div>
+<div style="padding-bottom:5px;">
+Frame Shadow : 
+<select name="FrameShadow" list="FrameShadow" onchange="OptionFrameShadow();" value="" class="mkb-input" id="FrameShadow" style="display: inline; width:100px">
+		<option value="Shadow">Shadow</option>
+        <option value="Non-Shadow">Non-Shadow</option>
+</select>
+</div>
+<div style="padding-bottom:5px;">
+Frame Color : 
+  <input type="color" id="framecolor" name="framecolor" onchange="OptionFrameColor();" value="">
+</div>
+</fieldset>
 </div>
 <div class="mkb-group">
 <table border="0">
   <tr>
     <td valign="top">
 <div class="mkb-label">✍ Tulis Nama/Komentar :</div>
-<textarea class="mkb-input" type="text" id="textchatposter" style="background-color: #DCDCDC; color: #000000; white-space:pre;" placeholder="Pesan Teks" value="" onfocus="this.value='';document.getElementById('errorMessage').innerHTML = '';" value="" onchange="GettextPoster();" col='120' rows='2'></textarea> 
+<textarea class="mkb-input" type="text" id="textchatposter" style="background-color: #DCDCDC; color: #000000; white-space:pre;" placeholder="Pesan Teks" value="" onchange="GettextPoster();" col='120' rows='5'></textarea> 
     </td>
     <td>
 <div style="padding-bottom:5px; text-align:right;">
 <div class="mkb-label" style="display:inline;">↕ :</div>
 <select id="UkuranHuruf" onchange="OptionTextSize();" name="UkuranHuruf" value="" required style="width: 80px; display:inline;">
-<option value=""></option>
 <option value="Kecil">Kecil</option>
 <option value="Normal">Normal</option>
 <option value="Besar">Besar</option>
@@ -317,7 +115,6 @@ appearance: none !important; /* CSS3 */
 <div style="padding-bottom:5px; text-align:right;">
 <div class="mkb-label" style="display:inline;">⯐ :</div>
 <select id="PosisiHuruf" onchange="OptionPosisiHuruf();" name="PosisiHuruf" value="" required style="width: 80px; display:inline;">
-<option value=""></option>
 <option value="Bawah">Bawah</option>
 <option value="Atas">Atas</option>
 <option value="Kanan">Kanan</option>
@@ -327,7 +124,6 @@ appearance: none !important; /* CSS3 */
 <div style="padding-bottom:5px; text-align:right;">
 <div class="mkb-label" style="display:inline;">Ξ :</div>
 <select id="PosisiHurufAlign" onchange="OptionPosisiAlign();" name="PosisiHurufAlign" value="" required style="width: 80px; display:inline;">
-<option value=""></option>
 <option value="Tengah">Tengah</option>
 <option value="Kanan">Kanan</option>
 <option value="Kiri">Kiri</option>
@@ -336,7 +132,6 @@ appearance: none !important; /* CSS3 */
 <div style="padding-bottom:5px; text-align:right;">
 <div class="mkb-label" style="display:inline;">✎ :</div>
 <select id="GayaHuruf" onchange="OptionFonts(this);" name="GayaHuruf" value="" required style="width: 80px; display:inline;">
-<option value=""></option>
 <option>Concert One</option>
 <option>Luckiest Guy</option>
 <option>Henny Penny</option>
@@ -360,7 +155,6 @@ appearance: none !important; /* CSS3 */
 <div style="padding-bottom:5px; text-align:right;">
 <div class="mkb-label" style="display:inline;">✎ :</div>
 <select id="WeightHuruf" onchange="OptionWeightFonts(this);" name="WeightHuruf" value="" required style="width: 80px; display:inline;">
-<option value=""></option>
 <option>normal</option>
 <option>lighter</option>
 <option>bold</option>
@@ -368,8 +162,8 @@ appearance: none !important; /* CSS3 */
 </select> 
 </div>
 <div style="padding-bottom:5px; text-align:right;">
-<div class="mkb-label" style="display:inline;">🚥 :</div>
-<input id="colortext" data-jscolor="#ffffff" onchange="GettcolorPoster();" style="width: 80px; display:inline;" class="mkb-input"> 
+<div class="mkb-label" style="display:inline; width: 50px;">🚥 :</div>
+<input id="colortext" data-jscolor="#ffffff" type="color" style="width: 80px; display:inline;" class="mkb-input"  onchange="GettcolorPoster();"> 
 </div>  
     </td>
   </tr>
@@ -379,128 +173,6 @@ appearance: none !important; /* CSS3 */
 <div>By MaSkIbOw 2021</div>
 </div>	
 </center>
-<script>	
-       document.getElementById("btn_convert").addEventListener("click", function() {
-	   document.getElementById("settingposter").style.display = "none";
-	   document.getElementById("backgroundposter").style.marginLeft = "0px";
-	   document.getElementById("backgroundposter").style.marginTop = "0px";
-	   document.getElementById("html-content-holder").style.width = "300px";
-	   document.getElementById("backgroundposter").style.width = "300px";
-	   document.getElementById("imgposter").style.width = "300px";
-	   document.getElementById("previewImg").style.width = "300px";    
-	   document.getElementById("html-content-holder").style.height = "300px";
-	   document.getElementById("backgroundposter").style.height = "300px";
-	   document.getElementById("imgposter").style.height = "300px";
-	   document.getElementById("previewImg").style.height = "300px";  
-	       html2canvas(document.getElementById("html-content-holder"),
-			{
-				allowTaint: true,
-				useCORS: true
-			}).then(function (canvas) {
-				var anchorTag = document.createElement("a");
-				document.body.appendChild(anchorTag);
-				document.getElementById("previewImg").appendChild(canvas);
-				anchorTag.download = "PosterHariIni.jpg";
-				anchorTag.href = canvas.toDataURL();
-				anchorTag.target = '_blank';
-				anchorTag.click();
-			});
-	  document.getElementById("backgroundposter").style.marginLeft = "0px";
-	  document.getElementById("backgroundposter").style.marginTop = "0px"; 
-	  document.getElementById("html-content-holder").style.width = "300px";
-	  document.getElementById("backgroundposter").style.width = "300px";
-	  document.getElementById("imgposter").style.width = "300px";
-	  document.getElementById("previewImg").style.width = "300px";      
-	  document.getElementById("html-content-holder").style.height = "300px";
-	  document.getElementById("backgroundposter").style.height = "300px";
-	  document.getElementById("imgposter").style.height = "300px";
-	  document.getElementById("previewImg").style.height = "300px";   
-       });
-
-</script>
-
-<script>
-function GetFotoPoster(event){
-		 var getImagePath = URL.createObjectURL(event.target.files[0]);
-		 $('#backgroundposter').css('background-image', 'url(' + getImagePath + ')');
-		}
-
-function GettextPoster(){
-document.getElementById("textposter").innerHTML = document.getElementById("textchatposter").value;
-}
-
-function GettcolorPoster(){
-document.getElementById("textposter").style.color = document.getElementById("colortext").value;
-}
-
-function OptionTextSize(){
-if(document.getElementById("UkuranHuruf").value == "Normal") {
-document.getElementById("textposter").style.fontSize = "20px";
-};
-if(document.getElementById("UkuranHuruf").value == "Kecil") {
-document.getElementById("textposter").style.fontSize = "18px";
-};
-if(document.getElementById("UkuranHuruf").value == "Besar") {
-document.getElementById("textposter").style.fontSize = "30px";
-};
-}
-
-function OptionPosisiHuruf(){
-if(document.getElementById("PosisiHuruf").value == "Bawah") {
-document.getElementById("textposter").style.left = "";
-document.getElementById("textposter").style.top  = "";
-document.getElementById("textposter").style.bottom  = "20px";
-document.getElementById("textposter").style.transform = "rotate(0deg)";
-};
-if(document.getElementById("PosisiHuruf").value == "Atas") {
-document.getElementById("textposter").style.left = "";
-document.getElementById("textposter").style.bottom  = "";
-document.getElementById("textposter").style.top  = "20px";
-document.getElementById("textposter").style.transform = "rotate(0deg)";
-};
-if(document.getElementById("PosisiHuruf").value == "Kiri") {
-document.getElementById("textposter").style.top  = "100px";
-document.getElementById("textposter").style.bottom  = "";
-document.getElementById("textposter").style.left = "-80px";
-document.getElementById("textposter").style.transform = "rotate(-90deg)";
-};
-if(document.getElementById("PosisiHuruf").value == "Kanan") {
-document.getElementById("textposter").style.top  = "100px";
-document.getElementById("textposter").style.bottom  = "";
-document.getElementById("textposter").style.left = "100px";
-document.getElementById("textposter").style.transform = "rotate(90deg)";
-};
-}
-function pengaturanon() {
-document.getElementById("settingposter").style.display = "block";
-document.getElementById("getval").value = "";
-document.getElementById("temapilih").value = "";
-document.getElementById("textchatposter").value = "";
-document.getElementById("UkuranHuruf").value = "";
-document.getElementById("PosisiHuruf").value = "";
-document.getElementById("PosisiHurufAlign").value = "";
-}
-
-function OptionPosisiAlign(){
-if(document.getElementById("PosisiHurufAlign").value == "Tengah") {
-document.getElementById("textposter").style.textAlign = "center";
-};
-if(document.getElementById("PosisiHurufAlign").value == "Kanan") {
-document.getElementById("textposter").style.textAlign = "right";
-};
-if(document.getElementById("PosisiHurufAlign").value == "Kiri") {
-document.getElementById("textposter").style.textAlign = "left";
-};
-}
-function OptionFonts(selectTag){
-  var listValue = selectTag.options[selectTag.selectedIndex].text;
-  document.getElementById("textposter").style.fontFamily = listValue;
-}
-function OptionWeightFonts(selectTag){
-  var listValue = selectTag.options[selectTag.selectedIndex].text;
-  document.getElementById("textposter").style.fontWeight = listValue;
-}
-</script>
-
+<script src="https://webtama.github.io/WebAppJp05/JS/JSPOSTER.js"></script>
 </body>
 </html>
