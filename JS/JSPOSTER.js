@@ -107,80 +107,143 @@ function OptionWeightFonts(selectTag){
 
 function OptionFrameFoto(){
 if(document.getElementById("FrameFoto").value == "frame01") {
-document.getElementById("imgposter").style.left = "50px";
-document.getElementById("imgposter").style.top  = "50px";
-document.getElementById("imgposter").style.width  = "200px";
-document.getElementById("imgposter").style.height = "200px";
+document.getElementById("imgposter").style.left = "35px";
+document.getElementById("imgposter").style.top  = "35px";
+document.getElementById("imgposter").style.width  = "230px";
+document.getElementById("imgposter").style.height = "230px";
 document.getElementById("imgposter").style.borderRadius = "50%";
 };
 if(document.getElementById("FrameFoto").value == "frame02") {
 document.getElementById("imgposter").style.left = "20px";
 document.getElementById("imgposter").style.top  = "0px";
-document.getElementById("imgposter").style.width  = "180px";
-document.getElementById("imgposter").style.height = "230px";
+document.getElementById("imgposter").style.width  = "200px";
+document.getElementById("imgposter").style.height = "240px";
 document.getElementById("imgposter").style.borderRadius = "0% 0% 20px 20px";
 };
 if(document.getElementById("FrameFoto").value == "frame03") {
-document.getElementById("imgposter").style.left = "100px";
+document.getElementById("imgposter").style.left = "80px";
 document.getElementById("imgposter").style.top  = "0px";
-document.getElementById("imgposter").style.width  = "180px";
-document.getElementById("imgposter").style.height = "230px";
+document.getElementById("imgposter").style.width  = "200px";
+document.getElementById("imgposter").style.height = "240px";
 document.getElementById("imgposter").style.borderRadius = "0% 0% 20px 20px";
 };
 if(document.getElementById("FrameFoto").value == "frame04") {
 document.getElementById("imgposter").style.left = "20px";
-document.getElementById("imgposter").style.top  = "70px";
-document.getElementById("imgposter").style.width  = "180px";
-document.getElementById("imgposter").style.height = "230px";
+document.getElementById("imgposter").style.top  = "60px";
+document.getElementById("imgposter").style.width  = "200px";
+document.getElementById("imgposter").style.height = "240px";
 document.getElementById("imgposter").style.borderRadius = "20px 20px 0% 0%";
 };
 if(document.getElementById("FrameFoto").value == "frame05") {
-document.getElementById("imgposter").style.left = "100px";
-document.getElementById("imgposter").style.top  = "70px";
-document.getElementById("imgposter").style.width  = "180px";
-document.getElementById("imgposter").style.height = "230px";
+document.getElementById("imgposter").style.left = "80px";
+document.getElementById("imgposter").style.top  = "60px";
+document.getElementById("imgposter").style.width  = "200px";
+document.getElementById("imgposter").style.height = "240px";
 document.getElementById("imgposter").style.borderRadius = "20px 20px 0% 0%";
 };
 if(document.getElementById("FrameFoto").value == "frame06") {
-document.getElementById("imgposter").style.left = "150px";
+document.getElementById("imgposter").style.left = "140px";
 document.getElementById("imgposter").style.top  = "0px";
-document.getElementById("imgposter").style.width  = "150px";
+document.getElementById("imgposter").style.width  = "160px";
 document.getElementById("imgposter").style.height = "300px";
 document.getElementById("imgposter").style.borderRadius = "0% 20px 20px 0%";
 };
 if(document.getElementById("FrameFoto").value == "frame07") {
 document.getElementById("imgposter").style.left = "0px";
 document.getElementById("imgposter").style.top  = "0px";
-document.getElementById("imgposter").style.width  = "150px";
+document.getElementById("imgposter").style.width  = "160px";
 document.getElementById("imgposter").style.height = "300px";
 document.getElementById("imgposter").style.borderRadius = "20px 0% 0% 20px";
 };
 if(document.getElementById("FrameFoto").value == "frame08") {
 document.getElementById("imgposter").style.left = "0px";
-document.getElementById("imgposter").style.top  = "80px";
-document.getElementById("imgposter").style.width  = "220px";
-document.getElementById("imgposter").style.height = "220px";
+document.getElementById("imgposter").style.top  = "70px";
+document.getElementById("imgposter").style.width  = "230px";
+document.getElementById("imgposter").style.height = "230px";
 document.getElementById("imgposter").style.borderRadius = "0px 100% 0% 20px";
 };
 if(document.getElementById("FrameFoto").value == "frame09") {
-document.getElementById("imgposter").style.left = "80px";
-document.getElementById("imgposter").style.top  = "80px";
-document.getElementById("imgposter").style.width  = "220px";
-document.getElementById("imgposter").style.height = "220px";
+document.getElementById("imgposter").style.left = "70px";
+document.getElementById("imgposter").style.top  = "70px";
+document.getElementById("imgposter").style.width  = "230px";
+document.getElementById("imgposter").style.height = "230px";
 document.getElementById("imgposter").style.borderRadius = "100% 0% 20px 0%";
 };
 }
 
-function OptionFrameShadow(){
-if(document.getElementById("FrameShadow").value == "Shadow") {
-document.getElementById("imgposter").style.border = "10px solid rgb(0, 0, 0, 0.5)";
+function OptionFrameShadowatas(){
+  var text = document.getElementById("imgposter");
+  if (document.getElementById("checkshadowatas").checked == true){
+    text.style.borderTop = "15px solid rgba(255,255,255,.4)";
+  } else {
+     text.style.borderTop = "";
+  }
+}
+
+function OptionFrameShadowbawah() {
+  var text = document.getElementById("imgposter");
+  if (document.getElementById("checkshadowbawah").checked == true){
+    text.style.borderBottom = "15px solid rgba(255,255,255,.4)";
+  } else {
+     text.style.borderBottom = "";
+  }
+}
+
+function OptionFrameShadowkanan() {
+  var text = document.getElementById("imgposter");
+  if (document.getElementById("checkshadowkanan").checked == true){
+    text.style.borderRight = "15px solid rgba(255,255,255,.4)";
+  } else {
+     text.style.borderRight = "";
+  }
+}
+
+function OptionFrameShadowkiri() {
+  var text = document.getElementById("imgposter");
+  if (document.getElementById("checkshadowkiri").checked == true){
+    text.style.borderLeft = "15px solid rgba(255,255,255,.4)";
+  } else {
+     text.style.borderLeft = "";
+  }
+}
+
+function OptionPosisiAlignJudul(){
+if(document.getElementById("PosisiHurufAlignJudul").value == "Tengah") {
+document.getElementById("judultposter").style.textAlign = "center";
 };
-if(document.getElementById("FrameShadow").value == "Non-Shadow") {
-document.getElementById("imgposter").style.border = "0px solid rgb(0, 0, 0, 0.5)";
+if(document.getElementById("PosisiHurufAlignJudul").value == "Kanan") {
+document.getElementById("judultposter").style.textAlign = "right";
+};
+if(document.getElementById("PosisiHurufAlignJudul").value == "Kiri") {
+document.getElementById("judultposter").style.textAlign = "left";
+};
+}
+function OptionFontsJudul(selectTag){
+  var listValue = selectTag.options[selectTag.selectedIndex].text;
+  document.getElementById("judultposter").style.fontFamily = listValue;
+}
+
+function OptionPosisiHurufJudul(){
+if(document.getElementById("PosisiHurufJudul").value == "Bawah") {
+document.getElementById("judultposter").style.left = "";
+document.getElementById("judultposter").style.top  = "220px";
+document.getElementById("judultposter").style.bottom  = "";
+};
+if(document.getElementById("PosisiHurufJudul").value == "Atas") {
+document.getElementById("judultposter").style.left = "";
+document.getElementById("judultposter").style.bottom  = "";
+document.getElementById("judultposter").style.top  = "0px";
 };
 }
 
-function OptionFrameColor(){
-document.getElementById("imgposter").style.borderColor  = document.getElementById("framecolor").value;
+function GettcolorPosterJudul(){
+document.getElementById("judultposter").style.color = document.getElementById("colortextJudul").value;
 }
 
+function GettextjudulPoster(){
+document.getElementById("judul").innerHTML = document.getElementById("judulposter").value;
+}
+
+function GettextdescPoster(){
+document.getElementById("deskripsi").innerHTML = document.getElementById("descposter").value;
+}
