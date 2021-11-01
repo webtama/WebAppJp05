@@ -19,8 +19,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap" rel="stylesheet"> 
 <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet"> 
 <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Rampart+One&display=swap" rel="stylesheet"> 
-<link href="https://webtama.github.io/WebAppJp05/CSS/CSSMAINPOSTER.css" rel="stylesheet" type="text/css" media="all" />
+<link href="CSSMAINPOSTER.css" rel="stylesheet" type="text/css" media="all" />
 
+<script>
+$(document).ready(function() {
+  $("#framecolor").change(function() {
+    var coloropacity = $("#frameopacity[type=range]").val();
+    var color = $("#framecolor[type=color]").val();
+    var rgbaCol = 'rgba(' + parseInt(color.slice(-6, -4), 16) + ',' + parseInt(color.slice(-4, -2), 16) + ',' + parseInt(color.slice(-2), 16) + ',' + coloropacity + ')';
+    $('#imgposter').css('borderColor', rgbaCol)
+  })
+})
+</script>
 </head>
 
 
@@ -32,6 +42,10 @@
 <div id="backgroundposter" class="backgroundposter">
 <img  id="imgposterbcg" class="imgposterbcg" src=""/>
 <img  id="imgposter" src="" class="imgposter"/>
+<div id="judultposter" class="judultposter">
+<span id="judul" class="judul"></span>
+<span id="deskripsi" class="deskripsi"></span>
+</div>
 <div id="textposter" class="textposter"></div>
 </div>
 </div>	
@@ -47,15 +61,44 @@
 <div class="mkb-group">
 <div class="mkb-label">🧩 Pilih Tema :</div>
 <select name="temapilih" list="temapilih" onchange="document.getElementById('imgposterbcg').src = this.value;" class="mkb-input" value="" id="temapilih">
-	<optgroup label="Januari">
-		<option value="https://webtama.github.io/WebAppJp05/IMG/.png">Tahun Baru</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/HLHidup.png">Lingkungan Hidup</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/1jutapoon.png">Gerakan 1 Juta Pohon</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/GizidanMakanan.png">Gizi dan Makanan</option>
+	<optgroup label="CITY">
+		<option value="https://webtama.github.io/WebAppJp05/IMG/CITY1.jpg">CITY-1</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/CITY2.jpg">CITY-2</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/CITY3.jpg">CITY-3</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/CITY4.jpg">CITY-4</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/CITY5.jpg">CITY-5</option>
     </optgroup>
-    <optgroup label="Maret">
-		<option value="https://webtama.github.io/WebAppJp05/IMG/">Musik Nasional</option>
-        <option value="https://webtama.github.io/WebAppJp05/IMG/">Film Indonesia</option>
+    <optgroup label="FLORA">
+		<option value="https://webtama.github.io/WebAppJp05/IMG/FLORA1.jpg">FLORA-1</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/FLORA2.jpg">FLORA-2</option>
+		<option value="https://webtama.github.io/WebAppJp05/IMG/FLORA3.jpg">FLORA-3</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/FLORA4.jpg">FLORA-4</option>
+    </optgroup>
+    <optgroup label="FAUNA">
+		<option value="https://webtama.github.io/WebAppJp05/IMG/FAUNA1.jpg">FAUNA-1</option>
+ 		<option value="https://webtama.github.io/WebAppJp05/IMG/FAUNA2.jpg">FAUNA-2</option>
+		<option value="https://webtama.github.io/WebAppJp05/IMG/FAUNA3.jpg">FAUNA-3</option>
+ 		<option value="https://webtama.github.io/WebAppJp05/IMG/FAUNA4.jpg">FAUNA-4</option>
+    </optgroup>    
+    <optgroup label="FOOD">
+		<option value="https://webtama.github.io/WebAppJp05/IMG/FOOD1.jpg">FOOD-1</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/FOOD2.jpg">FOOD-2</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/FOOD3.jpg">FOOD-3</option>
+    </optgroup>
+    <optgroup label="HEALTH">
+		<option value="https://webtama.github.io/WebAppJp05/IMG/HEALTH1.jpg">HEALTH-1</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/HEALTH2.jpg">HEALTH-2</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/HEALTH3.jpg">HEALTH-3</option>
+    </optgroup>
+    <optgroup label="MUSICS">
+		<option value="https://webtama.github.io/WebAppJp05/IMG/MUSICS1.jpg">MUSICS-1</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/MUSICS2.jpg">MUSICS-2</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/MUSICS3.jpg">MUSICS-3</option>
+    </optgroup>
+    <optgroup label="NATURE">
+		<option value="https://webtama.github.io/WebAppJp05/IMG/NATURE1.jpg">NATURE-1</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/NATURE2.jpg">NATURE-2</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/NATURE3.jpg">NATURE-3</option>
     </optgroup>
 </select>
 </div>
@@ -67,7 +110,7 @@
 Pilih Foto : 
 <input type='file' id='getval' name="background-image" onchange="document.getElementById('imgposter').src = window.URL.createObjectURL(this.files[0])" class="mkb-input" accept="image/png, image/gif, image/jpeg" style="color:transparent; width:80px;"/>
 </div>
-<fieldset style="padding-left: 50px; text-align: justify;">
+<fieldset style="padding-left: 30px; text-align: justify;">
 <legend>Edit Frame:</legend>
 <div style="padding-bottom:5px;">
 Frame Foto : 
@@ -84,18 +127,82 @@ Frame Foto :
 </select>
 </div>
 <div style="padding-bottom:5px;">
-Frame Shadow : 
-<select name="FrameShadow" list="FrameShadow" onchange="OptionFrameShadow();" value="" class="mkb-input" id="FrameShadow" style="display: inline; width:100px">
-		<option value="Shadow">Shadow</option>
-        <option value="Non-Shadow">Non-Shadow</option>
-</select>
+Frame Shadow : <br />
+<label for="vehicle1">Atas : </label>
+ <input type="checkbox" id="checkshadowatas" onclick="OptionFrameShadowatas();" name="checkshadowatas">
+<label for="vehicle1">Bawah : </label>
+<input type="checkbox" id="checkshadowbawah" onclick="OptionFrameShadowbawah();" name="checkshadowbawah">
+<label for="vehicle2">Kanan : </label>
+<input type="checkbox" id="checkshadowkiri" onclick="OptionFrameShadowkiri();" name="checkshadowkiri">
+<label for="vehicle3">Kiri : </label>
+<input type="checkbox" id="checkshadowkanan" onclick="OptionFrameShadowkanan();" name="checkshadowkanan">
 </div>
 <div style="padding-bottom:5px;">
 Frame Color : 
   <input type="color" id="framecolor" name="framecolor" onchange="OptionFrameColor();" value="">
+  <input type="range" min="0" max="0.4" step="0.1" id="frameopacity" style="display:none">
 </div>
 </fieldset>
 </div>
+
+<div class="mkb-group">
+<table border="0">
+  <tr>
+    <td valign="top">
+<div class="mkb-label">✍ Judul :</div>
+<textarea class="mkb-input" type="text" id="judulposter" style="background-color: #DCDCDC; color: #000000; white-space:pre;" placeholder="Pesan Teks" value="" onchange="GettextjudulPoster();" col='120' rows='5'></textarea> 
+<div class="mkb-label">✍ Deskripsi :</div>
+<textarea class="mkb-input" type="text" id="descposter" style="background-color: #DCDCDC; color: #000000; white-space:pre;" placeholder="Pesan Teks" value="" onchange="GettextdescPoster();" col='120' rows='5'></textarea> 
+    </td>
+    <td>
+<div style="padding-bottom:5px; text-align:right;">
+<div class="mkb-label" style="display:inline;">⯐ :</div>
+<select id="PosisiHurufJudul" onchange="OptionPosisiHurufJudul();" name="PosisiHurufJudul" value="" required style="width: 80px; display:inline;">
+<option value="Bawah">Bawah</option>
+<option value="Atas">Atas</option>
+</select> 
+</div>
+<div style="padding-bottom:5px; text-align:right;">
+<div class="mkb-label" style="display:inline;">Ξ :</div>
+<select id="PosisiHurufAlignJudul" onchange="OptionPosisiAlignJudul();" name="PosisiHurufAlignJudul" value="" required style="width: 80px; display:inline;">
+<option value="Tengah">Tengah</option>
+<option value="Kanan">Kanan</option>
+<option value="Kiri">Kiri</option>
+</select>
+</div>
+<div style="padding-bottom:5px; text-align:right;">
+<div class="mkb-label" style="display:inline;">✎ :</div>
+<select id="GayaHurufJudul" onchange="OptionFontsJudul(this);" name="GayaHurufJudul" value="" required style="width: 80px; display:inline;">
+<option>Concert One</option>
+<option>Luckiest Guy</option>
+<option>Henny Penny</option>
+<option>Rampart One</option>
+<option>Finger Paint</option>
+<option>Georgia</option>
+<option>Palatino Linotype</option>
+<option>Book Antiqua</option>
+<option>Times New Roman</option>
+<option>Arial</option>
+<option>Helvetica</option>
+<option>Arial Black</option>
+<option>Impact</option>
+<option>Lucida Sans Unicode</option>
+<option>Tahoma</option>
+<option>Verdana</option>
+<option>Courier New</option>
+<option>Lucida Console</option>
+</select> 
+</div>
+
+<div style="padding-bottom:5px; text-align:right;">
+<div class="mkb-label" style="display:inline; width: 50px;">🚥 :</div>
+<input id="colortextJudul" data-jscolor="#ffffff" type="color" style="width: 80px; display:inline;" class="mkb-input"  onchange="GettcolorPosterJudul();"> 
+</div>  
+    </td>
+  </tr>
+</table>
+</div>	
+
 <div class="mkb-group">
 <table border="0">
   <tr>
@@ -168,11 +275,12 @@ Frame Color :
     </td>
   </tr>
 </table>
-</div>		
+</div>
+		
 <input id="btn_convert" type="button" value="Unduh Foto" class="mkb-button"/>	
 <div>By MaSkIbOw 2021</div>
 </div>	
 </center>
-<script src="https://webtama.github.io/WebAppJp05/JS/JSPOSTER.js"></script>
+<script src="JSPOSTER.js"></script>
 </body>
 </html>
