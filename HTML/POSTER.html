@@ -6,6 +6,8 @@
 	
 <script src="https://webtama.github.io/WebAppJp05/JQUERY/jquery-3.6.0.min.js"></script>
 <script src="https://webtama.github.io/WebAppJp05/JS/POSTER.js"></script>
+<script src="https://webtama.github.io/WebAppJp05/JS/SpryTabbedPanels.js" type="text/javascript"></script>
+<link href="https://webtama.github.io/WebAppJp05/CSS/SpryTabbedPanels.css" rel="stylesheet" type="text/css" />
 	
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -42,9 +44,12 @@ $(document).ready(function() {
 <div id="backgroundposter" class="backgroundposter">
 <img  id="imgposterbcg" class="imgposterbcg" src=""/>
 <img  id="imgposter" src="" class="imgposter"/>
+<img  id="logoposter" src="" class="logoposter"/>
+<img  id="Bingkai" src="" class="Bingkai"/>
 <div id="judultposter" class="judultposter">
 <span id="judul" class="judul"></span>
 <span id="deskripsi" class="deskripsi"></span>
+<span id="logomaskibow" class="logomaskibow" style="font-size:8px; position:absolute; top:288px; right: 5px; color: white; display: none;">#Maskibow 2021</span>
 </div>
 <div id="textposter" class="textposter"></div>
 </div>
@@ -58,9 +63,17 @@ $(document).ready(function() {
 
 <div id="settingposter">
 
+<div id="TabbedPanels1" class="TabbedPanels">
+  <ul class="TabbedPanelsTabGroup">
+    <li class="TabbedPanelsTab" tabindex="0">Pilih Tema</li>
+    <li class="TabbedPanelsTab" tabindex="0">Foto Anda</li>
+    <li class="TabbedPanelsTab" tabindex="0">Judul</li>
+    <li class="TabbedPanelsTab" tabindex="0">Note</li>
+  </ul>
+  <div class="TabbedPanelsContentGroup">
+    <div class="TabbedPanelsContent">
 <div class="mkb-group">
-<div class="mkb-label">🧩 Pilih Tema :</div>
-<select name="temapilih" list="temapilih" onchange="document.getElementById('imgposterbcg').src = this.value;" class="mkb-input" value="" id="temapilih">
+Pilih Tema : <select name="temapilih" list="temapilih" onchange="document.getElementById('imgposterbcg').src = this.value;" class="mkb-input" value="" id="temapilih">
 	<optgroup label="CITY">
 		<option value="https://webtama.github.io/WebAppJp05/IMG/CITY1.jpg">CITY-1</option>
         <option value="https://webtama.github.io/WebAppJp05/IMG/CITY2.jpg">CITY-2</option>
@@ -100,9 +113,33 @@ $(document).ready(function() {
         <option value="https://webtama.github.io/WebAppJp05/IMG/NATURE2.jpg">NATURE-2</option>
         <option value="https://webtama.github.io/WebAppJp05/IMG/NATURE3.jpg">NATURE-3</option>
     </optgroup>
+    	<option value="https://webtama.github.io/WebAppJp05/IMG/NATURE3.jpg">Lainnya</option>
+</select><br /><br />
+Pilih Logo : <select name="logopilih" list="logopilih" onchange="document.getElementById('logoposter').src = this.value;" class="mkb-input" value="" id="logopilih">
+		<option value="">Tanpa Logo</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/logoDKI.png.png">Logo DKI</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/tutwurih.png">Logo Tut Wuri</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/garuda.png">Garuda</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/512x512.png">Logo JP05</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/merahputih1.png">Merah-Putih 01</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/merahputih2.png">Merah-Putih 02</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/NATURE3.jpg">Pilih Lainnya</option>
+</select><br /><br />
+Pilih Bingkai : <select name="Bingkaipilih" list="Bingkaipilih" onchange="document.getElementById('Bingkai').src = this.value;" class="mkb-input" value="" id="Bingkaipilih">
+		<option value="">Tanpa Bingkai</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/RAMPLE-01.png">Bingkai-01</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/RAMPLE-02.png">Bingkai-02</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/RAMPLE-03.png">Bingkai-03</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/RAMPLE-04.png">Bingkai-04</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/RAMPLE-05.png">Bingkai-05</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/RAMPLE-06.png">Bingkai-06</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/RAMPLE-07.png">Bingkai-07</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/RAMPLE-08.png">Bingkai-08</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/RAMPLE-09.png">Bingkai-09</option>
 </select>
-</div>
-	
+</div>    
+    </div>
+    <div class="TabbedPanelsContent">
 <div class="mkb-group">
 <div style="padding-bottom:5px;">
 <div class="mkb-label" value="">📸Foto Anda :</div>
@@ -129,42 +166,44 @@ Frame Foto :
 <div style="padding-bottom:5px;">
 Frame Shadow : <br />
 <label for="vehicle1">Atas : </label>
- <input type="checkbox" id="checkshadowatas" onclick="OptionFrameShadowatas();" name="checkshadowatas">
+ <input type="checkbox" id="checkshadowatas" onclick="OptionFrameShadowatas();" name="checkshadowatas" class="checkin"><br />
 <label for="vehicle1">Bawah : </label>
-<input type="checkbox" id="checkshadowbawah" onclick="OptionFrameShadowbawah();" name="checkshadowbawah">
+<input type="checkbox" id="checkshadowbawah" onclick="OptionFrameShadowbawah();" name="checkshadowbawah" class="checkin"><br />
 <label for="vehicle2">Kanan : </label>
-<input type="checkbox" id="checkshadowkiri" onclick="OptionFrameShadowkiri();" name="checkshadowkiri">
+<input type="checkbox" id="checkshadowkiri" onclick="OptionFrameShadowkiri();" name="checkshadowkiri" class="checkin"><br />
 <label for="vehicle3">Kiri : </label>
-<input type="checkbox" id="checkshadowkanan" onclick="OptionFrameShadowkanan();" name="checkshadowkanan">
+<input type="checkbox" id="checkshadowkanan" onclick="OptionFrameShadowkanan();" name="checkshadowkanan" class="checkin">
 </div>
 <div style="padding-bottom:5px;">
 Frame Color : 
-  <input type="color" id="framecolor" name="framecolor" onchange="OptionFrameColor();" value="">
+  <input type="color" id="framecolor" name="framecolor" onchange="OptionFrameColor();" value="#ffffff">
   <input type="range" min="0" max="0.4" step="0.1" id="frameopacity" style="display:none">
 </div>
 </fieldset>
-</div>
-
+</div>    
+    </div>
+    
+    <div class="TabbedPanelsContent">
 <div class="mkb-group">
 <table border="0">
   <tr>
     <td valign="top">
 <div class="mkb-label">✍ Judul :</div>
-<textarea class="mkb-input" type="text" id="judulposter" style="background-color: #DCDCDC; color: #000000; white-space:pre;" placeholder="Pesan Teks" value="" onchange="GettextjudulPoster();" col='120' rows='5'></textarea> 
+<textarea class="mkb-input" type="text" id="judulposter" style="background-color: #DCDCDC; color: #000000; white-space:pre;" placeholder="Pesan Teks" value="" onchange="GettextjudulPoster();" col='80' rows='5'></textarea> 
 <div class="mkb-label">✍ Deskripsi :</div>
-<textarea class="mkb-input" type="text" id="descposter" style="background-color: #DCDCDC; color: #000000; white-space:pre;" placeholder="Pesan Teks" value="" onchange="GettextdescPoster();" col='120' rows='5'></textarea> 
+<textarea class="mkb-input" type="text" id="descposter" style="background-color: #DCDCDC; color: #000000; white-space:pre;" placeholder="Pesan Teks" value="" onchange="GettextdescPoster();" col='80' rows='5'></textarea> 
     </td>
     <td>
 <div style="padding-bottom:5px; text-align:right;">
 <div class="mkb-label" style="display:inline;">⯐ :</div>
-<select id="PosisiHurufJudul" onchange="OptionPosisiHurufJudul();" name="PosisiHurufJudul" value="" required style="width: 80px; display:inline;">
+<select id="PosisiHurufJudul" onchange="OptionPosisiHurufJudul();" name="PosisiHurufJudul" value="" required style="width: 70px; display:inline;">
 <option value="Bawah">Bawah</option>
 <option value="Atas">Atas</option>
 </select> 
 </div>
 <div style="padding-bottom:5px; text-align:right;">
 <div class="mkb-label" style="display:inline;">Ξ :</div>
-<select id="PosisiHurufAlignJudul" onchange="OptionPosisiAlignJudul();" name="PosisiHurufAlignJudul" value="" required style="width: 80px; display:inline;">
+<select id="PosisiHurufAlignJudul" onchange="OptionPosisiAlignJudul();" name="PosisiHurufAlignJudul" value="" required style="width: 70px; display:inline;">
 <option value="Tengah">Tengah</option>
 <option value="Kanan">Kanan</option>
 <option value="Kiri">Kiri</option>
@@ -172,7 +211,7 @@ Frame Color :
 </div>
 <div style="padding-bottom:5px; text-align:right;">
 <div class="mkb-label" style="display:inline;">✎ :</div>
-<select id="GayaHurufJudul" onchange="OptionFontsJudul(this);" name="GayaHurufJudul" value="" required style="width: 80px; display:inline;">
+<select id="GayaHurufJudul" onchange="OptionFontsJudul(this);" name="GayaHurufJudul" value="" required style="width: 70px; display:inline;">
 <option>Concert One</option>
 <option>Luckiest Guy</option>
 <option>Henny Penny</option>
@@ -196,24 +235,26 @@ Frame Color :
 
 <div style="padding-bottom:5px; text-align:right;">
 <div class="mkb-label" style="display:inline; width: 50px;">🚥 :</div>
-<input id="colortextJudul" data-jscolor="#ffffff" type="color" style="width: 80px; display:inline;" class="mkb-input"  onchange="GettcolorPosterJudul();"> 
+<input id="colortextJudul" value="#ffffff" type="color" style="width: 70px; display:inline;" class="mkb-input"  onchange="GettcolorPosterJudul();"> 
 </div>  
     </td>
   </tr>
 </table>
-</div>	
-
+</div>	    
+    </div>
+    
+    <div class="TabbedPanelsContent">
 <div class="mkb-group">
 <table border="0">
   <tr>
     <td valign="top">
 <div class="mkb-label">✍ Tulis Nama/Komentar :</div>
-<textarea class="mkb-input" type="text" id="textchatposter" style="background-color: #DCDCDC; color: #000000; white-space:pre;" placeholder="Pesan Teks" value="" onchange="GettextPoster();" col='120' rows='5'></textarea> 
+<textarea class="mkb-input" type="text" id="textchatposter" style="background-color: #DCDCDC; color: #000000; white-space:pre;" placeholder="Pesan Teks" value="" onchange="GettextPoster();" col='80' rows='5'></textarea> 
     </td>
     <td>
 <div style="padding-bottom:5px; text-align:right;">
 <div class="mkb-label" style="display:inline;">↕ :</div>
-<select id="UkuranHuruf" onchange="OptionTextSize();" name="UkuranHuruf" value="" required style="width: 80px; display:inline;">
+<select id="UkuranHuruf" onchange="OptionTextSize();" name="UkuranHuruf" value="" required style="width: 70px; display:inline;">
 <option value="Kecil">Kecil</option>
 <option value="Normal">Normal</option>
 <option value="Besar">Besar</option>
@@ -221,7 +262,7 @@ Frame Color :
 </div>
 <div style="padding-bottom:5px; text-align:right;">
 <div class="mkb-label" style="display:inline;">⯐ :</div>
-<select id="PosisiHuruf" onchange="OptionPosisiHuruf();" name="PosisiHuruf" value="" required style="width: 80px; display:inline;">
+<select id="PosisiHuruf" onchange="OptionPosisiHuruf();" name="PosisiHuruf" value="" required style="width: 70px; display:inline;">
 <option value="Bawah">Bawah</option>
 <option value="Atas">Atas</option>
 <option value="Kanan">Kanan</option>
@@ -230,7 +271,7 @@ Frame Color :
 </div>
 <div style="padding-bottom:5px; text-align:right;">
 <div class="mkb-label" style="display:inline;">Ξ :</div>
-<select id="PosisiHurufAlign" onchange="OptionPosisiAlign();" name="PosisiHurufAlign" value="" required style="width: 80px; display:inline;">
+<select id="PosisiHurufAlign" onchange="OptionPosisiAlign();" name="PosisiHurufAlign" value="" required style="width: 70px; display:inline;">
 <option value="Tengah">Tengah</option>
 <option value="Kanan">Kanan</option>
 <option value="Kiri">Kiri</option>
@@ -238,7 +279,7 @@ Frame Color :
 </div>
 <div style="padding-bottom:5px; text-align:right;">
 <div class="mkb-label" style="display:inline;">✎ :</div>
-<select id="GayaHuruf" onchange="OptionFonts(this);" name="GayaHuruf" value="" required style="width: 80px; display:inline;">
+<select id="GayaHuruf" onchange="OptionFonts(this);" name="GayaHuruf" value="" required style="width: 70px; display:inline;">
 <option>Concert One</option>
 <option>Luckiest Guy</option>
 <option>Henny Penny</option>
@@ -261,7 +302,7 @@ Frame Color :
 </div>
 <div style="padding-bottom:5px; text-align:right;">
 <div class="mkb-label" style="display:inline;">✎ :</div>
-<select id="WeightHuruf" onchange="OptionWeightFonts(this);" name="WeightHuruf" value="" required style="width: 80px; display:inline;">
+<select id="WeightHuruf" onchange="OptionWeightFonts(this);" name="WeightHuruf" value="" required style="width: 70px; display:inline;">
 <option>normal</option>
 <option>lighter</option>
 <option>bold</option>
@@ -270,13 +311,21 @@ Frame Color :
 </div>
 <div style="padding-bottom:5px; text-align:right;">
 <div class="mkb-label" style="display:inline; width: 50px;">🚥 :</div>
-<input id="colortext" data-jscolor="#ffffff" type="color" style="width: 80px; display:inline;" class="mkb-input"  onchange="GettcolorPoster();"> 
+<input id="colortext" value="#ffffff" type="color" style="width: 70px; display:inline;" class="mkb-input"  onchange="GettcolorPoster();"> 
 </div>  
     </td>
   </tr>
 </table>
+</div>    
+    </div>
+        
+  </div>
 </div>
-		
+<script type="text/javascript">
+<!--
+var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
+//-->
+</script>
 <input id="btn_convert" type="button" value="Unduh Foto" class="mkb-button"/>	
 <div>By MaSkIbOw 2021</div>
 </div>	
