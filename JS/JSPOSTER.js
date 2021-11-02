@@ -1,13 +1,16 @@
 // JavaScript Document Maskibow on PsychoGrapics
        document.getElementById("btn_convert").addEventListener("click", function() {
 	   document.getElementById("settingposter").style.display = "none";
+	   document.getElementById("logomaskibow").style.display = "block";
 	   document.getElementById("backgroundposter").style.marginLeft = "0px";
 	   document.getElementById("backgroundposter").style.marginTop = "0px";
 	   document.getElementById("previewImg").style.width = "300px";    
 	   document.getElementById("html-content-holder").style.height = "300px"; 
-	       html2canvas(document.getElementById("html-content-holder"),
+	   html2canvas(document.getElementById("html-content-holder"),
 			{
-				allowTaint: false,
+				scale: 3,
+				dpi: 240,
+				allowTaint: true,
 				useCORS: true,
 			}).then(function (canvas) {
 				var anchorTag = document.createElement("a");
@@ -21,7 +24,8 @@
 	  document.getElementById("backgroundposter").style.marginLeft = "0px";
 	  document.getElementById("backgroundposter").style.marginTop = "0px"; 
 	   document.getElementById("previewImg").style.width = "300px";    
-	   document.getElementById("html-content-holder").style.height = "300px";   
+	   document.getElementById("html-content-holder").style.height = "300px";
+	   document.getElementById("logomaskibow").style.display = "none";
        });
 
 function GetFotoPoster(event){
@@ -83,8 +87,29 @@ document.getElementById("textchatposter").value = "";
 document.getElementById("UkuranHuruf").value = "";
 document.getElementById("PosisiHuruf").value = "";
 document.getElementById("PosisiHurufAlign").value = "";
+document.getElementById("logopilih").value = "";
+document.getElementById("Bingkaipilih").value = "";
+document.getElementById("FrameFoto").value = "";
+document.getElementById("checkshadowatas").value = "";
+document.getElementById("checkshadowbawah").value = "";
+document.getElementById("checkshadowkiri").value = "";
+document.getElementById("checkshadowkanan").value = "";
+document.getElementById("framecolor").value = "";
+document.getElementById("PosisiHurufJudul").value = "";
+document.getElementById("PosisiHurufAlignJudul").value = "";
+document.getElementById("GayaHurufJudul").value = "";
+document.getElementById("colortextJudul").value = "";
+document.getElementById("GayaHuruf").value = "";
+document.getElementById("WeightHuruf").value = "";
+document.getElementById("colortext").value = "";
+uncheckAll1;
 }
-
+function uncheckAll1() {
+  var inputs = document.querySelectorAll('.checkin');
+  for (var i = 0; i < inputs.length; i++) {
+    inputs[i].checked = false;
+  }
+}
 function OptionPosisiAlign(){
 if(document.getElementById("PosisiHurufAlign").value == "Tengah") {
 document.getElementById("textposter").style.textAlign = "center";
@@ -107,38 +132,38 @@ function OptionWeightFonts(selectTag){
 
 function OptionFrameFoto(){
 if(document.getElementById("FrameFoto").value == "frame01") {
-document.getElementById("imgposter").style.left = "35px";
-document.getElementById("imgposter").style.top  = "35px";
-document.getElementById("imgposter").style.width  = "230px";
-document.getElementById("imgposter").style.height = "230px";
+document.getElementById("imgposter").style.left = "45px";
+document.getElementById("imgposter").style.top  = "45px";
+document.getElementById("imgposter").style.width  = "210px";
+document.getElementById("imgposter").style.height = "210px";
 document.getElementById("imgposter").style.borderRadius = "50%";
 };
 if(document.getElementById("FrameFoto").value == "frame02") {
 document.getElementById("imgposter").style.left = "20px";
 document.getElementById("imgposter").style.top  = "0px";
-document.getElementById("imgposter").style.width  = "200px";
-document.getElementById("imgposter").style.height = "240px";
+document.getElementById("imgposter").style.width  = "190px";
+document.getElementById("imgposter").style.height = "220px";
 document.getElementById("imgposter").style.borderRadius = "0% 0% 20px 20px";
 };
 if(document.getElementById("FrameFoto").value == "frame03") {
-document.getElementById("imgposter").style.left = "80px";
+document.getElementById("imgposter").style.left = "90px";
 document.getElementById("imgposter").style.top  = "0px";
-document.getElementById("imgposter").style.width  = "200px";
-document.getElementById("imgposter").style.height = "240px";
+document.getElementById("imgposter").style.width  = "190px";
+document.getElementById("imgposter").style.height = "220px";
 document.getElementById("imgposter").style.borderRadius = "0% 0% 20px 20px";
 };
 if(document.getElementById("FrameFoto").value == "frame04") {
 document.getElementById("imgposter").style.left = "20px";
-document.getElementById("imgposter").style.top  = "60px";
-document.getElementById("imgposter").style.width  = "200px";
-document.getElementById("imgposter").style.height = "240px";
+document.getElementById("imgposter").style.top  = "80px";
+document.getElementById("imgposter").style.width  = "190px";
+document.getElementById("imgposter").style.height = "220px";
 document.getElementById("imgposter").style.borderRadius = "20px 20px 0% 0%";
 };
 if(document.getElementById("FrameFoto").value == "frame05") {
-document.getElementById("imgposter").style.left = "80px";
-document.getElementById("imgposter").style.top  = "60px";
-document.getElementById("imgposter").style.width  = "200px";
-document.getElementById("imgposter").style.height = "240px";
+document.getElementById("imgposter").style.left = "90px";
+document.getElementById("imgposter").style.top  = "80px";
+document.getElementById("imgposter").style.width  = "190px";
+document.getElementById("imgposter").style.height = "220px";
 document.getElementById("imgposter").style.borderRadius = "20px 20px 0% 0%";
 };
 if(document.getElementById("FrameFoto").value == "frame06") {
