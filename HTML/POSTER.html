@@ -296,6 +296,198 @@ Spry.Widget.TabbedPanels.prototype.getElementChildren = function(element)
 		child = child.nextSibling;
 	}
 	return children;
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+<script src="https://webtama.github.io/WebAppJp05/JQUERY/jquery-3.6.0.min.js"></script>
+<script src="https://webtama.github.io/WebAppJp05/JS/POSTER.js"></script>
+	
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1"/>   
+<base target="_top">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 	
+<link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Rampart+One&display=swap" rel="stylesheet"> 
+<link href="https://webtama.github.io/WebAppJp05/CSS/CSSMAINPOSTER.css" rel="stylesheet" type="text/css" media="all" />
+
+<script>
+$(document).ready(function() {
+  $("#framecolor").change(function() {
+    var coloropacity = $("#frameopacity[type=range]").val();
+    var color = $("#framecolor[type=color]").val();
+    var rgbaCol = 'rgba(' + parseInt(color.slice(-6, -4), 16) + ',' + parseInt(color.slice(-4, -2), 16) + ',' + parseInt(color.slice(-2), 16) + ',' + coloropacity + ')';
+    $('#imgposter').css('borderColor', rgbaCol)
+  })
+})
+</script>
+<style>
+.TabbedPanels {
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	clear: none;
+	width: 100%; /* IE Hack to force proper layout when preceded by a paragraph. (hasLayout Bug)*/
+}
+
+.TabbedPanelsTabGroup {
+	margin: 0px;
+	padding: 0px;
+}
+
+.TabbedPanelsTab {
+	position: relative;
+	top: 1px;
+	float: left;
+	padding: 4px 10px;
+	margin: 0px 1px 0px 0px;
+	font: bold 0.7em sans-serif;
+	background-color: #DDD;
+	list-style: none;
+	border-left: solid 1px #CCC;
+	border-bottom: solid 1px #999;
+	border-top: solid 1px #999;
+	border-right: solid 1px #999;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	cursor: pointer;
+}
+
+.TabbedPanelsTabHover {
+	background-color: #CCC;
+}
+
+.TabbedPanelsTabSelected {
+	background-color: #EEE;
+	border-bottom: 1px solid #EEE;
+}
+
+.TabbedPanelsTab a {
+	color: black;
+	text-decoration: none;
+}
+
+.TabbedPanelsContentGroup {
+	clear: both;
+	border-left: solid 1px #CCC;
+	border-bottom: solid 1px #CCC;
+	border-top: solid 1px #999;
+	border-right: solid 1px #999;
+	background-color: #EEE;
+}
+
+.TabbedPanelsContent {
+	padding: 4px;
+}
+
+.TabbedPanelsContentVisible {
+}
+
+.VTabbedPanels .TabbedPanelsTabGroup {
+	float: left;
+	width: 10em;
+	height: 20em;
+	background-color: #EEE;
+	position: relative;
+	border-top: solid 1px #999;
+	border-right: solid 1px #999;
+	border-left: solid 1px #CCC;
+	border-bottom: solid 1px #CCC;
+}
+
+.VTabbedPanels .TabbedPanelsTab {
+	float: none;
+	margin: 0px;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+
+.VTabbedPanels .TabbedPanelsTabSelected {
+	background-color: #EEE;
+	border-bottom: solid 1px #999;
+}
+
+.VTabbedPanels .TabbedPanelsContentGroup {
+	clear: none;
+	float: left;
+	padding: 0px;
+	width: 30em;
+	height: 20em;
+}
+</style>	
+</head>
+
+
+<body style="background-color:#CCC">
+<script>
+var Spry;
+if (!Spry) Spry = {};
+if (!Spry.Widget) Spry.Widget = {};
+
+Spry.Widget.TabbedPanels = function(element, opts)
+{
+	this.element = this.getElement(element);
+	this.defaultTab = 0; // Show the first panel by default.
+	this.bindings = [];
+	this.tabSelectedClass = "TabbedPanelsTabSelected";
+	this.tabHoverClass = "TabbedPanelsTabHover";
+	this.tabFocusedClass = "TabbedPanelsTabFocused";
+	this.panelVisibleClass = "TabbedPanelsContentVisible";
+	this.focusElement = null;
+	this.hasFocus = false;
+	this.currentTabIndex = 0;
+	this.enableKeyboardNavigation = true;
+
+	Spry.Widget.TabbedPanels.setOptions(this, opts);
+
+
+	if (typeof (this.defaultTab) == "number")
+	{
+		if (this.defaultTab < 0)
+			this.defaultTab = 0;
+		else
+		{
+			var count = this.getTabbedPanelCount();
+			if (this.defaultTab >= count)
+				this.defaultTab = (count > 1) ? (count - 1) : 0;
+		}
+
+		this.defaultTab = this.getTabs()[this.defaultTab];
+	}
+
+if (this.defaultTab)
+		this.defaultTab = this.getElement(this.defaultTab);
+
+	this.attachBehaviors();
+};
+
+Spry.Widget.TabbedPanels.prototype.getElement = function(ele)
+{
+	if (ele && typeof ele == "string")
+		return document.getElementById(ele);
+	return ele;
+}
+
+Spry.Widget.TabbedPanels.prototype.getElementChildren = function(element)
+{
+	var children = [];
+	var child = element.firstChild;
+	while (child)
+	{
+		if (child.nodeType == 1 /* Node.ELEMENT_NODE */)
+			children.push(child);
+		child = child.nextSibling;
+	}
+	return children;
 };
 
 Spry.Widget.TabbedPanels.prototype.addClassName = function(ele, className)
@@ -482,13 +674,6 @@ Spry.Widget.TabbedPanels.prototype.addPanelEventListeners = function(tab, panel)
 
 	if (this.enableKeyboardNavigation)
 	{
-		// XXX: IE doesn't allow the setting of tabindex dynamically. This means we can't
-		// rely on adding the tabindex attribute if it is missing to enable keyboard navigation
-		// by default.
-
-		// Find the first element within the tab container that has a tabindex or the first
-		// anchor tag.
-		
 		var tabIndexEle = null;
 		var tabAnchorEle = null;
 
@@ -583,7 +768,7 @@ Spry.Widget.TabbedPanels.prototype.attachBehaviors = function(element)
 <div id="judultposter" class="judultposter">
 <span id="judul" class="judul"></span>
 <span id="deskripsi" class="deskripsi"></span>
-<span id="logomaskibow" class="logomaskibow" style="font-size:8px; position:absolute; top:288px; right: 5px; color: white; display: none;">#Maskibow 2021</span>
+<span id="logomaskibow" class="logomaskibow" style="font-size:6px; position:absolute; top:288px; right: 5px; color: white; display: none;">#Maskibow 2021</span>
 </div>
 <div id="textposter" class="textposter"></div>
 </div>
@@ -593,16 +778,16 @@ Spry.Widget.TabbedPanels.prototype.attachBehaviors = function(element)
 <div id="previewImg" class="previewImg"></div>
 
 <br>
-<button  onclick="pengaturanon();">🔧 Pengaturan</button>
+<button  onclick="pengaturanon();">🖼 Buat Poster</button>
 
 <div id="settingposter">
 
 <div id="TabbedPanels1" class="TabbedPanels">
   <ul class="TabbedPanelsTabGroup">
-    <li class="TabbedPanelsTab" tabindex="0">Pilih Tema</li>
-    <li class="TabbedPanelsTab" tabindex="0">Foto Anda</li>
-    <li class="TabbedPanelsTab" tabindex="0">Judul</li>
-    <li class="TabbedPanelsTab" tabindex="0">Note</li>
+    <li class="TabbedPanelsTab" tabindex="0">📆 Pilih Tema</li>
+    <li class="TabbedPanelsTab" tabindex="0">📷 Foto Anda</li>
+    <li class="TabbedPanelsTab" tabindex="0">🗒 Judul</li>
+    <li class="TabbedPanelsTab" tabindex="0">📰 Note</li>
   </ul>
   <div class="TabbedPanelsContentGroup">
     <div class="TabbedPanelsContent">
@@ -670,13 +855,31 @@ Pilih Bingkai : <select name="Bingkaipilih" list="Bingkaipilih" onchange="docume
         <option value="https://webtama.github.io/WebAppJp05/IMG/RAMPLE-07.png">Bingkai-07</option>
         <option value="https://webtama.github.io/WebAppJp05/IMG/RAMPLE-08.png">Bingkai-08</option>
         <option value="https://webtama.github.io/WebAppJp05/IMG/RAMPLE-09.png">Bingkai-09</option>
-</select>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/RAMPLE-10.png">Bingkai-10</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/RAMPLE-11.png">Bingkai-11</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/RAMPLE-12.png">Bingkai-12</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/RAMPLE-13.png">Bingkai-13</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/RAMPLE-14.png">Bingkai-14</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/RAMPLE-15.png">Bingkai-15</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/RAMPLE-16.png">Bingkai-16</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/RAMPLE-17.png">Bingkai-17</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/RAMPLE-18.png">Bingkai-18</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/RAMPLE-19.png">Bingkai-19</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/RAMPLE-20.png">Bingkai-20</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/RAMPLE-21.png">Bingkai-21</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/RAMPLE-22.png">Bingkai-22</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/RAMPLE-23.png">Bingkai-23</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/RAMPLE-24.png">Bingkai-24</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/RAMPLE-25.png">Bingkai-25</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/RAMPLE-26.png">Bingkai-26</option>
+        <option value="https://webtama.github.io/WebAppJp05/IMG/RAMPLE-27.png">Bingkai-27</option>        
+        </select>
 </div>    
     </div>
     <div class="TabbedPanelsContent">
 <div class="mkb-group">
 <div style="padding-bottom:5px;">
-<div class="mkb-label" value="">📸Foto Anda :</div>
+<div class="mkb-label" value="">Foto Anda :</div>
 <br />
 Pilih Foto : 
 <input type='file' id='getval' name="background-image" onchange="document.getElementById('imgposter').src = window.URL.createObjectURL(this.files[0])" class="mkb-input" accept="image/png, image/gif, image/jpeg" style="color:transparent; width:80px;"/>
@@ -722,9 +925,9 @@ Frame Color :
 <table border="0">
   <tr>
     <td valign="top">
-<div class="mkb-label">✍ Judul :</div>
+<div class="mkb-label">Judul :</div>
 <textarea class="mkb-input" type="text" id="judulposter" style="background-color: #DCDCDC; color: #000000; white-space:pre;" placeholder="Pesan Teks" value="" onchange="GettextjudulPoster();" col='80' rows='5'></textarea> 
-<div class="mkb-label">✍ Deskripsi :</div>
+<div class="mkb-label">Deskripsi :</div>
 <textarea class="mkb-input" type="text" id="descposter" style="background-color: #DCDCDC; color: #000000; white-space:pre;" placeholder="Pesan Teks" value="" onchange="GettextdescPoster();" col='80' rows='5'></textarea> 
     </td>
     <td>
