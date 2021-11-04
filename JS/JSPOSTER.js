@@ -102,14 +102,12 @@ document.getElementById("colortextJudul").value = "";
 document.getElementById("GayaHuruf").value = "";
 document.getElementById("WeightHuruf").value = "";
 document.getElementById("colortext").value = "";
-uncheckAll1;
+document.getElementById("checkshadowatas").checked = false;
+document.getElementById("checkshadowbawah").checked = false;
+document.getElementById("checkshadowkiri").checked = false;
+document.getElementById("checkshadowkanan").checked = false;
 }
-function uncheckAll1() {
-  var inputs = document.querySelectorAll('.checkin');
-  for (var i = 0; i < inputs.length; i++) {
-    inputs[i].checked = false;
-  }
-}
+
 function OptionPosisiAlign(){
 if(document.getElementById("PosisiHurufAlign").value == "Tengah") {
 document.getElementById("textposter").style.textAlign = "center";
@@ -132,51 +130,51 @@ function OptionWeightFonts(selectTag){
 
 function OptionFrameFoto(){
 if(document.getElementById("FrameFoto").value == "frame01") {
-document.getElementById("imgposter").style.left = "45px";
-document.getElementById("imgposter").style.top  = "45px";
-document.getElementById("imgposter").style.width  = "210px";
-document.getElementById("imgposter").style.height = "210px";
+document.getElementById("imgposter").style.left = "50px";
+document.getElementById("imgposter").style.top  = "50px";
+document.getElementById("imgposter").style.width  = "200px";
+document.getElementById("imgposter").style.height = "200px";
 document.getElementById("imgposter").style.borderRadius = "50%";
 };
 if(document.getElementById("FrameFoto").value == "frame02") {
 document.getElementById("imgposter").style.left = "20px";
 document.getElementById("imgposter").style.top  = "0px";
-document.getElementById("imgposter").style.width  = "190px";
-document.getElementById("imgposter").style.height = "220px";
+document.getElementById("imgposter").style.width  = "150px";
+document.getElementById("imgposter").style.height = "240px";
 document.getElementById("imgposter").style.borderRadius = "0% 0% 20px 20px";
 };
 if(document.getElementById("FrameFoto").value == "frame03") {
-document.getElementById("imgposter").style.left = "90px";
+document.getElementById("imgposter").style.left = "130px";
 document.getElementById("imgposter").style.top  = "0px";
-document.getElementById("imgposter").style.width  = "190px";
-document.getElementById("imgposter").style.height = "220px";
+document.getElementById("imgposter").style.width  = "150px";
+document.getElementById("imgposter").style.height = "240px";
 document.getElementById("imgposter").style.borderRadius = "0% 0% 20px 20px";
 };
 if(document.getElementById("FrameFoto").value == "frame04") {
 document.getElementById("imgposter").style.left = "20px";
-document.getElementById("imgposter").style.top  = "80px";
-document.getElementById("imgposter").style.width  = "190px";
-document.getElementById("imgposter").style.height = "220px";
+document.getElementById("imgposter").style.top  = "60px";
+document.getElementById("imgposter").style.width  = "150px";
+document.getElementById("imgposter").style.height = "240px";
 document.getElementById("imgposter").style.borderRadius = "20px 20px 0% 0%";
 };
 if(document.getElementById("FrameFoto").value == "frame05") {
-document.getElementById("imgposter").style.left = "90px";
-document.getElementById("imgposter").style.top  = "80px";
-document.getElementById("imgposter").style.width  = "190px";
-document.getElementById("imgposter").style.height = "220px";
+document.getElementById("imgposter").style.left = "130px";
+document.getElementById("imgposter").style.top  = "60px";
+document.getElementById("imgposter").style.width  = "150px";
+document.getElementById("imgposter").style.height = "240px";
 document.getElementById("imgposter").style.borderRadius = "20px 20px 0% 0%";
 };
 if(document.getElementById("FrameFoto").value == "frame06") {
-document.getElementById("imgposter").style.left = "140px";
+document.getElementById("imgposter").style.left = "150px";
 document.getElementById("imgposter").style.top  = "0px";
-document.getElementById("imgposter").style.width  = "160px";
+document.getElementById("imgposter").style.width  = "150px";
 document.getElementById("imgposter").style.height = "300px";
 document.getElementById("imgposter").style.borderRadius = "0% 20px 20px 0%";
 };
 if(document.getElementById("FrameFoto").value == "frame07") {
 document.getElementById("imgposter").style.left = "0px";
 document.getElementById("imgposter").style.top  = "0px";
-document.getElementById("imgposter").style.width  = "160px";
+document.getElementById("imgposter").style.width  = "150px";
 document.getElementById("imgposter").style.height = "300px";
 document.getElementById("imgposter").style.borderRadius = "20px 0% 0% 20px";
 };
@@ -271,4 +269,40 @@ document.getElementById("judul").innerHTML = document.getElementById("judulposte
 
 function GettextdescPoster(){
 document.getElementById("deskripsi").innerHTML = document.getElementById("descposter").value;
+}
+
+function Optionposisilogo(){
+if(document.getElementById("posisilogo").value == "Atas") {
+document.getElementById("logoposter").style.left = "auto";
+document.getElementById("logoposter").style.right = "10px";
+document.getElementById("logoposter").style.top  = "10px";
+document.getElementById("logoposter").style.bottom  = "auto";
+};
+if(document.getElementById("posisilogo").value == "Bawah") {
+document.getElementById("logoposter").style.left = "10px";
+document.getElementById("logoposter").style.right = "auto";
+document.getElementById("logoposter").style.top  = "auto";
+document.getElementById("logoposter").style.bottom  = "10px";
+};
+}
+
+function Optionlistbingkai(){
+if(document.getElementById("listbingkai").value == "Bawah") {
+document.getElementById("Bingkai").style.display = "block";
+document.getElementById("Bingkai02").style.display = "none";
+document.getElementById("Bingkai").style.transform  = "";
+document.getElementById("Bingkai02").style.transform  = "";
+};
+if(document.getElementById("listbingkai").value == "Atas") {
+document.getElementById("Bingkai").style.display = "none";
+document.getElementById("Bingkai02").style.display = "block";
+document.getElementById("Bingkai").style.transform  = "";
+document.getElementById("Bingkai02").style.transform  = "";
+};
+if(document.getElementById("listbingkai").value == "Atas-Bawah") {
+document.getElementById("Bingkai").style.display = "block";
+document.getElementById("Bingkai02").style.display = "block";
+document.getElementById("Bingkai").style.transform  = "";
+document.getElementById("Bingkai02").style.transform  = "";
+};
 }
