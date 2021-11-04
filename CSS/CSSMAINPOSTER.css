@@ -63,20 +63,23 @@ bottom: 50px;
 white-space:pre;
 max-height: 100px;
 left: 10px;
+line-height: 0.9;
 }
 
 #judultposter {
-width: 280px!important; 	
-position: ABSOLUTE!important; 
+max-width: 280px!important; 	
+position: absolute!important; 
 z-index: 300!important;
 font-smoothing: always!important;
 text-shadow: 0px 0px 5px #000000!important;
 font-family: Arial, sans-serif;
 top: 0px;
 white-space:pre;
+word-wrap: break-word;
 left: 10px;
 background-color: transparent;
 height : auto;
+line-height: 0.9;
 }
 #judul{
 margin-top: 0px;
@@ -113,7 +116,7 @@ border:none;
 left: 0px;
 border-color:transparent;
 background-color:transparent;
-object-fit: fill;
+object-fit: 100% auto;
 box-sizing: border-box;
 border-opacity: 0.5!important;
 image-resolution: 1200dpi snap;
@@ -143,10 +146,10 @@ font-size: 16px;
 
 #logoposter {
 position: absolute;
-right: 20px;
-top: 20px;
+right: 10px;
+top: 10px;
 z-index: 5;
-width: 50px;
+width: 100px;
 }
 	
 .mkb-button {
@@ -160,11 +163,15 @@ border:none;
 }
 #settingposter {display: none; max-width: 320px; margin-top: 20px;}
 
-#Bingkai {
+#Bingkai, #Bingkai02 {
 position: absolute;
 left: 0px;
 top: 0px;
 z-index: 3;
 width: 300px;
 border-radius: 20px!important;
+}
+#Bingkai02 {
+transform: rotate(180deg);
+display: none;
 }
