@@ -289,20 +289,14 @@ document.getElementById("logoposter").style.bottom  = "10px";
 function Optionlistbingkai(){
 if(document.getElementById("listbingkai").value == "Bawah") {
 document.getElementById("Bingkai").style.display = "block";
-document.getElementById("Bingkai02").style.display = "none";
-document.getElementById("Bingkai").style.transform  = "";
-document.getElementById("Bingkai02").style.transform  = "";
+document.getElementById("Bingkaix").style.display = "none";
 };
 if(document.getElementById("listbingkai").value == "Atas") {
 document.getElementById("Bingkai").style.display = "none";
-document.getElementById("Bingkai02").style.display = "block";
-document.getElementById("Bingkai").style.transform  = "";
-document.getElementById("Bingkai02").style.transform  = "";
+document.getElementById("Bingkaix").style.display = "block";
 };
 if(document.getElementById("listbingkai").value == "Atas-Bawah") {
 document.getElementById("Bingkai").style.display = "block";
-document.getElementById("Bingkai02").style.display = "block";
-document.getElementById("Bingkai").style.transform  = "";
-document.getElementById("Bingkai02").style.transform  = "";
+document.getElementById("Bingkaix").style.display = "block";
 };
 }
