@@ -67,7 +67,7 @@ line-height: 0.9;
 }
 
 #judultposter {
-max-width: 280px!important; 	
+width: 280px!important; 	
 position: absolute!important; 
 z-index: 300!important;
 font-smoothing: always!important;
