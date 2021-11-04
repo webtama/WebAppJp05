@@ -163,15 +163,22 @@ border:none;
 }
 #settingposter {display: none; max-width: 320px; margin-top: 20px;}
 
-#Bingkai, #Bingkai02 {
-position: absolute;
-left: 0px;
-top: 0px;
+#Bingkai{
+position: absolute!important;
+left: 0px!important;
+top: 0px!important;
 z-index: 3;
-width: 300px;
+width: 300px!important;
 border-radius: 20px!important;
+display:none;
 }
-#Bingkai02 {
+#Bingkaix {
+position: absolute!important;
+left: 0px!important;
+top: 0px!important;
+z-index: 3;
+width: 300px!important;
+border-radius: 20px!important;
 transform: rotate(180deg);
-display: none;
+display:none;
 }
