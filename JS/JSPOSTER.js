@@ -55,28 +55,24 @@ document.getElementById("textposter").style.fontSize = "30px";
 
 function OptionPosisiHuruf(){
 if(document.getElementById("PosisiHuruf").value == "Bawah") {
-document.getElementById("textposter").style.left = "";
-document.getElementById("textposter").style.top  = "";
-document.getElementById("textposter").style.bottom  = "20px";
-document.getElementById("textposter").style.transform = "rotate(0deg)";
+document.getElementById("textposterin").style.top = "";
+document.getElementById("textposterin").style.bottom = "10px";
+document.getElementById("textposterout").style.transform = "rotate(0deg)";
 };
 if(document.getElementById("PosisiHuruf").value == "Atas") {
-document.getElementById("textposter").style.left = "";
-document.getElementById("textposter").style.bottom  = "";
-document.getElementById("textposter").style.top  = "20px";
-document.getElementById("textposter").style.transform = "rotate(0deg)";
+document.getElementById("textposterin").style.top = "10px";
+document.getElementById("textposterin").style.bottom = "";
+document.getElementById("textposterout").style.transform = "rotate(0deg)";
 };
 if(document.getElementById("PosisiHuruf").value == "Kiri") {
-document.getElementById("textposter").style.top  = "100px";
-document.getElementById("textposter").style.bottom  = "";
-document.getElementById("textposter").style.left = "-80px";
-document.getElementById("textposter").style.transform = "rotate(-90deg)";
+document.getElementById("textposterin").style.top = "10px";
+document.getElementById("textposterin").style.bottom = "";
+document.getElementById("textposterout").style.transform = "rotate(-90deg)";
 };
 if(document.getElementById("PosisiHuruf").value == "Kanan") {
-document.getElementById("textposter").style.top  = "100px";
-document.getElementById("textposter").style.bottom  = "";
-document.getElementById("textposter").style.left = "100px";
-document.getElementById("textposter").style.transform = "rotate(90deg)";
+document.getElementById("textposterin").style.top = "10px";
+document.getElementById("textposterin").style.bottom = "";
+document.getElementById("textposterout").style.transform = "rotate(90deg)";
 };
 }
 function pengaturanon() {
@@ -251,19 +247,17 @@ function OptionFontsJudul(selectTag){
 
 function OptionPosisiHurufJudul(){
 if(document.getElementById("PosisiHurufJudul").value == "Bawah") {
-document.getElementById("judultposter").style.left = "";
-document.getElementById("judultposter").style.top  = "220px";
-document.getElementById("judultposter").style.bottom  = "";
+document.getElementById("judulinner").style.top = "";
+document.getElementById("judulinner").style.bottom = "10px";
 };
 if(document.getElementById("PosisiHurufJudul").value == "Atas") {
-document.getElementById("judultposter").style.left = "";
-document.getElementById("judultposter").style.bottom  = "";
-document.getElementById("judultposter").style.top  = "0px";
+document.getElementById("judulinner").style.top = "10px";
+document.getElementById("judulinner").style.bottom = "";
 };
 }
 
 function GettcolorPosterJudul(){
-document.getElementById("judultposter").style.color = document.getElementById("colortextJudul").value;
+document.getElementById("judulinner").style.color = document.getElementById("colortextJudul").value;
 }
 
 function GettextjudulPoster(){
