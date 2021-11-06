@@ -78,17 +78,10 @@ if ('serviceWorker' in navigator) {
 }
 </script>
 <script>     
-const installApp = document.getElementById('installApp');
-
-installApp.addEventListener('click', async () => {
-    if (deferredPrompt !== null) {
-        deferredPrompt.prompt();
-        const { outcome } = await deferredPrompt.userChoice;
-        if (outcome === 'accepted') {
-            deferredPrompt = null;
-        }
-    }
-});
+let installable = true;
+if (!('serviceWorker' in navigator)){
+  installable = false;
+}
 </script>
 <body style="margin: 0px; padding: 0px;">                                                 
                                                     
