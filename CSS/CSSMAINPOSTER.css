@@ -15,6 +15,8 @@ overflow: none !important !important;
 -o-appearance: none !important; /* Opera */
 -ms-appearance: none !important; /* Internet Explorer */
 appearance: none !important; /* CSS3 */
+overflow-y: hidden;
+overflow-x: hidden;	
 }	
 body {
 scrollbar-width: none;
@@ -24,6 +26,8 @@ scrollbar-width: none;
 -o-appearance: none !important; /* Opera */
 -ms-appearance: none !important; /* Internet Explorer */
 appearance: none !important; /* CSS3 */
+overflow-y: hidden;
+overflow-x: hidden;	
 }
 body::-webkit-scrollbar {
 display: none;
