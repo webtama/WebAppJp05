@@ -7,6 +7,21 @@ const CACHE_NAME = 'offline';
 const OFFLINE_URL = '/WebAppJp05/offline/index.html';
 const NOT_FOUND_URL = '/WebAppJp05/404.html';
 
+self.addEventListener('install', (e) => {
+  e.waitUntil(
+    caches.open('offline').then((cache) => cache.addAll([
+      'https://github.com/webtama/WebAppJp05/',
+    ])),
+  );
+});
+
+self.addEventListener('fetch', (e) => {
+  console.log(e.request.url);
+  e.respondWith(
+    caches.match(e.request).then((response) => response || fetch(e.request)),
+  );
+});
+
 self.addEventListener('fetch', function(event) {
   // console.log('[Service Worker] Fetch', event.request.url);
   if (event.request.mode === 'navigate') {
