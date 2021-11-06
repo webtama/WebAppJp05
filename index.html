@@ -44,12 +44,6 @@
         <base target="_top">
 <style>
 </style>
-                                          
-<body style="margin: 0px; padding: 0px;" onload="showInstallPromotion();">  
-<script>
-document.getElementById('warning').style.display = 'none';
-</script>
-</head>
 <script>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
@@ -62,21 +56,56 @@ if ('serviceWorker' in navigator) {
     });
   });
 }
- 
-// Initialize deferredPrompt for use later to show browser install prompt.
-let deferredPrompt;
+</script>
+<script>      
+let deferredPrompt; // Allows to show the install prompt
+const installButton = document.getElementById("install_button");
 
-window.addEventListener('beforeinstallprompt', (e) => {
-  // Prevent the mini-infobar from appearing on mobile
+window.addEventListener("beforeinstallprompt", e => {
+  console.log("beforeinstallprompt fired");
+  // Prevent Chrome 76 and earlier from automatically showing a prompt
   e.preventDefault();
   // Stash the event so it can be triggered later.
   deferredPrompt = e;
-  // Update UI notify the user they can install the PWA
-  showInstallPromotion();
-  // Optionally, send analytics event that PWA install promo was shown.
-  console.log(`'beforeinstallprompt' event was fired.`);
+  // Show the install button
+  installButton.hidden = false;
+  installButton.addEventListener("click", installApp);
+});    
+</script>  
+
+<script> 
+ function installApp() {
+  // Show the prompt
+  deferredPrompt.prompt();
+  installButton.disabled = true;
+
+  // Wait for the user to respond to the prompt
+  deferredPrompt.userChoice.then(choiceResult => {
+    if (choiceResult.outcome === "accepted") {
+      console.log("PWA setup accepted");
+      installButton.hidden = true;
+    } else {
+      console.log("PWA setup rejected");
+    }
+    installButton.disabled = false;
+    deferredPrompt = null;
+  });
+}     
+</script> 
+            
+<script> 
+ window.addEventListener("appinstalled", evt => {
+  console.log("appinstalled fired", evt);
 });     
-</script>        
+</script>       
+      
+<body style="margin: 0px; padding: 0px;" onload="installApp();">  
+<script>
+document.getElementById('warning').style.display = 'none';
+</script>
+</head>
+   
       <iframe title="GSapp05" width="100%" height="100%" src="https://script.google.com/a/macros/edu.jakarta.go.id/s/AKfycbxNj_NcfFf0lxCD9bwnKA5DcjUsFK66lnp6W_PQJ9ty8yn6Det0/exec" frameborder="0"></iframe>
+<button id="install_button" hidden>Install</button>
 </body>
 </html>
