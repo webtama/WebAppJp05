@@ -134,60 +134,60 @@ self.addEventListener("message", (event) => {
 });
 
 workbox.routing.registerRoute(
-  ({event}) => event.request.destination === 'document',
+  ({event}) => event.request.destination === 'HTML',
   new workbox.strategies.NetworkFirst({
     cacheName: HTML_CACHE,
     plugins: [
       new workbox.expiration.ExpirationPlugin({
-        maxEntries: 10,
+        maxEntries: 100,
       }),
     ],
   })
 );
 
 workbox.routing.registerRoute(
-  ({event}) => event.request.destination === 'script',
+  ({event}) => event.request.destination === 'JS',
   new workbox.strategies.StaleWhileRevalidate({
     cacheName: JS_CACHE,
     plugins: [
       new workbox.expiration.ExpirationPlugin({
-        maxEntries: 15,
+        maxEntries: 100,
       }),
     ],
   })
 );
 
 workbox.routing.registerRoute(
-  ({event}) => event.request.destination === 'style',
+  ({event}) => event.request.destination === 'CSS',
   new workbox.strategies.StaleWhileRevalidate({
     cacheName: STYLE_CACHE,
     plugins: [
       new workbox.expiration.ExpirationPlugin({
-        maxEntries: 15,
+        maxEntries: 100,
       }),
     ],
   })
 );
 
 workbox.routing.registerRoute(
-  ({event}) => event.request.destination === 'image',
+  ({event}) => event.request.destination === 'IMG',
   new workbox.strategies.StaleWhileRevalidate({
     cacheName: IMAGE_CACHE,
     plugins: [
       new workbox.expiration.ExpirationPlugin({
-        maxEntries: 15,
+        maxEntries: 200,
       }),
     ],
   })
 );
 
 workbox.routing.registerRoute(
-  ({event}) => event.request.destination === 'font',
+  ({event}) => event.request.destination === 'FONT',
   new workbox.strategies.StaleWhileRevalidate({
     cacheName: FONT_CACHE,
     plugins: [
       new workbox.expiration.ExpirationPlugin({
-        maxEntries: 15,
+        maxEntries: 200,
       }),
     ],
   })
