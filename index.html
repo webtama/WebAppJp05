@@ -43,29 +43,8 @@
       <script src="/WebAppJp05/script.js"></script>                                                            
         <base target="_top">
 <style>
-#installContainer {
-  position: absolute;
-  bottom: 1em;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-#installContainer button {
-  background-color: inherit;
-  border: 1px solid white;
-  color: white;
-  font-size: 1em;
-  padding: 0.75em;
-.add-button {
-  position: absolute;
-  top: 1px;
-  left: 1px;
-}
-      
-}
 </style>
-<script src="/WebAppJp05/script.js" defer></script>                           
+                                     
 <script>
 document.getElementById('warning').style.display = 'none';
 </script>
@@ -82,14 +61,7 @@ if ('serviceWorker' in navigator) {
     });
   });
 }
-</script>
-<script>     
-let deferredPrompt;
-const addBtn = document.querySelector('.add-button');
-addBtn.style.display = 'none';
-}
-</script>
-<script>  
+ 
 // Initialize deferredPrompt for use later to show browser install prompt.
 let deferredPrompt;
 
