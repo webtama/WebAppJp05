@@ -126,6 +126,9 @@ const JS_CACHE = "javascript";
 const STYLE_CACHE = "stylesheets";
 const IMAGE_CACHE = "images";
 const FONT_CACHE = "fonts";
+const ICON_CACHE = "icons";
+const JQUERY_CACHE = "JQUERY";
+const SOUND_CACHE = "SOUND";
 
 self.addEventListener("message", (event) => {
   if (event.data && event.data.type === "SKIP_WAITING") {
@@ -184,7 +187,7 @@ workbox.routing.registerRoute(
 workbox.routing.registerRoute(
   ({event}) => event.request.destination === 'FONT',
   new workbox.strategies.StaleWhileRevalidate({
-    cacheName: FONT_CACHE,
+    cacheName: ICON_CACHE,
     plugins: [
       new workbox.expiration.ExpirationPlugin({
         maxEntries: 200,
@@ -192,6 +195,43 @@ workbox.routing.registerRoute(
     ],
   })
 );
+
+workbox.routing.registerRoute(
+  ({event}) => event.request.destination === 'icons',
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: IMAGE_CACHE,
+    plugins: [
+      new workbox.expiration.ExpirationPlugin({
+        maxEntries: 200,
+      }),
+    ],
+  })
+);
+
+workbox.routing.registerRoute(
+  ({event}) => event.request.destination === 'JQUERY',
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: JQUERY_CACHE,
+    plugins: [
+      new workbox.expiration.ExpirationPlugin({
+        maxEntries: 200,
+      }),
+    ],
+  })
+);
+
+workbox.routing.registerRoute(
+  ({event}) => event.request.destination === 'SOUND',
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: SOUND_CACHE,
+    plugins: [
+      new workbox.expiration.ExpirationPlugin({
+        maxEntries: 200,
+      }),
+    ],
+  })
+);
+
 
 // This is the "serving cached media" service worker
 
