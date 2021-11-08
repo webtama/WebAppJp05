@@ -68,7 +68,7 @@ if ('serviceWorker' in navigator) {
   deferredPrompt.userChoice.then(choiceResult => {
     if (choiceResult.outcome === "accepted") {
       console.log("PWA setup accepted");
-      installButton.hidden = true;
+      installButton.hidden = false;
     } else {
       console.log("PWA setup rejected");
     }
