@@ -2,10 +2,10 @@ var APP_PREFIX = 'WebAppJp05_';
 var VERSION = 'version_01';
 var URLS = '.';
 
-const NOT_FOUND_CACHE_FILES = '/WebAppJp05/404.html';
+const NOT_FOUND_CACHE_FILES = '/404.html';
 const CACHE_NAME = 'offline';
-const OFFLINE_URL = '/WebAppJp05/offline/index.html';
-const NOT_FOUND_URL = '/WebAppJp05/404.html';
+const OFFLINE_URL = '/offline/index.html';
+const NOT_FOUND_URL = '/404.html';
 
 self.addEventListener('fetch', function(event) {
   // console.log('[Service Worker] Fetch', event.request.url);
@@ -37,7 +37,7 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox
 const CACHE = "offline";
 
 // TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "/offline/";
-const offlineFallbackPage = "https://webtama.github.io/WebAppJp05/index.html";
+const offlineFallbackPage = "/offline/";
 
 self.addEventListener("message", (event) => {
   if (event.data && event.data.type === "SKIP_WAITING") {
