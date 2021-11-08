@@ -37,7 +37,7 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox
 const CACHE = "offline";
 
 // TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "/offline/";
-const offlineFallbackPage = "/offline/";
+const offlineFallbackPage = "https://webtama.github.io/WebAppJp05/offline/index.html";
 
 self.addEventListener("message", (event) => {
   if (event.data && event.data.type === "SKIP_WAITING") {
