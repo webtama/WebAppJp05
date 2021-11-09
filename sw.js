@@ -255,6 +255,8 @@ workbox.routing.registerRoute(
   }),
 );
 
+// This is the "background periodic sync" service worker
+
 async function registerPeriodicNewsCheck() {
   const registration = await navigator.serviceWorker.ready;
   try {
@@ -264,7 +266,7 @@ async function registerPeriodicNewsCheck() {
   } catch {
     console.log('Periodic Sync could not be registered!');
   }
-};
+}
 navigator.serviceWorker.ready.then(registration => {
   registration.periodicSync.getTags().then(tags => {
     if (tags.includes('get-latest-news'))
