@@ -254,3 +254,26 @@ workbox.routing.registerRoute(
     ],
   }),
 );
+
+async function registerPeriodicNewsCheck() {
+  const registration = await navigator.serviceWorker.ready;
+  try {
+    await registration.periodicSync.register('get-latest-news', {
+      minInterval: 24 * 60 * 60 * 1000,
+    });
+  } catch {
+    console.log('Periodic Sync could not be registered!');
+  }
+};
+navigator.serviceWorker.ready.then(registration => {
+  registration.periodicSync.getTags().then(tags => {
+    if (tags.includes('get-latest-news'))
+      skipDownloadingLatestNewsOnPageLoad();
+  });
+});
+
+self.addEventListener('periodicsync', event => {
+  if (event.tag == 'get-latest-news') {
+    event.waitUntil(fetchAndCacheLatestNews());
+  }
+});
