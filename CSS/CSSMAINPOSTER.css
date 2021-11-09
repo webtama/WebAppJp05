@@ -19,6 +19,7 @@ overflow: none !important !important;
 appearance: none !important; /* CSS3 */
 }	
 body {
+height: 600px;		
 overflow-y: scroll;
 scrollbar-width: none;
 -ms-overflow-style: none;
