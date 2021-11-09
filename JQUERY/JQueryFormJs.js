@@ -27,12 +27,12 @@
     // Read the file on form submit
     function kirimchat(event) {
       //event.preventDefault();
-      $('#USERNAME,#AVRfoto,#TEXTCHAT,#FILECHAT,#KLSS,#KEY').not(':input[type=button],:input[type=submit], :input[type=reset],.file-path,.select-dropdown,.picker__select--year').each(function(index, item){
+      $('#USERNAME,#AVRfoto,#TEXTCHAT,#FILECHAT,#KLSS,#INDUK').not(':input[type=button],:input[type=submit], :input[type=reset],.file-path,.select-dropdown,.picker__select--year').each(function(index, item){
           if(nameArr.indexOf($(item).attr('name'))<0){
              nameArr.push({name: $(item).attr('name'), type: $(item).attr('type')});
           }
       });
-      $('#USERNAME,#AVRfoto,#TEXTCHAT,#FILECHAT,#KLSS,#KEY').not(':input[type=button],:input[type=submit], :input[type=reset],:input[type=file],.file-path,.select-dropdown,.picker__select--year').each(function(index, item){
+      $('#USERNAME,#AVRfoto,#TEXTCHAT,#FILECHAT,#KLSS,#INDUK').not(':input[type=button],:input[type=submit], :input[type=reset],:input[type=file],.file-path,.select-dropdown,.picker__select--year').each(function(index, item){
           if($(item).attr('type')=='radio'){
             if($(item).is(":checked")){
               formObj[$(item).attr('name')]=$(item).val();
