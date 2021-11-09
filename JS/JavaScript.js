@@ -341,6 +341,7 @@ function closeNav() {
   function getAllDatacHAT(){
   document.getElementById("loaddingchat").style.display = "block";
   google.script.run.withSuccessHandler(createTablecHAT).getAllDataChat();
+    FILTERSISWABP();
   BottomFunction();
   scrolltextchat();
   }
@@ -365,6 +366,7 @@ function closeNav() {
       div.innerHTML = "Chat Tidak Ada!";
       document.getElementById("loaddingchat").style.display = "none";
     }
+    FILTERSISWABP();
     }
 
 function pastethemes() {
