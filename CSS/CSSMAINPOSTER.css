@@ -1,35 +1,10 @@
 @charset "utf-8";
 /* CSS Document Maskibow on PsychoGrapics*/
 html {
-height: 1200px;	
-overflow-y: scroll;
--ms-overflow-style: none !important !important;
-scrollbar-width: none !important !important; 
-overflow: scroll !important !important;  
-overflow-x: none !important !important;
-overflow-y: none !important !important;
--webkit-appearance: none !important !important;
--moz-appearance: none !important !important;
--ms-overflow-style: none;
-overflow: none !important !important;
--webkit-appearance: none !important; /* WebKit */
--moz-appearance: none !important; /* Mozilla */
--o-appearance: none !important; /* Opera */
--ms-appearance: none !important; /* Internet Explorer */
-appearance: none !important; /* CSS3 */
+
 }	
 body {
-height: 1200px;		
-overflow-y: scroll;
-scrollbar-width: none;
--ms-overflow-style: none;
--webkit-appearance: none !important; /* WebKit */
--moz-appearance: none !important; /* Mozilla */
--o-appearance: none !important; /* Opera */
--ms-appearance: none !important; /* Internet Explorer */
-appearance: none !important; /* CSS3 */
--ms-overflow-style: none; /* for Internet Explorer, Edge */
-scrollbar-width: none; /* for Firefox */
+
 }
 body::-webkit-scrollbar. html::-webkit-scrollbar {
 display: none;
