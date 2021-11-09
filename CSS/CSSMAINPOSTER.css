@@ -15,8 +15,9 @@ overflow: none !important !important;
 -o-appearance: none !important; /* Opera */
 -ms-appearance: none !important; /* Internet Explorer */
 appearance: none !important; /* CSS3 */
-overflow-y: hidden;
-overflow-x: hidden;	
+-ms-overflow-style: none; /* for Internet Explorer, Edge */
+scrollbar-width: none; /* for Firefox */
+overflow-y: scroll; 	
 }	
 body {
 scrollbar-width: none;
@@ -27,9 +28,12 @@ scrollbar-width: none;
 -ms-appearance: none !important; /* Internet Explorer */
 appearance: none !important; /* CSS3 */
 overflow-y: hidden;
-overflow-x: hidden;	
+overflow-x: hidden;
+-ms-overflow-style: none; /* for Internet Explorer, Edge */
+scrollbar-width: none; /* for Firefox */
+overflow-y: scroll; 	
 }
-body::-webkit-scrollbar {
+body::-webkit-scrollbar. html::-webkit-scrollbar {
 display: none;
 }		
 #html-content-holder {
