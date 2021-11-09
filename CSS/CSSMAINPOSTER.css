@@ -1,6 +1,7 @@
 @charset "utf-8";
 /* CSS Document Maskibow on PsychoGrapics*/
 html {
+overflow-y: scroll;
 -ms-overflow-style: none !important !important;
 scrollbar-width: none !important !important; 
 overflow: scroll !important !important;  
@@ -17,6 +18,7 @@ overflow: none !important !important;
 appearance: none !important; /* CSS3 */
 }	
 body {
+overflow-y: scroll;
 scrollbar-width: none;
 -ms-overflow-style: none;
 -webkit-appearance: none !important; /* WebKit */
