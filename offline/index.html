@@ -60,6 +60,19 @@
         z-index: 300;
         color: red;
       }
+      @keyframes airplanego {
+      0%   {left: 0%; top: 30%; width: 0px;}
+      50%  {top: 10%;}
+      90%  {opacity: 1;}
+      100% {left: calc(100% - 150px); top: 10%; width: 150px;opacity: 0;}
+    }
+
+    @keyframes awango {
+      0%   {right: 0%; top: 10%;z-index: -1;opacity: 1;}
+      50%  {right: calc(100% - 200px);z-index: -1;opacity: 1;}
+      51%  {z-index: 101; opacity: 0.1;}
+      100% {right: 0%; top: 10%;}
+    }
       #GAMEOFFLINE {height: calc(100vh - 20px); z-index: 10;}
       #section_footer1 {display: none!important}
     </style>
