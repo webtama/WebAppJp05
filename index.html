@@ -46,6 +46,9 @@
 .wrapper { overscroll-behavior: none }
 </style>
 <script>
+document.getElementById('warning').style.display = 'none';
+</script>                
+<script>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
     navigator.serviceWorker.register('/WebAppJp05/sw.js', {scope: '.'}).then(function(registration) {
@@ -58,15 +61,10 @@ if ('serviceWorker' in navigator) {
   });
 }
 </script>
-  
+</head>  
       
-<body style="margin: 0px; padding: 0px;">  
-      
-<script>
-document.getElementById('warning').style.display = 'none';
-</script>
-      
-</head>          
+<body style="margin: 0px; padding: 0px;">   
+           
 <iframe title="GSapp05" width="100%" height="100%" src="https://script.google.com/macros/s/AKfycbxNj_NcfFf0lxCD9bwnKA5DcjUsFK66lnp6W_PQJ9ty8yn6Det0/exec" frameborder="0" crossorigin="use-credential"></iframe>
 </body>
       
