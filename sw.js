@@ -3,7 +3,7 @@ var VERSION = 'version_01';
 var URLS = '.';
 
 const NOT_FOUND_CACHE_FILES = '/404.html';
-const CACHE_NAME = 'offline';
+const CACHE_NAME = 'CACHE_OFFLINE_WEBAPP';
 const OFFLINE_URL = '/offline/index.html';
 const NOT_FOUND_URL = '/404.html';
 
@@ -34,7 +34,7 @@ self.addEventListener('fetch', function(event) {
 
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
-const CACHE = "offline";
+const CACHE = "CACHE_OFFLINE_WEBAPP";
 
 // TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "/offline/";
 const offlineFallbackPage = "https://webtama.github.io/WebAppJp05/offline/index.html";
