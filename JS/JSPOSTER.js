@@ -233,13 +233,16 @@ function OptionFrameShadowkiri() {
 
 function OptionPosisiAlignJudul(){
 if(document.getElementById("PosisiHurufAlignJudul").value == "Tengah") {
-document.getElementById("judultposter").style.textAlign = "center";
+document.getElementById("judultposter").style.textAlign = "center!important";
+document.getElementById("judultposter").style.lineHeight = "0.9";	
 };
 if(document.getElementById("PosisiHurufAlignJudul").value == "Kanan") {
-document.getElementById("judultposter").style.textAlign = "right";
+document.getElementById("judultposter").style.textAlign = "right!important";
+document.getElementById("judultposter").style.lineHeight = "0.9";	
 };
 if(document.getElementById("PosisiHurufAlignJudul").value == "Kiri") {
-document.getElementById("judultposter").style.textAlign = "left";
+document.getElementById("judultposter").style.textAlign = "left!important";
+document.getElementById("judultposter").style.lineHeight = "0.9";	
 };
 }
 function OptionFontsJudul(selectTag){
