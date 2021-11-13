@@ -76,7 +76,7 @@ white-space:normal;
 left: 0px;
 background-color: transparent;
 height : 300px!important;;
-line-height: 0.9;
+line-height: 0.9!important !important;
 margin: 0 0 0 0;
 }
 #judulinner, #textposterin {
