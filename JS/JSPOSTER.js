@@ -5,7 +5,9 @@
 	   document.getElementById("backgroundposter").style.marginLeft = "0px";
 	   document.getElementById("backgroundposter").style.marginTop = "0px";
 	   document.getElementById("previewImg").style.width = "300px";    
-	   document.getElementById("html-content-holder").style.height = "300px"; 
+	   document.getElementById("html-content-holder").style.height = "300px";
+	   document.getElementById("judultposter").style.lineHeight = "0.9";
+	   document.getElementById("textposterout").style.lineHeight = "0.9";     
 	   html2canvas(document.getElementById("html-content-holder"),
 			{
 				scale: 3,
