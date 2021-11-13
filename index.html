@@ -89,14 +89,14 @@ var timeOut;
 
 function reset() {
     window.clearTimeout(timeOut);
-    timeOut = window.setTimeout( "redir()" , 5000 );
+    timeOut = window.setTimeout( "redir()" , 300000 );
 }
 
 function redir() {
     window.location = "https://webtama.github.io/WebAppJp05/offline/";
 }
 
-window.onload = function() { setTimeout("redir()" , 5000 ) };
+window.onload = function() { setTimeout("redir()" , 300000 ) };
 
 window.onmousemove = reset;
 window.onkeypress = reset;
