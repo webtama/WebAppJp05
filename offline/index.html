@@ -66,14 +66,6 @@ z-index: -1;
 right: 0%;
 }
   
-h1{
-text-align: center;
-position: absolute;
-width: 100vw;
-z-index: 300;
-color: red;
-}
-  
 @keyframes airplanego {
 0%   	{left: calc(0% + 0px); top: 30%; width: 0px;}
 20%  	{top: 10%;}
@@ -131,13 +123,12 @@ animation-iteration-count: infinite;
 </style>
   </head>
 <body>
-<h1><button onclick="goBack()">Go Back</button></h1>
 <script>
 function goBack() {
   window.history.back();
 }
 </script>  
-      <p id="loginjudul">SDN Jatipadang 05 Pagi<br>~~Offline~~</p>
+      <p id="loginjudul">SDN Jatipadang 05 Pagi<br><br>..OFFLINE..</p><button onclick="goBack()">Kembali Login</button>
     <div id="sunny"></div>
     <img id="airplane" src="https://webtama.github.io/WebAppJp05/IMG/airplane.gif"/>
     <img id="awan" src="https://webtama.github.io/WebAppJp05/IMG/awan.png"/>
