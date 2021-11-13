@@ -6,8 +6,7 @@
 	   document.getElementById("backgroundposter").style.marginTop = "0px";
 	   document.getElementById("previewImg").style.width = "300px";    
 	   document.getElementById("html-content-holder").style.height = "300px";
-	   document.getElementById("judultposter").style.lineHeight = "0.7";
-	   document.getElementById("textposterout").style.lineHeight = "0.7";     
+	   document.getElementById("judulinner").style.lineHeight = "0.9";   
 	   html2canvas(document.getElementById("html-content-holder"),
 			{
 				scale: 3,
@@ -233,18 +232,18 @@ function OptionFrameShadowkiri() {
 
 function OptionPosisiAlignJudul(){
 if(document.getElementById("PosisiHurufAlignJudul").value == "Tengah") {
-document.getElementById("judultposter").style.textAlign = "center";	
+document.getElementById("judulinner").style.textAlign = "center";	
 };
 if(document.getElementById("PosisiHurufAlignJudul").value == "Kanan") {
-document.getElementById("judultposter").style.textAlign = "right";	
+document.getElementById("judulinner").style.textAlign = "right";	
 };
 if(document.getElementById("PosisiHurufAlignJudul").value == "Kiri") {
-document.getElementById("judultposter").style.textAlign = "left";	
+document.getElementById("judulinner").style.textAlign = "left";	
 };
 }
 function OptionFontsJudul(selectTag){
   var listValue = selectTag.options[selectTag.selectedIndex].text;
-  document.getElementById("judultposter").style.fontFamily = listValue;
+  document.getElementById("judulinner").style.fontFamily = listValue;
 }
 
 function OptionPosisiHurufJudul(){
