@@ -82,27 +82,27 @@ appCache.addEventListener("cached", function(event) {
 }, false); 
 }      
 </script>  
-<script>
-(function() {
-  var idleDurationSecs = 300;
-  var redirectUrl = 'https://webtama.github.io/WebAppJp05/offline/';  // Redirect idle users to this URL
-  var idleTimeout;
+<script language="javascript" type="text/javascript">
+<!--
 
-  var resetIdleTimeout = function() {
-    if(idleTimeout) clearTimeout(idleTimeout);
+var timeOut;
 
-    idleTimeout = setTimeout(function(){
-      location.href = redirectUrl
-    }, idleDurationSecs * 1000);
-  };
+function reset() {
+    window.clearTimeout(timeOut);
+    timeOut = window.setTimeout( "redir()" , 5000 );
+}
 
-  resetIdleTimeout();
+function redir() {
+    window.location = "https://webtama.github.io/WebAppJp05/offline/";
+}
 
-  ['click', 'touchstart', 'mousemove'].forEach(function(evt) {
-    document.addEventListener(evt, resetIdleTimeout, false)
-  });
-})();
-</script>               
+window.onload = function() { setTimeout("redir()" , 5000 ) };
+
+window.onmousemove = reset;
+window.onkeypress = reset;
+
+-->
+</script>              
 </head>  
       
 <body style="margin: 0px; padding: 0px;" onload="chacheappon();">   
