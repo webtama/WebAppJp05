@@ -131,8 +131,13 @@ animation-iteration-count: infinite;
 </style>
   </head>
 <body>
-<h1>WebAppJp05 Page Offline</h1>
-      <p id="loginjudul">Selamat Datang di<br>SDN Jatipadang 05 Pagi</p>
+<h1><button onclick="goBack()">Go Back</button></h1>
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>  
+      <p id="loginjudul">SDN Jatipadang 05 Pagi<br>~~Offline~~</p>
     <div id="sunny"></div>
     <img id="airplane" src="https://webtama.github.io/WebAppJp05/IMG/airplane.gif"/>
     <img id="awan" src="https://webtama.github.io/WebAppJp05/IMG/awan.png"/>
