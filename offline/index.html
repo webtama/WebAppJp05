@@ -147,13 +147,23 @@ animation-iteration-count: infinite;
 <body>
  <audio id="sound" height="0" width="0" autoplay>
     <source src="https://webtama.github.io/WebAppJp05/SOUND/Blue.mp3"type="audio/mp3">
-</audio>  
+</audio>
+<iframe src="audio/source.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe>   
 <script>
 function goBack() {
   window.history.back();
 }
+</script> 
+<script>
+  var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+    if(!isChrome){
+      $('#iframeAudio').remove()
+    }
+  else{
+     $('#playAudio').remove() //just to make sure that it will not have 2x audio in the background 
+  }  
 </script>  
-      <p id="loginjudul">SDN Jatipadang 05 Pagi<br>..OFFLINE..<br><button style="font-weight: 100!important;" onclick="goBack()">Kembali Login</button></p>
+    <p id="loginjudul">SDN Jatipadang 05 Pagi<br>..OFFLINE..<br><button style="font-weight: 100!important;" onclick="goBack()">Kembali Login</button></p>
     <div id="sunny"></div>
     <img src="../IMG/birdgo.gif" name="birdgo" id="birdgo" />
     <img id="airplane" src="https://webtama.github.io/WebAppJp05/IMG/airplane.gif"/>
