@@ -31,19 +31,21 @@ overflow: hidden;
 animation-name: skywave;
 animation-duration: 120s;
 animation-iteration-count: infinite;
+background-blend-mode: multiply;
 }
+ 
 @keyframes skywave {
-0%  {background-color: rgb(135, 206, 250, 0.5)}
+0%  {background-color: rgb(135, 206, 250, 0.5);}
 20%   {background-color: rgb(135, 206, 250, 1)}
 30%   {background-color: rgb(135, 206, 250, 0.5)}
 40%  {background-color: rgb(255, 165, 0, 0.5)}
 50%  {background-color: rgb(25, 25, 112, 1)}
-60%  {background-color: rgb(0, 0, 0, 1)}
-80%  {background-color: rgb(0, 0, 0, 1)}
+60%  {background-color: rgb(0, 0, 0, 0.9)}
+80%  {background-color: rgb(0, 0, 0, 0.9)}
 95%  {background-color: rgb(25, 25, 112, 1)}
 100% {background-color: rgb(135, 206, 250, 0.5)}
 }
-#airplane {
+#airplane{
 position: absolute; 
 display: block; 
 z-index: 100;  
@@ -64,6 +66,15 @@ position: absolute;
 display: block; 
 z-index: -1;  
 right: 0%;
+}
+
+#birdgo {
+position: absolute; 
+display: block; 
+z-index: 100;  
+animation-name: birdgo;
+animation-duration: 120s;
+animation-iteration-count: infinite;
 }
   
 @keyframes airplanego {
@@ -86,7 +97,17 @@ right: 0%;
 50%  {z-index: 101;filter: blur(5px)}
 75%  {z-index: 101; filter: blur(50px);opacity: 0.1;}
 100% {right: 0%; top: 10%;filter:blur(20px);opacity: 0.5;}
-}  
+} 
+
+@keyframes birdgo {
+0%   {top: 3vh; right: 0%; opacity: 0; width: 150px;}
+25%   {top: 3vh; right: 0%; opacity: 0; width: 150px;}
+26%   {top: 3vh; right: 0%; opacity: 1; width: 150px;}
+55%  {top: 40vh;right: calc(100% - 0px); opacity: 0; width: 0px;}
+56%  {right: 0%; opacity: 0; width: 0px;}
+100% {right: 0%; opacity: 0; width: 0px;}
+} 
+ 
 #loginjudul {
 text-align: center;
 width: 100vw;
@@ -118,7 +139,7 @@ animation-iteration-count: infinite;
 51%  {top: 30vh; right: calc(100% - 200px); background: radial-gradient(#FAF9E6 20%, white 20%, transparent 50%);opacity: 0;}
 75%  {top: -5vh; right: calc(50% - 100px); background: radial-gradient(#FAF9E6 20%, white 20%, transparent 50%);opacity: 1;}
 99% {top: 30vh; right: 0%; background: radial-gradient(#FAF9E6 20%, white 20%,transparent 50%);opacity: 0;}
-100% {top: 30vh; right: 0%; background: radial-gradient(#f9d71c 20%, yellow 20%, transparent 50%);;opacity: 0;}
+100% {top: 30vh; right: 0%; background: radial-gradient(#f9d71c 20%, yellow 20%, transparent 50%);opacity: 0;}
 } 
 </style>
   </head>
@@ -130,9 +151,10 @@ function goBack() {
 </script>  
       <p id="loginjudul">SDN Jatipadang 05 Pagi<br>..OFFLINE..<br><button style="font-weight: 100!important;" onclick="goBack()">Kembali Login</button></p>
     <div id="sunny"></div>
+    <img src="../IMG/birdgo.gif" name="birdgo" id="birdgo" />
     <img id="airplane" src="https://webtama.github.io/WebAppJp05/IMG/airplane.gif"/>
     <img id="awan" src="https://webtama.github.io/WebAppJp05/IMG/awan.png"/>
-    <div style="width: 100%; text-align: center; font-size:12px; bottom: 0vh; position: absolute;">
+<div style="width: 100%; text-align: center; font-size:12px; bottom: 0vh; position: absolute; color:#FFFFFF;">
     <img src="https://webtama.github.io/WebAppJp05/icons/160x160.png" alt="logo" width="30" height="30"  style="margin-left: auto;margin-right: auto;"><br>
     Copyright by Maskibow on PsyChOgRaPiCs
 </div>
