@@ -168,28 +168,7 @@ animation-iteration-count: infinite;
 	100% {	opacity: 0;}
 }	
 </style>
-  </head>
-<body>
-<audio autoplay loop  id="playAudio" style="display:none">
-    <source src="https://webtama.github.io/WebAppJp05/SOUND/Blue.mp3">
-</audio>
-  
-<iframe src="https://webtama.github.io/WebAppJp05/SOUND/Blue.mp3" loop="true" allow="autoplay" style="display:none" id="iframeAudio" loop></iframe>   
-<script>
-function goBack() {
-  window.history.back();
-}
-</script> 
-	
-<script>
-  var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-    if(!isChrome){
-      $('#iframeAudio').remove()
-    }
-  else{
-     $('#playAudio').remove() //just to make sure that it will not have 2x audio in the background 
-  }  
-</script> 
+<script> 
 const btn = document.getElementById('airplane');
 btn.addEventListener('click', () => {
 	const particles = [];
@@ -234,8 +213,30 @@ function randomLocation() {
 function randomColor() {
 	return `hsl(${Math.floor(Math.random() * 361)}, 100%, 50%)`;
 }	
-<script> 
+</script>
+	  
+</head>
 	
+<body>
+<audio autoplay loop  id="playAudio" style="display:none">
+    <source src="https://webtama.github.io/WebAppJp05/SOUND/Blue.mp3">
+</audio>
+  
+<iframe src="https://webtama.github.io/WebAppJp05/SOUND/Blue.mp3" loop="true" allow="autoplay" style="display:none" id="iframeAudio" loop></iframe>   
+<script>
+function goBack() {
+  window.history.back();
+}
+</script> 
+	
+<script>
+  var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+    if(!isChrome){
+      $('#iframeAudio').remove()
+    }
+  else{
+     $('#playAudio').remove() //just to make sure that it will not have 2x audio in the background 
+  }  
 </script>	
     <p id="loginjudul">SDN Jatipadang 05 Pagi<br>..OFFLINE..<br><button style="font-weight: 100!important;" onclick="goBack()">Kembali Login</button></p>
     <div id="sunny"></div>
