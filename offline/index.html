@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#3f51b5">
     <link rel="manifest" href="/WebAppJp05/manifest.json">
-    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js" integrity="sha384-BnFYVbw3PHhz5qWXTCSL12MjPc3KxjdKPx7R4R5JjIzxFmYX267NDyJ9B/nZANdg" crossorigin="anonymous">    
 <style>
 @media screen and (max-width: 950px) {  
   body {background-size: cover;}
@@ -163,6 +163,18 @@ function goBack() {
 }
 </script> 
 <script>
+	$(function () {
+	  $('#airplane').clickFireworks({
+	    // canvas id
+	    id: 'fireworks',
+	    // append canvas to where, default is body
+	    appendTo: 'body',
+      // canvas z-index, make it higher than anything on the page
+	    zIndex: 1000
+	  });
+	});  
+</script> 
+<script>
   var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
     if(!isChrome){
       $('#iframeAudio').remove()
@@ -174,10 +186,10 @@ function goBack() {
     <p id="loginjudul">SDN Jatipadang 05 Pagi<br>..OFFLINE..<br><button style="font-weight: 100!important;" onclick="goBack()">Kembali Login</button></p>
     <div id="sunny"></div>
     <img src="../IMG/birdgo.gif" name="birdgo" id="birdgo" />
-    <img id="airplane" src="https://webtama.github.io/WebAppJp05/IMG/airplane.gif"/>
-    <img id="awan" src="https://webtama.github.io/WebAppJp05/IMG/awan.png"/>
+    <img id="airplane" src="../IMG/airplane.gif"/>
+    <img id="awan" src=="../IMG/awan.png"/>
 <div style="width: 100%; text-align: center; font-size:12px; bottom: 0vh; position: absolute; color:#FFFFFF;">
-    <img src="https://webtama.github.io/WebAppJp05/icons/160x160.png" alt="logo" width="30" height="30"  style="margin-left: auto;margin-right: auto;"><br>
+    <img src="../icons/160x160.png" alt="logo" width="30" height="30"  style="margin-left: auto;margin-right: auto;"><br>
     Copyright by Maskibow on PsyChOgRaPiCs
 </div>
 </body>
