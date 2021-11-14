@@ -59,6 +59,7 @@ animation-duration: 30s;
 animation-iteration-count: infinite;
 -webkit-transform: scaleX(-1);
 transform: scaleX(-1);
+cursor: pointer;
 }
 
 #awan {
@@ -173,10 +174,10 @@ function goBack() {
      $('#playAudio').remove() //just to make sure that it will not have 2x audio in the background 
   }  
 </script>	
-    <p id="loginjudul">SDN Jatipadang 05 Pagi<br>..OFFLINE..<br><div style="display: block; font-weight: 100!important; font-family: arial; padding: 5px; border-radius: 3px; background-color: white; cursor: pointer;"  onclick="goBack()">💻 Kembali Login</div></p>
+    <p id="loginjudul">SDN Jatipadang 05 Pagi<br>..OFFLINE..<br>Klik Pesawat untuk 💻 Kembali Login</p>
     <div id="sunny"></div>
     <img src="../IMG/birdgo.gif" name="birdgo" id="birdgo" />
-    <img id="airplane" src="../IMG/airplane.gif"/>
+    <img id="airplane" src="../IMG/airplane.gif" onclick="goBack();"/>
     <img id="awan" src="../IMG/awan.png"/>
 <div style="width: 100%; text-align: center; font-size:12px; bottom: 0vh; position: absolute; color:#FFFFFF;">
     <img src="../icons/160x160.png" alt="logo" width="30" height="30"  style="margin-left: auto;margin-right: auto;"><br>
