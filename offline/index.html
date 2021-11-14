@@ -41,8 +41,8 @@ background-blend-mode: multiply;
 30%   {background-color: rgb(135, 206, 250, 0.5)}
 40%  {background-color: rgb(255, 165, 0, 0.5)}
 50%  {background-color: rgb(25, 25, 112, 1)}
-60%  {background-color: rgb(0, 0, 0, 0.9)}
-80%  {background-color: rgb(0, 0, 0, 0.9)}
+60%  {background-color: rgb(0, 0, 0, 0.95)}
+80%  {background-color: rgb(0, 0, 0, 0.9)5}
 95%  {background-color: rgb(25, 25, 112, 1)}
 100% {background-color: rgb(135, 206, 250, 0.5)}
 }
@@ -62,11 +62,12 @@ transform: scaleX(-1);
 animation-name: awango;
 animation-duration: 120s;
 animation-iteration-count: infinite;
-width: 200px;
+width: 90vw;
 position: absolute; 
 display: block; 
-z-index: -1;  
-right: 0%;
+z-index: 10;
+height:40vh; 
+top: 5%; 
 }
 
 #birdgo {
@@ -93,11 +94,10 @@ animation-iteration-count: infinite;
 }
 
 @keyframes awango {
-0%   {right: 0%; top: 10%;z-index: -1;filter: blur(20px);opacity: 0.5;}
-25%  {right: calc(100% - 200px);filter: blur(0px);opacity: 1;}
-50%  {z-index: 101;filter: blur(5px)}
-75%  {z-index: 101; filter: blur(50px);opacity: 0.1;}
-100% {right: 0%; top: 10%;filter:blur(20px);opacity: 0.5;}
+0%   {right: 0%; opacity: 1;}
+25%  {right: calc(100% - 90vw);}
+75%   {opacity: 0;}
+100% {right: 0%;}
 } 
 
 @keyframes birdgo {
@@ -123,7 +123,9 @@ color: rgb(255, 255, 255, 0.7);
 line-height: 1;
 text-shadow: 2px 3px black;
 padiing-bottom: 0px;
+z-index: 100;  
 }
+  
 #sunny { 
 width: 200px;
 height: 200px; 
@@ -133,6 +135,7 @@ animation-name: sunnygo;
 animation-duration: 120s;
 animation-iteration-count: infinite;
 }
+  
 @keyframes sunnygo {
 0%   {top: 30vh; right: 0%; background: radial-gradient(#f9d71c 20%, yellow 20%, transparent 50%);opacity: 0;}
 25%  {top: -5vh; right: calc(50% - 100px); background: radial-gradient(#f9d71c 20%, yellow 20%, transparent 50%);opacity: 1;}
